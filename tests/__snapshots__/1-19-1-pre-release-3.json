@@ -298,5 +298,6 @@
   "shortText": "Custom servers can hide player chat messages from display via a new network packet: This does not delete player chat messages from chat logs, Insecure chat messages logged in the server are prefixed with a [Not Secure] tag, The order of chat messages are now cryptographically",
   "title": "Minecraft 1.19.1 Pre-Release 3",
   "targetRelease": "1.19.1",
-  "publishedAt": 1657119046
+  "publishedAt": 1657119046,
+  "sourceURL": "https://www.minecraft.net/en-us/article/minecraft-1-19-1-pre-release-3"
 }

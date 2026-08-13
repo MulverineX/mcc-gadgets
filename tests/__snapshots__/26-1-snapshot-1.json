@@ -11257,5 +11257,6 @@
   "shortText": "Changes What trades are unlocked by villager professions are now determined using deterministic random sequences, like loot drops and barter loot, The algorithm that maps block and sky light levels to how bright things appear on screen has been fully rewritten, A new lightmap",
   "title": "Minecraft 26.1 Snapshot 1",
   "targetRelease": "26.1",
-  "publishedAt": 1765888949
+  "publishedAt": 1765888949,
+  "sourceURL": "https://www.minecraft.net/en-us/article/minecraft-26-1-snapshot-1"
 }

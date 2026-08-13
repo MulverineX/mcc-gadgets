@@ -30,6 +30,7 @@ export interface VersionResponse extends ParsedArticle {
   targetRelease: string | null;
   /** Manifest release timestamp in Unix seconds. Null when the version isn't in the manifest. */
   publishedAt: number | null;
+  sourceURL: string;
 }
 
 /**
@@ -145,6 +146,7 @@ export async function fetchParsedVersion(
     title: humanReadableTitle(version),
     targetRelease: targetReleaseOf(version),
     publishedAt: toUnixSeconds(resolution.releaseTime),
+    sourceURL: resolution.url,
   };
 }
 

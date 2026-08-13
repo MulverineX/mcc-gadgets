@@ -698,7 +698,7 @@ function splitMojangByVersion(container: Element, targetVersion: string): Sectio
  */
 function hasWordPressMoreMarker(container: Element): boolean {
   for (const child of containerChildren(container)) {
-    if (isComment(child) && /^\s*more\s*$/i.test(child.data)) return true;
+    if (isComment(child) && /^\s*more\s*$/i.test((child as any).data)) return true;
   }
   return false;
 }
@@ -1342,23 +1342,6 @@ function isEdgeTrimmable(node: ChildNode): boolean {
   return false;
 }
 
-/** Drop leading + trailing whitespace text and comments from the root node list. Mirrors the old `.trim()` on the HTML string. */
-/**
- * Walk `nodes` and rewrite each `<div class="article-media">` block.
- * The minecraft.net article markup wraps every image in
- * `<figure><picture><img></picture></figure>` plus an optional
- * `<div class="MC_Link_Style_RichText">` subtitle inside the same
- * figure. Collapse the noise:
- *   - No subtitle → emit a bare `<img>` with the src absolutized.
- *   - With subtitle → wrap as `<div class="captioned-image"><img/>…</div>`
- *     where `…` is the subtitle RichText's children pulled out of their
- *     wrapper (consistent with how `article-text`/`MC_Link_Style_RichText`
- *     elsewhere get unwrapped to surface their content).
- *
- * `img.src` gets the same absolutize treatment as the hero image so
- * relative `/content/dam/...` URLs become fully-qualified minecraft.net
- * URLs.
- */
 function normalizeArticleMedia(nodes: ChildNode[]): void {
   for (let i = 0; i < nodes.length; i++) {
     const node = nodes[i] as unknown as Element;
@@ -1366,13 +1349,45 @@ function normalizeArticleMedia(nodes: ChildNode[]): void {
     const classes = (node.attribs?.class ?? "").split(" ");
     if (!classes.includes("article-media")) continue;
 
-    // Find the lone `<img>` and any subtitle RichText inside the
-    // article-media block.
     const imgs = htmlparser2.DomUtils.findAll(
       (el) => el.tagName === "img",
       node as unknown as Parameters<typeof htmlparser2.DomUtils.findAll>[1],
     ) as unknown as Element[];
     const imageEl = imgs[0] ?? null;
+
+    let imageLinksTo: undefined | string = undefined;
+    //console.log(imageEl?.parentNode?.parentNode?.type)
+    if (
+      imageEl?.parentNode?.parentNode?.type === "tag" 
+      && imageEl.parentNode.parentNode.tagName === "a"
+    ) {
+      imageLinksTo = imageEl.parentNode.parentNode.attributes.find((attr) => attr.name === "href")?.value;
+
+      if (typeof imageLinksTo === "string" && imageLinksTo.startsWith("https://youtu")) {
+        const youtubeLink = new URL(imageLinksTo)
+
+        // This doesn't work in the __rendered.html either because of something missing in the <head> or because its not actually from a webserver
+        // or because the host isnt https, but I tested the element on mcc-gadgets.com and it worked fine.
+        // TODO: Add wrapper to this so the user sees the thumbnail mojang chose for the article and when they click the video should start
+        nodes[i] = new DomElement(
+          "iframe",
+          {
+            id: 'ytplayer',
+            width: "640",
+            height: "360",
+            frameborder: "0",
+            src: `https://www.youtube.com/embed/${
+              youtubeLink.hostname === 'youtu.be' ? youtubeLink.pathname.slice(1) : youtubeLink.searchParams.get('v')
+            }`,
+            allow: "compute-pressure",
+            referrerpolicy: "strict-origin-when-cross-origin"
+          },
+          [],
+          ElementType.Tag,
+        ) as unknown as Element;
+        continue;
+      }
+    }
 
     let subtitleEl: Element | null = null;
     const stack: Element[] = [...((node.children ?? []) as Element[])];
@@ -1399,10 +1414,10 @@ function normalizeArticleMedia(nodes: ChildNode[]): void {
       for (const c of (subtitleEl.children ?? []) as Element[]) {
         (wrap.children ?? []).push(c);
       }
-      nodes[i] = wrap as unknown as ChildNode;
+      nodes[i] = wrap;
     } else if (imageEl) {
       // Bare img — replace the article-media div with the img directly.
-      nodes[i] = imageEl as unknown as ChildNode;
+      nodes[i] = imageEl;
     }
   }
 }

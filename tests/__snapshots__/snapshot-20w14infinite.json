@@ -1,0 +1,1771 @@
+{
+  "version": "20w14infinite",
+  "heroImage": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/logos/infinite-header.jpg",
+  "source": "minecraft.net",
+  "body": {
+    "nodes": [
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          1,
+          2,
+          4
+        ],
+        "parent": null,
+        "prev": null,
+        "next": {
+          "$ref": 5
+        }
+      },
+      {
+        "type": "text",
+        "data": "Technology is amazing – except when it isn’t. Just the other day my own ",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": null,
+        "next": {
+          "$ref": 2
+        }
+      },
+      {
+        "type": "element",
+        "tag": "i",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          3
+        ],
+        "parent": {
+          "$ref": 0
+        },
+        "prev": {
+          "$ref": 1
+        },
+        "next": {
+          "$ref": 4
+        }
+      },
+      {
+        "type": "text",
+        "data": "phone ",
+        "parent": {
+          "$ref": 2
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "ended a call as I was about to order a delicious and completely legit pineapple pizza. And what does Siri mean by “Try selecting a flavor better suited for human consumption”? If this isn’t proof that the singularity is here and that the robot revolution is happening, I don’t know what is.",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": {
+          "$ref": 2
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 0
+        },
+        "next": {
+          "$ref": 6
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          7,
+          8,
+          10
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 5
+        },
+        "next": {
+          "$ref": 11
+        }
+      },
+      {
+        "type": "text",
+        "data": "There are a few exceptions of course (watch it ",
+        "parent": {
+          "$ref": 6
+        },
+        "prev": null,
+        "next": {
+          "$ref": 8
+        }
+      },
+      {
+        "type": "element",
+        "tag": "i",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          9
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 7
+        },
+        "next": {
+          "$ref": 10
+        }
+      },
+      {
+        "type": "text",
+        "data": "technology",
+        "parent": {
+          "$ref": 8
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": ", I’ve got my eyes on you), and today Mojang is thrilled to reveal the next big step for Minecraft as we take our game into a bold new direction where no blocky sandbox has gone before. Don’t ask us what direction though, we don’t own a compass and we’re terrible with directions.",
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 8
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 6
+        },
+        "next": {
+          "$ref": 12
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          13,
+          14,
+          16
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 11
+        },
+        "next": {
+          "$ref": 17
+        }
+      },
+      {
+        "type": "text",
+        "data": "Introducing: ",
+        "parent": {
+          "$ref": 12
+        },
+        "prev": null,
+        "next": {
+          "$ref": 14
+        }
+      },
+      {
+        "type": "element",
+        "tag": "b",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          15
+        ],
+        "parent": {
+          "$ref": 12
+        },
+        "prev": {
+          "$ref": 13
+        },
+        "next": {
+          "$ref": 16
+        }
+      },
+      {
+        "type": "text",
+        "data": "Snapshot 20w14∞",
+        "parent": {
+          "$ref": 14
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " – the Ultimate Content update.",
+        "parent": {
+          "$ref": 12
+        },
+        "prev": {
+          "$ref": 14
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 12
+        },
+        "next": {
+          "$ref": 18
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n    \n",
+        "parent": null,
+        "prev": {
+          "$ref": 17
+        },
+        "next": {
+          "$ref": 19
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n        \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 18
+        },
+        "next": {
+          "$ref": 20
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 19
+        },
+        "next": {
+          "$ref": 21
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n                \n            ",
+        "parent": null,
+        "prev": {
+          "$ref": 20
+        },
+        "next": {
+          "$ref": 22
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 21
+        },
+        "next": {
+          "$ref": 23
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 22
+        },
+        "next": {
+          "$ref": 24
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 23
+        },
+        "next": {
+          "$ref": 25
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 24
+        },
+        "next": {
+          "$ref": 26
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 25
+        },
+        "next": {
+          "$ref": 27
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 26
+        },
+        "next": {
+          "$ref": 28
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n            ",
+        "parent": null,
+        "prev": {
+          "$ref": 27
+        },
+        "next": {
+          "$ref": 29
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n                \n                \n\n\n\n\n    \n    \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 28
+        },
+        "next": {
+          "$ref": 30
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 29
+        },
+        "next": {
+          "$ref": 31
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 30
+        },
+        "next": {
+          "$ref": 32
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        \n        \n\n\n\n\n    \n    \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 31
+        },
+        "next": {
+          "$ref": 33
+        }
+      },
+      {
+        "type": "element",
+        "tag": "iframe",
+        "kind": "tag",
+        "attrs": {
+          "id": "ytplayer",
+          "width": "640",
+          "height": "360",
+          "frameborder": "0",
+          "src": "https://www.youtube.com/embed/_dWMIPeyXT8",
+          "allow": "compute-pressure",
+          "referrerpolicy": "strict-origin-when-cross-origin"
+        },
+        "children": [],
+        "parent": null,
+        "prev": {
+          "$ref": 32
+        },
+        "next": {
+          "$ref": 34
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n        \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 33
+        },
+        "next": {
+          "$ref": 35
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 34
+        },
+        "next": {
+          "$ref": 36
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n                \n            ",
+        "parent": null,
+        "prev": {
+          "$ref": 35
+        },
+        "next": {
+          "$ref": 37
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 36
+        },
+        "next": {
+          "$ref": 38
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 37
+        },
+        "next": {
+          "$ref": 39
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 38
+        },
+        "next": {
+          "$ref": 40
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 39
+        },
+        "next": {
+          "$ref": 41
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 40
+        },
+        "next": {
+          "$ref": 42
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 41
+        },
+        "next": {
+          "$ref": 43
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n            ",
+        "parent": null,
+        "prev": {
+          "$ref": 42
+        },
+        "next": {
+          "$ref": 44
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n                \n                \n\n\n\n\n    \n    \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 43
+        },
+        "next": {
+          "$ref": 45
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 44
+        },
+        "next": {
+          "$ref": 46
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 45
+        },
+        "next": {
+          "$ref": 47
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        \n        \n\n\n\n\n    \n    \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 46
+        },
+        "next": {
+          "$ref": 48
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 47
+        },
+        "next": {
+          "$ref": 49
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 48
+        },
+        "next": {
+          "$ref": 50
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 49
+        },
+        "next": {
+          "$ref": 51
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          52,
+          53,
+          55,
+          56,
+          58,
+          59,
+          61
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 50
+        },
+        "next": {
+          "$ref": 62
+        }
+      },
+      {
+        "type": "text",
+        "data": "Stunning, isn’t it? We know. Using aggregated player feedback we have been keeping safe for a long time, combined with highly advanced machine learning, and some random old algorithms we “borrowed” from Dinnerbone’s desk during a ",
+        "parent": {
+          "$ref": 51
+        },
+        "prev": null,
+        "next": {
+          "$ref": 53
+        }
+      },
+      {
+        "type": "element",
+        "tag": "a",
+        "kind": "tag",
+        "attrs": {
+          "href": "https://twitter.com/Dinnerbone/status/1236976106194055169"
+        },
+        "children": [
+          54
+        ],
+        "parent": {
+          "$ref": 51
+        },
+        "prev": {
+          "$ref": 52
+        },
+        "next": {
+          "$ref": 55
+        }
+      },
+      {
+        "type": "text",
+        "data": "recent workshop",
+        "parent": {
+          "$ref": 53
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": ", we were able to create this Snapshot in which ",
+        "parent": {
+          "$ref": 51
+        },
+        "prev": {
+          "$ref": 53
+        },
+        "next": {
+          "$ref": 56
+        }
+      },
+      {
+        "type": "element",
+        "tag": "b",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          57
+        ],
+        "parent": {
+          "$ref": 51
+        },
+        "prev": {
+          "$ref": 55
+        },
+        "next": {
+          "$ref": 58
+        }
+      },
+      {
+        "type": "text",
+        "data": "every imaginable reality has become actual reality",
+        "parent": {
+          "$ref": 56
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": ". And the process for visiting one is quite simple: Just pick up a book, write a few words in it, toss it into a Nether portal, and voila – you now have access to a unique world. Want a world with oceans made out of Creepers? Done! A world where carrots are noteblocks and the sun is an Enderman? Sure, why not. The possibilities are ",
+        "parent": {
+          "$ref": 51
+        },
+        "prev": {
+          "$ref": 56
+        },
+        "next": {
+          "$ref": 59
+        }
+      },
+      {
+        "type": "element",
+        "tag": "i",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          60
+        ],
+        "parent": {
+          "$ref": 51
+        },
+        "prev": {
+          "$ref": 58
+        },
+        "next": {
+          "$ref": 61
+        }
+      },
+      {
+        "type": "text",
+        "data": "endless",
+        "parent": {
+          "$ref": 59
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": ".",
+        "parent": {
+          "$ref": 51
+        },
+        "prev": {
+          "$ref": 59
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 51
+        },
+        "next": {
+          "$ref": 63
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          64
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 62
+        },
+        "next": {
+          "$ref": 65
+        }
+      },
+      {
+        "type": "text",
+        "data": "“Why do I keep getting quoted in these blog posts?” said Jens “Jeb” Bergensten, Chief Creative Officer, as he was unable to contain his excitement for this upcoming Snapshot. “I don’t have time for monkey business, go bother Bartosz instead!”",
+        "parent": {
+          "$ref": 63
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 63
+        },
+        "next": {
+          "$ref": 66
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          67
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 65
+        },
+        "next": {
+          "$ref": 68
+        }
+      },
+      {
+        "type": "text",
+        "data": "“We’re literally going bananas right now,“ said Bartosz Bok, Java Developer and overall nice guy. “Not only have we managed to deliver the update our players have always craved – we’ve now completely automated all future content for Minecraft, which means I can finally play the Minecraft Dungeons beta!“",
+        "parent": {
+          "$ref": 66
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 66
+        },
+        "next": {
+          "$ref": 69
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n    \n",
+        "parent": null,
+        "prev": {
+          "$ref": 68
+        },
+        "next": {
+          "$ref": 70
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n        \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 69
+        },
+        "next": {
+          "$ref": 71
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 70
+        },
+        "next": {
+          "$ref": 72
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n                \n            ",
+        "parent": null,
+        "prev": {
+          "$ref": 71
+        },
+        "next": {
+          "$ref": 73
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 72
+        },
+        "next": {
+          "$ref": 74
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 73
+        },
+        "next": {
+          "$ref": 75
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 74
+        },
+        "next": {
+          "$ref": 76
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 75
+        },
+        "next": {
+          "$ref": 77
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 76
+        },
+        "next": {
+          "$ref": 78
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 77
+        },
+        "next": {
+          "$ref": 79
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n            ",
+        "parent": null,
+        "prev": {
+          "$ref": 78
+        },
+        "next": {
+          "$ref": 80
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n                \n                \n\n\n\n\n    \n    \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 79
+        },
+        "next": {
+          "$ref": 81
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 80
+        },
+        "next": {
+          "$ref": 82
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 81
+        },
+        "next": {
+          "$ref": 83
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        \n        \n\n\n\n\n    \n    \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 82
+        },
+        "next": {
+          "$ref": 84
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 83
+        },
+        "next": {
+          "$ref": 85
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 84
+        },
+        "next": {
+          "$ref": 86
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 85
+        },
+        "next": {
+          "$ref": 87
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h2",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          88
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 86
+        },
+        "next": {
+          "$ref": 89
+        }
+      },
+      {
+        "type": "text",
+        "data": "Features",
+        "parent": {
+          "$ref": 87
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 87
+        },
+        "next": {
+          "$ref": 90
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          91
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 89
+        },
+        "next": {
+          "$ref": 92
+        }
+      },
+      {
+        "type": "text",
+        "data": "Gameplay",
+        "parent": {
+          "$ref": 90
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 90
+        },
+        "next": {
+          "$ref": 93
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          94,
+          98,
+          104,
+          108,
+          112
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 92
+        },
+        "next": {
+          "$ref": 116
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          95,
+          97
+        ],
+        "parent": {
+          "$ref": 93
+        },
+        "prev": null,
+        "next": {
+          "$ref": 98
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          96
+        ],
+        "parent": {
+          "$ref": 94
+        },
+        "prev": null,
+        "next": {
+          "$ref": 97
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added two billion (2,147,483,647 to be precise) worlds, based on intuitive player input",
+        "parent": {
+          "$ref": 95
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": {
+          "$ref": 94
+        },
+        "prev": {
+          "$ref": 95
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          99,
+          103
+        ],
+        "parent": {
+          "$ref": 93
+        },
+        "prev": {
+          "$ref": 94
+        },
+        "next": {
+          "$ref": 104
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          100,
+          101
+        ],
+        "parent": {
+          "$ref": 98
+        },
+        "prev": null,
+        "next": {
+          "$ref": 103
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added deep and engaging lore, using immersive ",
+        "parent": {
+          "$ref": 99
+        },
+        "prev": null,
+        "next": {
+          "$ref": 101
+        }
+      },
+      {
+        "type": "element",
+        "tag": "b",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          102
+        ],
+        "parent": {
+          "$ref": 99
+        },
+        "prev": {
+          "$ref": 100
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "environmental storytelling",
+        "parent": {
+          "$ref": 101
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": {
+          "$ref": 98
+        },
+        "prev": {
+          "$ref": 99
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          105,
+          107
+        ],
+        "parent": {
+          "$ref": 93
+        },
+        "prev": {
+          "$ref": 98
+        },
+        "next": {
+          "$ref": 108
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          106
+        ],
+        "parent": {
+          "$ref": 104
+        },
+        "prev": null,
+        "next": {
+          "$ref": 107
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added Advancement “You’re almost there” for visiting one billion worlds",
+        "parent": {
+          "$ref": 105
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": {
+          "$ref": 104
+        },
+        "prev": {
+          "$ref": 105
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          109,
+          111
+        ],
+        "parent": {
+          "$ref": 93
+        },
+        "prev": {
+          "$ref": 104
+        },
+        "next": {
+          "$ref": 112
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          110
+        ],
+        "parent": {
+          "$ref": 108
+        },
+        "prev": null,
+        "next": {
+          "$ref": 111
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added revolutionary visuals that will blow your mind: sponge Menger sponges, square spheres, and a three-dimensional turing machine",
+        "parent": {
+          "$ref": 109
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": {
+          "$ref": 108
+        },
+        "prev": {
+          "$ref": 109
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          113,
+          115
+        ],
+        "parent": {
+          "$ref": 93
+        },
+        "prev": {
+          "$ref": 108
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          114
+        ],
+        "parent": {
+          "$ref": 112
+        },
+        "prev": null,
+        "next": {
+          "$ref": 115
+        }
+      },
+      {
+        "type": "text",
+        "data": "Expansions for both your game and mind",
+        "parent": {
+          "$ref": 113
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": {
+          "$ref": 112
+        },
+        "prev": {
+          "$ref": 113
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 93
+        },
+        "next": {
+          "$ref": 117
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          118
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 116
+        },
+        "next": {
+          "$ref": 119
+        }
+      },
+      {
+        "type": "text",
+        "data": "Blocks",
+        "parent": {
+          "$ref": 117
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 117
+        },
+        "next": {
+          "$ref": 120
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          121
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 119
+        },
+        "next": {
+          "$ref": 128
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          122,
+          127
+        ],
+        "parent": {
+          "$ref": 120
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          123,
+          124,
+          126
+        ],
+        "parent": {
+          "$ref": 121
+        },
+        "prev": null,
+        "next": {
+          "$ref": 127
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added ",
+        "parent": {
+          "$ref": 122
+        },
+        "prev": null,
+        "next": {
+          "$ref": 124
+        }
+      },
+      {
+        "type": "element",
+        "tag": "i",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          125
+        ],
+        "parent": {
+          "$ref": 122
+        },
+        "prev": {
+          "$ref": 123
+        },
+        "next": {
+          "$ref": 126
+        }
+      },
+      {
+        "type": "text",
+        "data": "all ",
+        "parent": {
+          "$ref": 124
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "of the blocks",
+        "parent": {
+          "$ref": 122
+        },
+        "prev": {
+          "$ref": 124
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": {
+          "$ref": 121
+        },
+        "prev": {
+          "$ref": 122
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 120
+        },
+        "next": {
+          "$ref": 129
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          130
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 128
+        },
+        "next": {
+          "$ref": 131
+        }
+      },
+      {
+        "type": "text",
+        "data": "Bugs",
+        "parent": {
+          "$ref": 129
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 129
+        },
+        "next": {
+          "$ref": 132
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          133,
+          137
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 131
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          134,
+          136
+        ],
+        "parent": {
+          "$ref": 132
+        },
+        "prev": null,
+        "next": {
+          "$ref": 137
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          135
+        ],
+        "parent": {
+          "$ref": 133
+        },
+        "prev": null,
+        "next": {
+          "$ref": 136
+        }
+      },
+      {
+        "type": "text",
+        "data": "Bugs? We don’t have bugs",
+        "parent": {
+          "$ref": 134
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": {
+          "$ref": 133
+        },
+        "prev": {
+          "$ref": 134
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          138,
+          140
+        ],
+        "parent": {
+          "$ref": 132
+        },
+        "prev": {
+          "$ref": 133
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          139
+        ],
+        "parent": {
+          "$ref": 137
+        },
+        "prev": null,
+        "next": {
+          "$ref": 140
+        }
+      },
+      {
+        "type": "text",
+        "data": "Seriously, who said anything about bugs?",
+        "parent": {
+          "$ref": 138
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": {
+          "$ref": 137
+        },
+        "prev": {
+          "$ref": 138
+        },
+        "next": null
+      }
+    ]
+  },
+  "bugList": [],
+  "merged": false,
+  "shortText": "Technology is amazing – except when it isn’t. Just the other day my own phone ended a call as I was about to order a delicious and completely legit pineapple pizza. And what does Siri mean by “Try selecting a flavor better suited for human consumption”? If this isn’t proof that",
+  "title": "Minecraft 20w14infinite",
+  "targetRelease": null,
+  "publishedAt": 1585745228,
+  "sourceURL": "https://www.minecraft.net/en-us/article/every-update-imaginable-coming-minecraft"
+}

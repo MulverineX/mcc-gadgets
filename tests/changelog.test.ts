@@ -61,6 +61,7 @@ const CORPUS: CorpusEntry[] = [
   { version: "1.11", snapshotName: "1-11" },
   { version: "17w06a", snapshotName: "snapshot-17w06a" },
   { version: "1.12-pre6", snapshotName: "1-12-pre-release-6" },
+  { version: "20w14infinite", snapshotName: "snapshot-20w14infinite" },
   { version: "21w08a", snapshotName: "snapshot-21w08a"},
   { version: "21w08b", snapshotName: "snapshot-21w08b"},
   { version: "1.19.1-pre3", snapshotName: "1-19-1-pre-release-3" },
@@ -292,6 +293,7 @@ describe("changelog_parser — corpus", () => {
       targetRelease: string | null;
       publishedAt: number | null;
       bugList: { id: string; title: string }[];
+      sourceURL: string;
     }> = [];
     for (const entry of CORPUS) {
       const snapshot = cache.readSnapshot<{
@@ -301,6 +303,7 @@ describe("changelog_parser — corpus", () => {
         targetRelease: string | null;
         publishedAt: number | null;
         bugList: { id: string; title: string }[];
+        sourceURL: string;
       }>(entry.snapshotName);
       if (
         !snapshot ||
@@ -328,12 +331,14 @@ describe("changelog_parser — corpus", () => {
           ? `Released <time class="released" data-unix="${snapshot.publishedAt}"></time>`
           : "") +
         `</p>`;
+      // TODO: This revealed that the URL resolution broke again, it was hidden by the cached html, we need to fix the 1.10.1/1.10.2 article resolution
+      const source = `<p class="source-url">Source: <a href="${snapshot.sourceURL}">${snapshot.sourceURL}</a></p>`
       const bugList = snapshot.bugList?.length
-        ? `<h3>Bugs (${snapshot.bugList.length})</h3><ul>${snapshot.bugList
+        ? `<h3>Fixed Bugs</h3><ul>${snapshot.bugList
             .map((b) => `<li><a href="https://mojira.dev/${escapeHtml(b.id)}"><code>${escapeHtml(b.id)}</code></a> — ${escapeHtml(b.title)}</li>`)
             .join("")}</ul>`
         : "";
-      return `<section>${hero}<h1>${escapeHtml(humanReadableTitle(snapshot.version))}</h1>${meta}${html}${bugList}</section>`;
+      return `<section>${hero}<h1>${escapeHtml(humanReadableTitle(snapshot.version))}</h1>${meta}${source}${html}${bugList}</section>`;
     });
     const style = `<style>
 :root {
