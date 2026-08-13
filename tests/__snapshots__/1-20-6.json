@@ -1,0 +1,78 @@
+{
+  "version": "1.20.6",
+  "heroImage": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.20.6%201170x500.jpg",
+  "source": "minecraft.net",
+  "body": {
+    "nodes": [
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          1
+        ],
+        "parent": null,
+        "prev": null,
+        "next": {
+          "$ref": 2
+        }
+      },
+      {
+        "type": "text",
+        "data": "The shipping room sure has been bustling with activity lately! So much so that we managed to cram one last release into the month of April. Today we're shipping Java Edition 1.20.6, a hotfix release that takes care of some critical issues that managed to sneak their way into the Armored Paws drop (1.20.5) last week.",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 0
+        },
+        "next": {
+          "$ref": 3
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          4
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 2
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Happy llama-safe mining!",
+        "parent": {
+          "$ref": 3
+        },
+        "prev": null,
+        "next": null
+      }
+    ]
+  },
+  "bugList": [
+    {
+      "id": "MC-271109",
+      "title": "Trader llama inventory shifted, partially lost during upgrade"
+    }
+  ],
+  "merged": false,
+  "shortText": "The shipping room sure has been bustling with activity lately! So much so that we managed to cram one last release into the month of April. Today we're shipping Java Edition 1.20.6, a hotfix release that takes care of some critical issues that managed to sneak their way into the",
+  "title": "Minecraft 1.20.6",
+  "targetRelease": "1.20.6",
+  "publishedAt": 1714394445,
+  "sourceURL": "https://www.minecraft.net/en-us/article/minecraft-java-edition-1-20-6"
+}

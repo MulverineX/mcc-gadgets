@@ -20,8 +20,8 @@ export function findFirst(
   dom: Element,
 ): Element | null {
   const hits = htmlparser2.DomUtils.findAll(
-    predicate as Parameters<typeof htmlparser2.DomUtils.findAll>[0],
-    dom as unknown as Parameters<typeof htmlparser2.DomUtils.findAll>[1],
+    predicate,
+    dom,
   );
   return (hits[0] as Element | undefined) ?? null;
 }

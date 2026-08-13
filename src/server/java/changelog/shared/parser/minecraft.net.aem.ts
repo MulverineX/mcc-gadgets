@@ -78,7 +78,8 @@ export function splitMinecraftNetByVersion(
   }
   const followUpNotePattern =
     firstFixedBugsIdx !== -1 &&
-    (firstChangesInIdx === -1 || firstFixedBugsIdx < firstChangesInIdx);
+    firstChangesInIdx !== -1 &&
+    firstFixedBugsIdx < firstChangesInIdx;
 
   const followUpSkipIndices = new Set<number>();
   let followUpBugUlIdx = -1;
@@ -170,7 +171,15 @@ export function splitMinecraftNetByVersion(
       current = startSection(versionStr, child, sectionStart);
     } else {
       if (!current && /^fixed bugs? in\b/i.test(headingMatch?.[1] ?? "")) {
-        const sectionStart = followUpStartIdx !== -1 ? followUpStartIdx : i;
+        // No Update para + no later "Changes in X" → single-section
+        // release (e.g. 1.20.6: intro + fixed bugs + bug ul + footer).
+        // Start at idx 0 so the intro prose isn't dropped.
+        const sectionStart =
+          followUpStartIdx !== -1
+            ? followUpStartIdx
+            : firstChangesInIdx === -1
+              ? 0
+              : i;
         if (followUpStartIdx !== -1) {
           stripUpdateLeadIn(sectionChildren[sectionStart]! as Element);
         }
