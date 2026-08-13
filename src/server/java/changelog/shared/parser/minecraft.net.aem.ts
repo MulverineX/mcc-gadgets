@@ -11,6 +11,59 @@ import {
   type SectionRange,
 } from "./utils";
 
+/**
+ * Walk the container's children and return every <p> that sits before the
+ * first heading. The intro prose on merged pre-release pages often spans
+ * multiple paragraphs (e.g. the lead-in + a "Happy mining!" sign-off).
+ * Returning just the first <p> would silently drop the rest and is exactly
+ * the kind of bug that only shows up on certain pages.
+ *
+ * Skips empty <p>s (whitespace-only). Skips <p>s starting with "Update:" —
+ * those are version-specific follow-up notes ("Update: we've now released
+ * 21w08b to fix a crash") that belong to the section they precede, not to
+ * the page-level intro. Stops at the first heading so we don't pull a <p>
+ * from inside a "Changes in X" / "Fixed bugs in X" block.
+ */
+export function findIntroProse(container: Element): Element[] {
+  const out: Element[] = [];
+  for (const child of containerChildren(container)) {
+    if (child.tagName === "h2" || child.tagName === "h3") break;
+    if (child.tagName !== "p") continue;
+    if (isUpdateNote(child)) continue;
+    out.push(child);
+  }
+  return out;
+}
+
+/**
+ * True if `<p>` is a Mojang-style "Update:" follow-up note ("Update: we've
+ * now released 22w16b to fix a crash") that points at a sibling-section
+ * version rather than the page-level intro. Two shapes to handle — the
+ * splitter's `stripUpdateLeadIn` may have already removed the literal
+ * "Update:" marker by the time we run:
+ *
+ *   <p><b>Update</b>: we've now released ...   (unstripped)
+ *   <p>we've now released ...                (already stripped)
+ *
+ * Both belong to the section they precede, never to the page-level intro.
+ */
+function isUpdateNote(p: Element): boolean {
+  const first = (p.children ?? [])[0] as Element | undefined;
+  if (first && isTag(first) && first.tagName === "b") {
+    if (/^update\b/i.test(trimmedTextOf(first))) return true;
+  }
+  const text = trimmedTextOf(p);
+  if (/^update\s*:/i.test(text)) return true;
+  // Stripped form: the splitter removes "Update:" but leaves the rest. Real
+  // examples: "We've now released 22w16b ...", "We are now on pre-release 5",
+  // "We're now on pre-release 5". Distinguish from prose: prose never
+  // starts with these patterns. The "(now|are|have) (on|released|...)"
+  // gate keeps us from false-matching "We're now confident enough ..."
+  // (the actual 1.14-pre1 intro — note the "confident" follows, not
+  // "released" / "on [pre-release X]").
+  return /^(we|i|we've|i've)\s+(are|now|have)\s+(now\s+)?(released|on|rolling|shipping|publishing)\b/i.test(text);
+}
+
 function stripUpdateLeadIn(p: Element): void {
   while (p.children && p.children.length > 0) {
     const first = p.children[0]!;
@@ -49,6 +102,12 @@ export function splitMinecraftNetByVersion(
     return out;
   }
 
+  // Tracks the index where the previous section ended so the next section's
+  // sectionStart can pick up exactly where the previous one left off. Without
+  // this, "Changes in 22w16a" would start at its heading idx, missing any
+  // sibling-section content that lives between sections (e.g. "New Features
+  // in 22w16a" sits between "Fixed Bugs in 22w16b" and "Changes in 22w16a").
+  let prevSectionEnd = 0;
   let footerIdx = children.length;
   for (let i = 0; i < children.length; i++) {
     const text = trimmedTextOf(children[i]!);
@@ -145,30 +204,30 @@ export function splitMinecraftNetByVersion(
         current ??= startSection(version, child, i);
         continue;
       }
-      versionStr = versionStr
-        .replace(
-          /\s+(pre-?release|release-?candidate|snapshot)\s*/i,
-          (_, t: string) => {
-            const norm = t.toLowerCase().replace(/\s+/g, "");
-            return `-${norm === "prerelease" ? "pre" : norm === "releasecandidate" ? "rc" : norm}`;
-          },
-        )
-        .replace(/(\d+)$/, "");
+      // Leave versionStr as the heading text ("1.14 PRE-RELEASE 5"). The old
+      // transform here stripped the trailing digit and rewrote the keyword,
+      // producing a string like "1.14-pre-release" that no version id could
+      // ever match. `pickRange` now compares via `parseVersionTuple` which
+      // accepts both heading and id formats.
     } else {
       versionStr = version;
     }
 
     if (/^changes? in\b/i.test(headingMatch?.[1] ?? "")) {
       if (current) {
-        ranges.push({
+        const end = current.followUp ? followUpBugUlIdx + 1 : i;
+        const pushed = {
           ...current,
-          children: current.followUp
-            ? sliceRange(current.sectionStart, followUpBugUlIdx + 1)
-            : sliceRange(current.sectionStart, i),
-        });
+          children: sliceRange(current.sectionStart, end),
+        };
+        prevSectionEnd = end;
+        ranges.push(pushed);
       }
-      const sectionStart = followUpNotePattern ? 0 : i;
-      current = startSection(versionStr, child, sectionStart);
+      // New section picks up where the previous one left off. Without this,
+      // content that sits BETWEEN sibling headings (e.g. "New Features in
+      // 22w16a" between "Fixed Bugs in 22w16b" and "Changes in 22w16a")
+      // gets dropped — the "Changes in" heading idx skips over it.
+      current = startSection(versionStr, child, prevSectionEnd);
     } else {
       if (!current && /^fixed bugs? in\b/i.test(headingMatch?.[1] ?? "")) {
         // No Update para + no later "Changes in X" → single-section
@@ -202,9 +261,9 @@ export function splitMinecraftNetByVersion(
       ),
     });
   }
-  if (process.env.DEBUG_PICK && /21w08/.test(version)) {
+  if (process.env.DEBUG_PICK) {
     console.log(
-      `  [minecraft-net] current=${current?.version} ranges=${JSON.stringify(ranges.map((r) => ({ v: r.version, c: r.children.length })))}`,
+      `  [minecraft-net] version=${version} current=${current?.version} ranges=${JSON.stringify(ranges.map((r) => ({ v: r.version, c: r.children.length })))}`,
     );
   }
 

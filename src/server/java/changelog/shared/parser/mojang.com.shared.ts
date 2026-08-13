@@ -20,6 +20,9 @@ export function splitMojangByVersion(
   container: Element,
   targetVersion: string,
 ): SectionRange[] {
+  if (process.env.DEBUG_PICK_ALL) {
+    console.log(`  [mojang-shared] hasMoreMarker=${hasWordPressMoreMarker(container)}`);
+  }
   if (hasWordPressMoreMarker(container)) {
     return splitMojangByVersionNewer(container);
   }

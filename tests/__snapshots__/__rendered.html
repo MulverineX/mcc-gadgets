@@ -9548,7 +9548,6 @@
           music, tweaks to the Allay, and to top it all off some random gameplay
           events are slightly more predictable.
         </p>
-
         <p>Enjoy!</p>
 
         <h2>New Features in 22w16a</h2>
@@ -10134,6 +10133,227 @@
     <section>
       <img
         class="hero"
+        src="https://www.minecraft.net/content/dam/minecraftnet/minecraft/java-snapshots/1-14-pre-release-1/2019-04-10_16.17.34_header.png"
+        alt=""
+      />
+      <h1>Minecraft 1.14 Pre-Release 1</h1>
+      <p class="meta">
+        Target Version: <code>1.14</code> · Released
+        <time class="released" data-unix="1554906256"></time>
+      </p>
+      <p class="source-url">
+        Source:
+        <a
+          href="https://www.minecraft.net/en-us/article/minecraft-1-14-pre-release-1"
+          >https://www.minecraft.net/en-us/article/minecraft-1-14-pre-release-1</a
+        >
+      </p>
+      <details>
+        <summary>Changelog</summary>
+
+        <p>
+          We&apos;re now feeling confident enough in the stability and
+          feature-completeness of 1.14 - The Village &amp; Pillage Update - that
+          we&apos;ve decided to enter the pre-release phase. Whilst we know that
+          there are still bugs to be solved and polish to be added, we feel that
+          this version is now good enough that we can ask you all to please help
+          us test and find any issues for a smooth release in a few weeks.
+          Remember to report anything you find to our
+          <a href="https://bugs.mojang.com/browse/MC">bug tracker</a>, or give
+          feedback on new features over to our
+          <a href="https://aka.ms/snapshotfeedback">feedback website</a>. It
+          helps us immensely!
+        </p>
+
+        <ul>
+          <li>Fixed lots of bugs</li>
+          <li>Some optimizations</li>
+          <li>
+            Inside optimize world screen there&apos;s now an option to remove
+            cached world data (e.g. height maps and light), so that it&apos;s
+            recomputed on the next load
+          </li>
+        </ul>
+      </details>
+      <h3>Fixed Bugs</h3>
+      <details>
+        <summary></summary>
+
+        <ul>
+          <li>
+            <a href="https://mojira.dev/MC-134755"><code>MC-134755</code></a> —
+            All short mobs drown just below the surface of water
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-137451"><code>MC-137451</code></a> —
+            Mobs heads rotate super quickly when looking around
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-138979"><code>MC-138979</code></a> —
+            Scaffolding switches quickly between entity and block when placed on
+            some non-solid blocks
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-139255"><code>MC-139255</code></a> —
+            Cave ambient sounds are not playing
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-140936"><code>MC-140936</code></a> —
+            The tall grass in the plains village structures doesn't take the
+            block it spawns on into consideration
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-142134"><code>MC-142134</code></a> —
+            Light sources spontaneously not working in some chunks
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-142228"><code>MC-142228</code></a> —
+            Skylight shines through blocks
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-142729"><code>MC-142729</code></a> —
+            Puffed puffer fishes with "NoAI" tag can shrink down
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-142768"><code>MC-142768</code></a> —
+            Mobs can suffocate below blocks, if the eye height isn't inside the
+            collision box
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-143112"><code>MC-143112</code></a> —
+            Duplicated files in village structure
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-143591"><code>MC-143591</code></a> —
+            Spiders and cave spiders fly-climb
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-143699"><code>MC-143699</code></a> —
+            Trader llamas won't despawn
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-144798"><code>MC-144798</code></a> —
+            Barrels always try to set their "open" state to false
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-145031"><code>MC-145031</code></a> —
+            Crash while ticking barrel
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-145766"><code>MC-145766</code></a> —
+            Iron golems spawning at an alarming rate
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-146295"><code>MC-146295</code></a> —
+            Loom top texture is backwards
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-146538"><code>MC-146538</code></a> —
+            Eye position for riptiding player is incorrect
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-146800"><code>MC-146800</code></a> —
+            Villager can make the discount number of unstackable item more than
+            1
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-146860"><code>MC-146860</code></a> —
+            Trading sometimes takes the full price instead of the discounted
+            price when player has the Hero of the Village effect
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-146919"><code>MC-146919</code></a> —
+            Drowned, fish and guardians are not spawning
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147031"><code>MC-147031</code></a> —
+            When a zombie wakes up a villager, the bed tag is still on occupied
+            (occupied: true)
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147056"><code>MC-147056</code></a> —
+            Zombie villagers spawned with a zombie village move very fast
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147207"><code>MC-147207</code></a> —
+            hs_pid_error appears for no reason in snapshots.
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147227"><code>MC-147227</code></a> —
+            Shift-clicking an item out of the trading inventory instantly locks
+            the trade
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147240"><code>MC-147240</code></a> —
+            Villagers can trade Arrows of Luck
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147268"><code>MC-147268</code></a> —
+            Villagers don't run away from ravagers, pillagers, vindicators,
+            evokers, zombies or husks
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147270"><code>MC-147270</code></a> —
+            Player can still move at normal speed and sprint while sneaking in a
+            1.5 blocks tall space
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147274"><code>MC-147274</code></a> —
+            Villager 'Happy' and 'Angry' particles not showing, even when
+            particles are on 'All'
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147298"><code>MC-147298</code></a> —
+            Arrow facing down with 0 degrees on both x z (basically straight
+            down) cannot be picked up and play a sound on loop
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147305"><code>MC-147305</code></a> —
+            Player crouches with a delay
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147363"><code>MC-147363</code></a> —
+            "Villager disagrees" sound is played twice when right clicking a
+            villager without trades
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147513"><code>MC-147513</code></a> —
+            Unable to focus anvil textfield by clicking
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147529"><code>MC-147529</code></a> —
+            Background is not dimmed for book or lectern
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147532"><code>MC-147532</code></a> —
+            Chunks stop loading after change view distance
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147538"><code>MC-147538</code></a> —
+            Cannot drag any slider in "Video Settings" options
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147560"><code>MC-147560</code></a> —
+            Mobs stop spawning over time if the render distance is less than 11
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147607"><code>MC-147607</code></a> —
+            Command block text field isn't focused when opening the GUI anymore
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147642"><code>MC-147642</code></a> —
+            Narrator is toggled when typing in text fields
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-147681"><code>MC-147681</code></a> —
+            X-ray with door and slab
+          </li>
+        </ul>
+      </details>
+    </section>
+    <section>
+      <img
+        class="hero"
         src="https://www.minecraft.net/content/dam/minecraftnet/archive/f74e0743bdda3a3ce0b99d5f87145287-snapshot_header.png"
         alt=""
       />
@@ -10149,51 +10369,242 @@
           >https://www.minecraft.net/en-us/article/minecraft-112-pre-release-6</a
         >
       </p>
-      <details><summary>Changelog</summary></details>
+      <details>
+        <summary>Changelog</summary>
+
+        <p>
+          We&apos;re now drawing to a close with 1.12, with hopefully the final
+          pre-releases. We&apos;re aiming to get the full 1.12 release out to
+          you all <b>this friday</b> (2017-06-02)!
+        </p>
+
+        <ul>
+          <li>
+            Optimized recipe book &amp; creative inventory searching a lot,
+            especially when using mods
+          </li>
+          <li>
+            Made a bunch of text translatable, where previously they were
+            hardcoded English
+          </li>
+          <li>
+            Optimized chunk loading, a previous pre-release slowed it down :(
+          </li>
+          <li>
+            Added the ability to see credits by clicking the copyright text in
+            the title screen
+          </li>
+          <li>
+            Technical: Skipped functions (when the conditional fails) is now
+            considered a failure (for example in command blocks)
+          </li>
+          <li>
+            Technical: Tab-completing command names in command blocks will no
+            longer add a <span class="MC_Effect_TextHighlightB">/</span> prefix.
+          </li>
+          <li>Added some new bugs!</li>
+        </ul>
+      </details>
       <h3>Fixed Bugs</h3>
       <details>
         <summary></summary>
 
         <ul>
           <li>
-            <a href="https://mojira.dev/MC-59535"><code>MC-59535</code></a> —
-            Server log outputs TextComponent object rather than its Text
-            property for player lost connection/Disconnecting message
+            <a href="https://mojira.dev/MC-40275"><code>MC-40275</code></a> —
+            Credit screen/End Poem music not playing correctly
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-94016"><code>MC-94016</code></a> —
+            Glass panes and iron bars connect to barrier blocks
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-115816"><code>MC-115816</code></a> —
+            During the destruction of the beds, cracks do not appear
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-116479"><code>MC-116479</code></a> —
+            Parrots dismount when y coordinate decreases
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-116489"><code>MC-116489</code></a> —
+            Unknown entity property for entity_properties loot table condition
+            causes server crash for default loot tables
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-116625"><code>MC-116625</code></a> —
+            Animation speed of Crafting Guide items is dependant on framerate.
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-116669"><code>MC-116669</code></a> —
+            Exploding TNT minecarts and ender crystals can cause StackOverflow
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-116696"><code>MC-116696</code></a> —
+            Animated textures in resource packs aren't animated in advancement
+            icons
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-116834"><code>MC-116834</code></a> —
+            "Showing Craftable" button shows uncraftable items of same recipe
+            group
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117004"><code>MC-117004</code></a> —
+            Narrator is toggled when typing in text fields
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117125"><code>MC-117125</code></a> —
+            Narrator still crashes on linux, flite installed
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117265"><code>MC-117265</code></a> —
+            Typing in search bar in recipe book displays next variant for
+            recipes with multiple variants
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117310"><code>MC-117310</code></a> —
+            gamerule gameLoopFunction does not tab complete function names
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117314"><code>MC-117314</code></a> —
+            stat.craftItem is missing most items
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117568"><code>MC-117568</code></a> —
+            Survival tutorial steps shown in creative mode
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117584"><code>MC-117584</code></a> —
+            Converting zombie villager without ConversionPlayer set crashes
+            server
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117611"><code>MC-117611</code></a> —
+            Extreme Lag on Multiplayer Server
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117627"><code>MC-117627</code></a> —
+            Moving items in inventory with open recipe book displays next
+            variant for recipes with multiple variants
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117636"><code>MC-117636</code></a> —
+            construct_beacon advancement trigger is triggered when player gets
+            near beacon instead of when building beacon
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117640"><code>MC-117640</code></a> —
+            Pets (wolves, ocelots, parrots) teleport onto magma blocks
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117661"><code>MC-117661</code></a> —
+            Conditional function command only runs the function if the selection
+            matches exactly one entity
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117663"><code>MC-117663</code></a> —
+            Conditional function commands do not work inside of functions
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117677"><code>MC-117677</code></a> —
+            Jumping does not increase progress in tutorial
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117687"><code>MC-117687</code></a> —
+            Recipe Book tries to use damaged bows to craft dispensers despite
+            this being invalid
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117703"><code>MC-117703</code></a> —
+            Cannot kill invulnerable parrot with cookie in Creative mode
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117704"><code>MC-117704</code></a> —
+            "excitedze" easter egg triggers when language is already "Pirate
+            Speak"
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117710"><code>MC-117710</code></a> —
+            Bonus Chest setting is not copied when re-creating world
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117711"><code>MC-117711</code></a> —
+            "Snowy Kingdom" Superflat preset arguments include villages despite
+            them being unable to generate in ice plains
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117713"><code>MC-117713</code></a> —
+            skipping function triggers conditional command blocks
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117714"><code>MC-117714</code></a> —
+            Clicking on dispenser recipe while only having enchanted bow in
+            inventory places other ingredients anyways
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117718"><code>MC-117718</code></a> —
+            Breeding animals without LoveCause set cause crash
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117727"><code>MC-117727</code></a> —
+            @s is described as "a player in /execute" despite working for all
+            entities
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117752"><code>MC-117752</code></a> —
+            Knowledge book isn't consumed upon right-click
           </li>
           <li>
             <a href="https://mojira.dev/MC-117764"><code>MC-117764</code></a> —
             No error is logged when using knowledge book with invalid recipes
           </li>
           <li>
-            <a href="https://mojira.dev/MC-118002"><code>MC-118002</code></a> —
-            Pausing game while moving causes screen shaking
+            <a href="https://mojira.dev/MC-117785"><code>MC-117785</code></a> —
+            Clicking arrows in recipe book have no click sound
           </li>
           <li>
-            <a href="https://mojira.dev/MC-118021"><code>MC-118021</code></a> —
-            Parrot spawn egg appears after rabbit spawn egg in English (US)
+            <a href="https://mojira.dev/MC-117789"><code>MC-117789</code></a> —
+            Crash: java.lang.IllegalAccessError: tried to access field
+            com.sun.jna.Pointer.peer from class com.sun.jna.PointerTool
           </li>
           <li>
-            <a href="https://mojira.dev/MC-118036"><code>MC-118036</code></a> —
-            Disconnecting from server prints
-            TranslatableComponent{key='multiplayer.disconnect.banned', ...} in
-            log
+            <a href="https://mojira.dev/MC-117812"><code>MC-117812</code></a> —
+            Weird criteria names in certain advancements
           </li>
           <li>
-            <a href="https://mojira.dev/MC-118038"><code>MC-118038</code></a> —
-            Crafting items with no recipe file shows empty toast
+            <a href="https://mojira.dev/MC-117823"><code>MC-117823</code></a> —
+            Single-ingredient recipes cannot be stacked by repeatedly clicking
+            on the recipe
           </li>
           <li>
-            <a href="https://mojira.dev/MC-118057"><code>MC-118057</code></a> —
-            Unexpectedly high CPU usage in menus
+            <a href="https://mojira.dev/MC-117827"><code>MC-117827</code></a> —
+            Nonexistent (or misnamed) tipped arrow recipe
           </li>
           <li>
-            <a href="https://mojira.dev/MC-118067"><code>MC-118067</code></a> —
-            Pressing t in Spectator mode allows you to use recipe book search
+            <a href="https://mojira.dev/MC-117843"><code>MC-117843</code></a> —
+            Parrots lose their Name Tag upon dismounting a player's shoulder
           </li>
           <li>
-            <a href="https://mojira.dev/MC-118068"><code>MC-118068</code></a> —
-            Recipe book uses always t for focusing search instead of chat
-            keybinding
+            <a href="https://mojira.dev/MC-117854"><code>MC-117854</code></a> —
+            Fences connect to barriers
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117858"><code>MC-117858</code></a> —
+            Right-clicking an item stack into the creative mode item selector
+            destroys the whole stack
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117877"><code>MC-117877</code></a> —
+            Naming Parrots, becoming unnamed.
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117883"><code>MC-117883</code></a> —
+            Advancement descriptions are able to go out of the Minecraft window
+          </li>
+          <li>
+            <a href="https://mojira.dev/MC-117960"><code>MC-117960</code></a> —
+            Strange vines behaviour
           </li>
         </ul>
       </details>
@@ -10218,6 +10629,17 @@
       </p>
       <details>
         <summary>Changelog</summary>
+
+        <p>
+          Welcome to the first Minecraft 1.12 snapshot! We anticipate to do many
+          more snapshots in the upcoming months, as we will continue adding more
+          features and make major improvements to the core game itself. This
+          particular snapshot brings you a bunch of new blocks and a very useful
+          addition to Creative Mode. Please remember to make backups of your
+          worlds before loading them in any of the snapshots. An even better
+          option is to always create a new world when checking out the new
+          features!
+        </p>
 
         <ul>
           <li>
@@ -11039,6 +11461,14 @@
         </ul>
 
         <p>Bugs fixed in this snapshot:</p>
+
+        <ul>
+          <li>
+            And many more that weren&#x2019;t on the bug tracker so we
+            couldn&#x2019;t mark them as fixed! Did I mention please report
+            bugs? Thanks.
+          </li>
+        </ul>
       </details>
       <h3>Fixed Bugs</h3>
       <details>

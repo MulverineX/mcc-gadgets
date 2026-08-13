@@ -3,48 +3,518 @@
   "heroImage": "https://www.minecraft.net/content/dam/minecraftnet/archive/f74e0743bdda3a3ce0b99d5f87145287-snapshot_header.png",
   "source": "minecraft.net",
   "body": {
-    "nodes": []
+    "nodes": [
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          1,
+          2,
+          4
+        ],
+        "parent": null,
+        "prev": null,
+        "next": {
+          "$ref": 5
+        }
+      },
+      {
+        "type": "text",
+        "data": "We're now drawing to a close with 1.12, with hopefully the final pre-releases. We're aiming to get the full 1.12 release out to you all ",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": null,
+        "next": {
+          "$ref": 2
+        }
+      },
+      {
+        "type": "element",
+        "tag": "b",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          3
+        ],
+        "parent": {
+          "$ref": 0
+        },
+        "prev": {
+          "$ref": 1
+        },
+        "next": {
+          "$ref": 4
+        }
+      },
+      {
+        "type": "text",
+        "data": "this friday",
+        "parent": {
+          "$ref": 2
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " (2017-06-02)!",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": {
+          "$ref": 2
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 0
+        },
+        "next": {
+          "$ref": 6
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          22
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 5
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          8
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": null,
+        "next": {
+          "$ref": 9
+        }
+      },
+      {
+        "type": "text",
+        "data": "Optimized recipe book & creative inventory searching a lot, especially when using mods",
+        "parent": {
+          "$ref": 7
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          10
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 7
+        },
+        "next": {
+          "$ref": 11
+        }
+      },
+      {
+        "type": "text",
+        "data": "Made a bunch of text translatable, where previously they were hardcoded English",
+        "parent": {
+          "$ref": 9
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          12
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 9
+        },
+        "next": {
+          "$ref": 13
+        }
+      },
+      {
+        "type": "text",
+        "data": "Optimized chunk loading, a previous pre-release slowed it down :(",
+        "parent": {
+          "$ref": 11
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          14
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 11
+        },
+        "next": {
+          "$ref": 15
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added the ability to see credits by clicking the copyright text in the title screen",
+        "parent": {
+          "$ref": 13
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          16
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 13
+        },
+        "next": {
+          "$ref": 17
+        }
+      },
+      {
+        "type": "text",
+        "data": "Technical: Skipped functions (when the conditional fails) is now considered a failure (for example in command blocks)",
+        "parent": {
+          "$ref": 15
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          18,
+          19,
+          21
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 15
+        },
+        "next": {
+          "$ref": 22
+        }
+      },
+      {
+        "type": "text",
+        "data": "Technical: Tab-completing command names in command blocks will no longer add a ",
+        "parent": {
+          "$ref": 17
+        },
+        "prev": null,
+        "next": {
+          "$ref": 19
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightB"
+        },
+        "children": [
+          20
+        ],
+        "parent": {
+          "$ref": 17
+        },
+        "prev": {
+          "$ref": 18
+        },
+        "next": {
+          "$ref": 21
+        }
+      },
+      {
+        "type": "text",
+        "data": "/",
+        "parent": {
+          "$ref": 19
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " prefix.",
+        "parent": {
+          "$ref": 17
+        },
+        "prev": {
+          "$ref": 19
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          23
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 17
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Added some new bugs!",
+        "parent": {
+          "$ref": 22
+        },
+        "prev": null,
+        "next": null
+      }
+    ]
   },
   "bugList": [
     {
-      "id": "MC-59535",
-      "title": "Server log outputs TextComponent object rather than its Text property for player lost connection/Disconnecting message"
+      "id": "MC-40275",
+      "title": "Credit screen/End Poem music not playing correctly"
+    },
+    {
+      "id": "MC-94016",
+      "title": "Glass panes and iron bars connect to barrier blocks"
+    },
+    {
+      "id": "MC-115816",
+      "title": "During the destruction of the beds, cracks do not appear"
+    },
+    {
+      "id": "MC-116479",
+      "title": "Parrots dismount when y coordinate decreases"
+    },
+    {
+      "id": "MC-116489",
+      "title": "Unknown entity property for entity_properties loot table condition causes server crash for default loot tables"
+    },
+    {
+      "id": "MC-116625",
+      "title": "Animation speed of Crafting Guide items is dependant on framerate."
+    },
+    {
+      "id": "MC-116669",
+      "title": "Exploding TNT minecarts and ender crystals can cause StackOverflow"
+    },
+    {
+      "id": "MC-116696",
+      "title": "Animated textures in resource packs aren't animated in advancement icons"
+    },
+    {
+      "id": "MC-116834",
+      "title": "\"Showing Craftable\" button shows uncraftable items of same recipe group"
+    },
+    {
+      "id": "MC-117004",
+      "title": "Narrator is toggled when typing in text fields"
+    },
+    {
+      "id": "MC-117125",
+      "title": "Narrator still crashes on linux, flite installed"
+    },
+    {
+      "id": "MC-117265",
+      "title": "Typing in search bar in recipe book displays next variant for recipes with multiple variants"
+    },
+    {
+      "id": "MC-117310",
+      "title": "gamerule gameLoopFunction does not tab complete function names"
+    },
+    {
+      "id": "MC-117314",
+      "title": "stat.craftItem is missing most items"
+    },
+    {
+      "id": "MC-117568",
+      "title": "Survival tutorial steps shown in creative mode"
+    },
+    {
+      "id": "MC-117584",
+      "title": "Converting zombie villager without ConversionPlayer set crashes server"
+    },
+    {
+      "id": "MC-117611",
+      "title": "Extreme Lag on Multiplayer Server"
+    },
+    {
+      "id": "MC-117627",
+      "title": "Moving items in inventory with open recipe book displays next variant for recipes with multiple variants"
+    },
+    {
+      "id": "MC-117636",
+      "title": "construct_beacon advancement trigger is triggered when player gets near beacon instead of when building beacon"
+    },
+    {
+      "id": "MC-117640",
+      "title": "Pets (wolves, ocelots, parrots) teleport onto magma blocks"
+    },
+    {
+      "id": "MC-117661",
+      "title": "Conditional function command only runs the function if the selection matches exactly one entity"
+    },
+    {
+      "id": "MC-117663",
+      "title": "Conditional function commands do not work inside of functions"
+    },
+    {
+      "id": "MC-117677",
+      "title": "Jumping does not increase progress in tutorial"
+    },
+    {
+      "id": "MC-117687",
+      "title": "Recipe Book tries to use damaged bows to craft dispensers despite this being invalid"
+    },
+    {
+      "id": "MC-117703",
+      "title": "Cannot kill invulnerable parrot with cookie in Creative mode"
+    },
+    {
+      "id": "MC-117704",
+      "title": "\"excitedze\" easter egg triggers when language is already \"Pirate Speak\""
+    },
+    {
+      "id": "MC-117710",
+      "title": "Bonus Chest setting is not copied when re-creating world"
+    },
+    {
+      "id": "MC-117711",
+      "title": "\"Snowy Kingdom\" Superflat preset arguments include villages despite them being unable to generate in ice plains"
+    },
+    {
+      "id": "MC-117713",
+      "title": "skipping function triggers conditional command blocks"
+    },
+    {
+      "id": "MC-117714",
+      "title": "Clicking on dispenser recipe while only having enchanted bow in inventory places other ingredients anyways"
+    },
+    {
+      "id": "MC-117718",
+      "title": "Breeding animals without LoveCause set cause crash"
+    },
+    {
+      "id": "MC-117727",
+      "title": "@s is described as \"a player in /execute\" despite working for all entities"
+    },
+    {
+      "id": "MC-117752",
+      "title": "Knowledge book isn't consumed upon right-click"
     },
     {
       "id": "MC-117764",
       "title": "No error is logged when using knowledge book with invalid recipes"
     },
     {
-      "id": "MC-118002",
-      "title": "Pausing game while moving causes screen shaking"
+      "id": "MC-117785",
+      "title": "Clicking arrows in recipe book have no click sound"
     },
     {
-      "id": "MC-118021",
-      "title": "Parrot spawn egg appears after rabbit spawn egg in English (US)"
+      "id": "MC-117789",
+      "title": "Crash: java.lang.IllegalAccessError: tried to access field com.sun.jna.Pointer.peer from class com.sun.jna.PointerTool"
     },
     {
-      "id": "MC-118036",
-      "title": "Disconnecting from server prints TranslatableComponent{key='multiplayer.disconnect.banned', ...} in log"
+      "id": "MC-117812",
+      "title": "Weird criteria names in certain advancements"
     },
     {
-      "id": "MC-118038",
-      "title": "Crafting items with no recipe file shows empty toast"
+      "id": "MC-117823",
+      "title": "Single-ingredient recipes cannot be stacked by repeatedly clicking on the recipe"
     },
     {
-      "id": "MC-118057",
-      "title": "Unexpectedly high CPU usage in menus"
+      "id": "MC-117827",
+      "title": "Nonexistent (or misnamed) tipped arrow recipe"
     },
     {
-      "id": "MC-118067",
-      "title": "Pressing t in Spectator mode allows you to use recipe book search"
+      "id": "MC-117843",
+      "title": "Parrots lose their Name Tag upon dismounting a player's shoulder"
     },
     {
-      "id": "MC-118068",
-      "title": "Recipe book uses always t for focusing search instead of chat keybinding"
+      "id": "MC-117854",
+      "title": "Fences connect to barriers"
+    },
+    {
+      "id": "MC-117858",
+      "title": "Right-clicking an item stack into the creative mode item selector destroys the whole stack"
+    },
+    {
+      "id": "MC-117877",
+      "title": "Naming Parrots, becoming unnamed."
+    },
+    {
+      "id": "MC-117883",
+      "title": "Advancement descriptions are able to go out of the Minecraft window"
+    },
+    {
+      "id": "MC-117960",
+      "title": "Strange vines behaviour"
     }
   ],
   "merged": true,
-  "shortText": "",
+  "shortText": "We're now drawing to a close with 1.12, with hopefully the final pre-releases. We're aiming to get the full 1.12 release out to you all this friday (2017-06-02)! Optimized recipe book & creative inventory searching a lot, especially when using mods, Made a bunch of text",
   "title": "Minecraft 1.12 Pre-Release 6",
   "targetRelease": "1.12",
   "publishedAt": 1496058312,

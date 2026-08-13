@@ -1,0 +1,388 @@
+{
+  "version": "1.14-pre1",
+  "heroImage": "https://www.minecraft.net/content/dam/minecraftnet/minecraft/java-snapshots/1-14-pre-release-1/2019-04-10_16.17.34_header.png",
+  "source": "minecraft.net",
+  "body": {
+    "nodes": [
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          1,
+          2,
+          4,
+          5,
+          7
+        ],
+        "parent": null,
+        "prev": null,
+        "next": {
+          "$ref": 8
+        }
+      },
+      {
+        "type": "text",
+        "data": "We're now feeling confident enough in the stability and feature-completeness of 1.14 - The Village & Pillage Update - that we've decided to enter the pre-release phase. Whilst we know that there are still bugs to be solved and polish to be added, we feel that this version is now good enough that we can ask you all to please help us test and find any issues for a smooth release in a few weeks. Remember to report anything you find to our ",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": null,
+        "next": {
+          "$ref": 2
+        }
+      },
+      {
+        "type": "element",
+        "tag": "a",
+        "kind": "tag",
+        "attrs": {
+          "href": "https://bugs.mojang.com/browse/MC"
+        },
+        "children": [
+          3
+        ],
+        "parent": {
+          "$ref": 0
+        },
+        "prev": {
+          "$ref": 1
+        },
+        "next": {
+          "$ref": 4
+        }
+      },
+      {
+        "type": "text",
+        "data": "bug tracker",
+        "parent": {
+          "$ref": 2
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": ", or give feedback on new features over to our ",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": {
+          "$ref": 2
+        },
+        "next": {
+          "$ref": 5
+        }
+      },
+      {
+        "type": "element",
+        "tag": "a",
+        "kind": "tag",
+        "attrs": {
+          "href": "https://aka.ms/snapshotfeedback"
+        },
+        "children": [
+          6
+        ],
+        "parent": {
+          "$ref": 0
+        },
+        "prev": {
+          "$ref": 4
+        },
+        "next": {
+          "$ref": 7
+        }
+      },
+      {
+        "type": "text",
+        "data": "feedback website",
+        "parent": {
+          "$ref": 5
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": ". It helps us immensely!",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": {
+          "$ref": 5
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 0
+        },
+        "next": {
+          "$ref": 9
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          10,
+          12,
+          14
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 8
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          11
+        ],
+        "parent": {
+          "$ref": 9
+        },
+        "prev": null,
+        "next": {
+          "$ref": 12
+        }
+      },
+      {
+        "type": "text",
+        "data": "Fixed lots of bugs",
+        "parent": {
+          "$ref": 10
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          13
+        ],
+        "parent": {
+          "$ref": 9
+        },
+        "prev": {
+          "$ref": 10
+        },
+        "next": {
+          "$ref": 14
+        }
+      },
+      {
+        "type": "text",
+        "data": "Some optimizations",
+        "parent": {
+          "$ref": 12
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          15
+        ],
+        "parent": {
+          "$ref": 9
+        },
+        "prev": {
+          "$ref": 12
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Inside optimize world screen there's now an option to remove cached world data (e.g. height maps and light), so that it's recomputed on the next load",
+        "parent": {
+          "$ref": 14
+        },
+        "prev": null,
+        "next": null
+      }
+    ]
+  },
+  "bugList": [
+    {
+      "id": "MC-134755",
+      "title": "All short mobs drown just below the surface of water"
+    },
+    {
+      "id": "MC-137451",
+      "title": "Mobs heads rotate super quickly when looking around"
+    },
+    {
+      "id": "MC-138979",
+      "title": "Scaffolding switches quickly between entity and block when placed on some non-solid blocks"
+    },
+    {
+      "id": "MC-139255",
+      "title": "Cave ambient sounds are not playing"
+    },
+    {
+      "id": "MC-140936",
+      "title": "The tall grass in the plains village structures doesn't take the block it spawns on into consideration"
+    },
+    {
+      "id": "MC-142134",
+      "title": "Light sources spontaneously not working in some chunks"
+    },
+    {
+      "id": "MC-142228",
+      "title": "Skylight shines through blocks"
+    },
+    {
+      "id": "MC-142729",
+      "title": "Puffed puffer fishes with \"NoAI\" tag can shrink down"
+    },
+    {
+      "id": "MC-142768",
+      "title": "Mobs can suffocate below blocks, if the eye height isn't inside the collision box"
+    },
+    {
+      "id": "MC-143112",
+      "title": "Duplicated files in village structure"
+    },
+    {
+      "id": "MC-143591",
+      "title": "Spiders and cave spiders fly-climb"
+    },
+    {
+      "id": "MC-143699",
+      "title": "Trader llamas won't despawn"
+    },
+    {
+      "id": "MC-144798",
+      "title": "Barrels always try to set their \"open\" state to false"
+    },
+    {
+      "id": "MC-145031",
+      "title": "Crash while ticking barrel"
+    },
+    {
+      "id": "MC-145766",
+      "title": "Iron golems spawning at an alarming rate"
+    },
+    {
+      "id": "MC-146295",
+      "title": "Loom top texture is backwards"
+    },
+    {
+      "id": "MC-146538",
+      "title": "Eye position for riptiding player is incorrect"
+    },
+    {
+      "id": "MC-146800",
+      "title": "Villager can make the discount number of unstackable item more than 1"
+    },
+    {
+      "id": "MC-146860",
+      "title": "Trading sometimes takes the full price instead of the discounted price when player has the Hero of the Village effect"
+    },
+    {
+      "id": "MC-146919",
+      "title": "Drowned, fish and guardians are not spawning"
+    },
+    {
+      "id": "MC-147031",
+      "title": "When a zombie wakes up a villager, the bed tag is still on occupied (occupied: true)"
+    },
+    {
+      "id": "MC-147056",
+      "title": "Zombie villagers spawned with a zombie village move very fast"
+    },
+    {
+      "id": "MC-147207",
+      "title": "hs_pid_error appears for no reason in snapshots."
+    },
+    {
+      "id": "MC-147227",
+      "title": "Shift-clicking an item out of the trading inventory instantly locks the trade"
+    },
+    {
+      "id": "MC-147240",
+      "title": "Villagers can trade Arrows of Luck"
+    },
+    {
+      "id": "MC-147268",
+      "title": "Villagers don't run away from ravagers, pillagers, vindicators, evokers, zombies or husks"
+    },
+    {
+      "id": "MC-147270",
+      "title": "Player can still move at normal speed and sprint while sneaking in a 1.5 blocks tall space"
+    },
+    {
+      "id": "MC-147274",
+      "title": "Villager 'Happy' and 'Angry' particles not showing, even when particles are on 'All'"
+    },
+    {
+      "id": "MC-147298",
+      "title": "Arrow facing down with 0 degrees on both x z (basically straight down) cannot be picked up and play a sound on loop"
+    },
+    {
+      "id": "MC-147305",
+      "title": "Player crouches with a delay"
+    },
+    {
+      "id": "MC-147363",
+      "title": "\"Villager disagrees\" sound is played twice when right clicking a villager without trades"
+    },
+    {
+      "id": "MC-147513",
+      "title": "Unable to focus anvil textfield by clicking"
+    },
+    {
+      "id": "MC-147529",
+      "title": "Background is not dimmed for book or lectern"
+    },
+    {
+      "id": "MC-147532",
+      "title": "Chunks stop loading after change view distance"
+    },
+    {
+      "id": "MC-147538",
+      "title": "Cannot drag any slider in \"Video Settings\" options"
+    },
+    {
+      "id": "MC-147560",
+      "title": "Mobs stop spawning over time if the render distance is less than 11"
+    },
+    {
+      "id": "MC-147607",
+      "title": "Command block text field isn't focused when opening the GUI anymore"
+    },
+    {
+      "id": "MC-147642",
+      "title": "Narrator is toggled when typing in text fields"
+    },
+    {
+      "id": "MC-147681",
+      "title": "X-ray with door and slab"
+    }
+  ],
+  "merged": true,
+  "shortText": "We're now feeling confident enough in the stability and feature-completeness of 1.14 - The Village & Pillage Update - that we've decided to enter the pre-release phase. Whilst we know that there are still bugs to be solved and polish to be added, we feel that this version is now",
+  "title": "Minecraft 1.14 Pre-Release 1",
+  "targetRelease": "1.14",
+  "publishedAt": 1554906256,
+  "sourceURL": "https://www.minecraft.net/en-us/article/minecraft-1-14-pre-release-1"
+}

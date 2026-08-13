@@ -4,6 +4,7 @@ import { createHash } from "crypto";
 
 import { parseManifestJson } from "./schemas";
 import { extractSitemapEntries } from "./sitemap";
+import { sanitizeManifestId } from "./manifest-sanitize";
 import type { SitemapEntry, VersionManifestResponse } from "../types";
 
 const MANIFEST_URL =
@@ -54,14 +55,19 @@ export class LocalCache {
 
   async fetchManifest(): Promise<VersionManifestResponse> {
     const file = join(this.cacheDir, "manifest.json");
+    const sanitize = (raw: VersionManifestResponse): VersionManifestResponse => ({
+      ...raw,
+      versions: raw.versions.map((v) => ({ ...v, id: sanitizeManifestId(v.id) })),
+    });
     if (existsSync(file)) {
-      return parseManifestJson(JSON.parse(readFileSync(file, "utf-8")));
+      return sanitize(parseManifestJson(JSON.parse(readFileSync(file, "utf-8"))));
     }
     const res = await fetch(MANIFEST_URL);
     if (!res.ok) throw new Error(`manifest fetch failed: ${res.status}`);
     const data = parseManifestJson(await res.json());
-    writeFileSync(file, JSON.stringify(data));
-    return data;
+    const sanitized = sanitize(data);
+    writeFileSync(file, JSON.stringify(sanitized));
+    return sanitized;
   }
 
   async fetchSitemapMap(): Promise<Map<string, SitemapEntry>> {
@@ -185,7 +191,7 @@ export class LocalCache {
   readSource(snapshotName: string): "minecraft.net" | "mojang" {
     const metaFile = join(this.cacheDir, `${snapshotName}.html.source`);
     if (!existsSync(metaFile)) return "minecraft.net";
-    return readFileSync(metaFile, "utf-8") as "minecraft.net" | "mojang";
+    return readFileSync(metaFile, "utf-8").trim() as "minecraft.net" | "mojang";
   }
 
   /** Persist the source marker after a fresh fetch. */

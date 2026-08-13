@@ -33,6 +33,7 @@ import {
   buildBodyElement,
   containerChildren,
   findFirst,
+  findOldestRange,
   makeShortTextFromChildren,
   pickRange,
   trimRootEdges,
@@ -41,7 +42,7 @@ import {
 import { normalizeArticleMedia } from "./media";
 import { splitMojangByVersion } from "./mojang.com.shared";
 import { findMojangLegacyFooterEnd } from "./mojang.com.old";
-import { splitMinecraftNetByVersion } from "./minecraft.net.aem";
+import { splitMinecraftNetByVersion, findIntroProse } from "./minecraft.net.aem";
 import type { SectionRange } from "./utils";
 
 const MINECRAFT_NET_BASE = "https://www.minecraft.net";
@@ -230,6 +231,22 @@ export function parseArticle(
       : rawRanges;
 
   const matched = pickRange(ranges, version);
+
+  // For minecraft.net merged pre-release pages (multiple "Changes in X" /
+  // "Fixed bugs in X" sections), the page-level intro prose belongs to the
+  // OLDEST version — the one the article was originally published for.
+  // Mojang appends newer pre-release updates below, so pre-2/3/4/5 in the
+  // 1.14-pre1 article get just their own section, no shared intro. Single-
+  // section pages (1.20.6) already include the intro via sectionStart=0,
+  // so we skip them here to avoid duplicating it.
+  const isMerged = ranges.length > 1;
+  const isOldest = matched !== null && matched === findOldestRange(ranges);
+  if (matched && source === "minecraft.net" && container && isMerged && isOldest) {
+    const introEls = findIntroProse(container);
+    if (introEls.length > 0) {
+      matched.children = [...introEls, ...matched.children];
+    }
+  }
 
   const bugList: BugRef[] = matched ? buildBodyElement(matched) : [];
   const survivors = matched

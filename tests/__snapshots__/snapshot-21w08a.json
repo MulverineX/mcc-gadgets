@@ -50,39 +50,18 @@
         }
       },
       {
-        "type": "text",
-        "data": "\r\n",
-        "parent": null,
-        "prev": {
-          "$ref": 3
-        },
-        "next": {
-          "$ref": 5
-        }
-      },
-      {
-        "type": "text",
-        "data": "\r\n",
-        "parent": null,
-        "prev": {
-          "$ref": 4
-        },
-        "next": {
-          "$ref": 6
-        }
-      },
-      {
         "type": "element",
         "tag": "ul",
         "kind": "tag",
         "attrs": {},
         "children": [
+          5,
           7,
           9,
           11,
           13,
           15,
-          17,
+          20,
           22,
           24,
           26,
@@ -90,16 +69,40 @@
           30,
           32,
           34,
-          36,
-          38
+          36
         ],
         "parent": null,
         "prev": {
-          "$ref": 5
+          "$ref": 3
         },
         "next": {
-          "$ref": 40
+          "$ref": 38
         }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          6
+        ],
+        "parent": {
+          "$ref": 4
+        },
+        "prev": null,
+        "next": {
+          "$ref": 7
+        }
+      },
+      {
+        "type": "text",
+        "data": "Tweaked cave sizes further",
+        "parent": {
+          "$ref": 5
+        },
+        "prev": null,
+        "next": null
       },
       {
         "type": "element",
@@ -110,16 +113,18 @@
           8
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
-        "prev": null,
+        "prev": {
+          "$ref": 5
+        },
         "next": {
           "$ref": 9
         }
       },
       {
         "type": "text",
-        "data": "Tweaked cave sizes further",
+        "data": "Canyon and cave carvers now apply below y=0",
         "parent": {
           "$ref": 7
         },
@@ -135,7 +140,7 @@
           10
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
         "prev": {
           "$ref": 7
@@ -146,7 +151,7 @@
       },
       {
         "type": "text",
-        "data": "Canyon and cave carvers now apply below y=0",
+        "data": "Cracks can now be found carved into the ground",
         "parent": {
           "$ref": 9
         },
@@ -162,7 +167,7 @@
           12
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
         "prev": {
           "$ref": 9
@@ -173,7 +178,7 @@
       },
       {
         "type": "text",
-        "data": "Cracks can now be found carved into the ground",
+        "data": "Grimstone has been changed into Deepslate",
         "parent": {
           "$ref": 11
         },
@@ -189,7 +194,7 @@
           14
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
         "prev": {
           "$ref": 11
@@ -200,36 +205,9 @@
       },
       {
         "type": "text",
-        "data": "Grimstone has been changed into Deepslate",
-        "parent": {
-          "$ref": 13
-        },
-        "prev": null,
-        "next": null
-      },
-      {
-        "type": "element",
-        "tag": "li",
-        "kind": "tag",
-        "attrs": {},
-        "children": [
-          16
-        ],
-        "parent": {
-          "$ref": 6
-        },
-        "prev": {
-          "$ref": 13
-        },
-        "next": {
-          "$ref": 17
-        }
-      },
-      {
-        "type": "text",
         "data": "Added Deepslate ores",
         "parent": {
-          "$ref": 15
+          "$ref": 13
         },
         "prev": null,
         "next": null
@@ -240,29 +218,29 @@
         "kind": "tag",
         "attrs": {},
         "children": [
-          18,
-          19,
-          21
+          16,
+          17,
+          19
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
         "prev": {
-          "$ref": 15
+          "$ref": 13
         },
         "next": {
-          "$ref": 22
+          "$ref": 20
         }
       },
       {
         "type": "text",
         "data": "The ",
         "parent": {
-          "$ref": 17
+          "$ref": 15
         },
         "prev": null,
         "next": {
-          "$ref": 19
+          "$ref": 17
         }
       },
       {
@@ -273,23 +251,23 @@
           "href": "https://images.ctfassets.net/8y6ykjruobr4/73xBtA88xuZQ3fKYH3pX6G/83cc7b912a6c08097d1e7e96e7ed6e96/snapshot-21w08a-ore-distribution.jpg"
         },
         "children": [
-          20
+          18
         ],
         "parent": {
-          "$ref": 17
+          "$ref": 15
         },
         "prev": {
-          "$ref": 18
+          "$ref": 16
         },
         "next": {
-          "$ref": 21
+          "$ref": 19
         }
       },
       {
         "type": "text",
         "data": "distribution of ores",
         "parent": {
-          "$ref": 19
+          "$ref": 17
         },
         "prev": null,
         "next": null
@@ -298,11 +276,38 @@
         "type": "text",
         "data": " has been further tweaked",
         "parent": {
-          "$ref": 17
+          "$ref": 15
         },
         "prev": {
-          "$ref": 19
+          "$ref": 17
         },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          21
+        ],
+        "parent": {
+          "$ref": 4
+        },
+        "prev": {
+          "$ref": 15
+        },
+        "next": {
+          "$ref": 22
+        }
+      },
+      {
+        "type": "text",
+        "data": "Andesite no longer generates under y=0",
+        "parent": {
+          "$ref": 20
+        },
+        "prev": null,
         "next": null
       },
       {
@@ -314,10 +319,10 @@
           23
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
         "prev": {
-          "$ref": 17
+          "$ref": 20
         },
         "next": {
           "$ref": 24
@@ -325,7 +330,7 @@
       },
       {
         "type": "text",
-        "data": "Andesite no longer generates under y=0",
+        "data": "Tuff now sometimes generates under y=0",
         "parent": {
           "$ref": 22
         },
@@ -341,7 +346,7 @@
           25
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
         "prev": {
           "$ref": 22
@@ -352,7 +357,7 @@
       },
       {
         "type": "text",
-        "data": "Tuff now sometimes generates under y=0",
+        "data": "The Tuff layer of amethyst geodes has been replaced with now a new type of stone called Smooth Basalt",
         "parent": {
           "$ref": 24
         },
@@ -368,7 +373,7 @@
           27
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
         "prev": {
           "$ref": 24
@@ -379,7 +384,7 @@
       },
       {
         "type": "text",
-        "data": "The Tuff layer of amethyst geodes has been replaced with now a new type of stone called Smooth Basalt",
+        "data": "Smooth Basalt is now obtained from smelting Basalt",
         "parent": {
           "$ref": 26
         },
@@ -395,7 +400,7 @@
           29
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
         "prev": {
           "$ref": 26
@@ -406,7 +411,7 @@
       },
       {
         "type": "text",
-        "data": "Smooth Basalt is now obtained from smelting Basalt",
+        "data": "Another round of tweaking has been done to the new textures of ores and Blackstone",
         "parent": {
           "$ref": 28
         },
@@ -422,7 +427,7 @@
           31
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
         "prev": {
           "$ref": 28
@@ -433,7 +438,7 @@
       },
       {
         "type": "text",
-        "data": "Another round of tweaking has been done to the new textures of ores and Blackstone",
+        "data": "Emerald and Lapis Lazuli ore textures have had some touch-ups",
         "parent": {
           "$ref": 30
         },
@@ -449,7 +454,7 @@
           33
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
         "prev": {
           "$ref": 30
@@ -460,7 +465,7 @@
       },
       {
         "type": "text",
-        "data": "Emerald and Lapis Lazuli ore textures have had some touch-ups",
+        "data": "Mineshafts now once again generate in the open air in caves",
         "parent": {
           "$ref": 32
         },
@@ -476,7 +481,7 @@
           35
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
         "prev": {
           "$ref": 32
@@ -487,7 +492,7 @@
       },
       {
         "type": "text",
-        "data": "Mineshafts now once again generate in the open air in caves",
+        "data": "Particles now appear in the air around spore blossoms",
         "parent": {
           "$ref": 34
         },
@@ -503,37 +508,10 @@
           37
         ],
         "parent": {
-          "$ref": 6
+          "$ref": 4
         },
         "prev": {
           "$ref": 34
-        },
-        "next": {
-          "$ref": 38
-        }
-      },
-      {
-        "type": "text",
-        "data": "Particles now appear in the air around spore blossoms",
-        "parent": {
-          "$ref": 36
-        },
-        "prev": null,
-        "next": null
-      },
-      {
-        "type": "element",
-        "tag": "li",
-        "kind": "tag",
-        "attrs": {},
-        "children": [
-          39
-        ],
-        "parent": {
-          "$ref": 6
-        },
-        "prev": {
-          "$ref": 36
         },
         "next": null
       },
@@ -541,7 +519,7 @@
         "type": "text",
         "data": "Slime Blocks and Honey Blocks have been moved to the Redstone tab of the creative inventory",
         "parent": {
-          "$ref": 38
+          "$ref": 36
         },
         "prev": null,
         "next": null
@@ -551,7 +529,29 @@
         "data": "\r\n\n    ",
         "parent": null,
         "prev": {
-          "$ref": 6
+          "$ref": 4
+        },
+        "next": {
+          "$ref": 39
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n    \n",
+        "parent": null,
+        "prev": {
+          "$ref": 38
+        },
+        "next": {
+          "$ref": 40
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n        \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 39
         },
         "next": {
           "$ref": 41
@@ -559,7 +559,7 @@
       },
       {
         "type": "text",
-        "data": "\n\n\n    \n",
+        "data": "\n",
         "parent": null,
         "prev": {
           "$ref": 40
@@ -570,7 +570,7 @@
       },
       {
         "type": "text",
-        "data": "\n\n\n\n        \n    ",
+        "data": "\n\n\n\n                \n            ",
         "parent": null,
         "prev": {
           "$ref": 41
@@ -581,7 +581,7 @@
       },
       {
         "type": "text",
-        "data": "\n",
+        "data": "\n        ",
         "parent": null,
         "prev": {
           "$ref": 42
@@ -592,7 +592,7 @@
       },
       {
         "type": "text",
-        "data": "\n\n\n\n                \n            ",
+        "data": "\n    ",
         "parent": null,
         "prev": {
           "$ref": 43
@@ -603,7 +603,7 @@
       },
       {
         "type": "text",
-        "data": "\n        ",
+        "data": "\n",
         "parent": null,
         "prev": {
           "$ref": 44
@@ -625,7 +625,7 @@
       },
       {
         "type": "text",
-        "data": "\n",
+        "data": "\n        ",
         "parent": null,
         "prev": {
           "$ref": 46
@@ -636,7 +636,7 @@
       },
       {
         "type": "text",
-        "data": "\n    ",
+        "data": "\n        ",
         "parent": null,
         "prev": {
           "$ref": 47
@@ -647,7 +647,7 @@
       },
       {
         "type": "text",
-        "data": "\n        ",
+        "data": "\n            ",
         "parent": null,
         "prev": {
           "$ref": 48
@@ -658,7 +658,7 @@
       },
       {
         "type": "text",
-        "data": "\n        ",
+        "data": "\n                \n                \n\n\n\n\n    \n    \n    ",
         "parent": null,
         "prev": {
           "$ref": 49
@@ -669,7 +669,7 @@
       },
       {
         "type": "text",
-        "data": "\n            ",
+        "data": "\n    ",
         "parent": null,
         "prev": {
           "$ref": 50
@@ -680,7 +680,7 @@
       },
       {
         "type": "text",
-        "data": "\n                \n                \n\n\n\n\n    \n    \n    ",
+        "data": "\n    ",
         "parent": null,
         "prev": {
           "$ref": 51
@@ -691,35 +691,13 @@
       },
       {
         "type": "text",
-        "data": "\n    ",
+        "data": "\n        \n        \n\n\n\n\n    \n    \n    ",
         "parent": null,
         "prev": {
           "$ref": 52
         },
         "next": {
           "$ref": 54
-        }
-      },
-      {
-        "type": "text",
-        "data": "\n    ",
-        "parent": null,
-        "prev": {
-          "$ref": 53
-        },
-        "next": {
-          "$ref": 55
-        }
-      },
-      {
-        "type": "text",
-        "data": "\n        \n        \n\n\n\n\n    \n    \n    ",
-        "parent": null,
-        "prev": {
-          "$ref": 54
-        },
-        "next": {
-          "$ref": 56
         }
       },
       {
@@ -733,6 +711,28 @@
         "children": [],
         "parent": null,
         "prev": {
+          "$ref": 53
+        },
+        "next": {
+          "$ref": 55
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n        \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 54
+        },
+        "next": {
+          "$ref": 56
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
           "$ref": 55
         },
         "next": {
@@ -741,7 +741,7 @@
       },
       {
         "type": "text",
-        "data": "\n\n\n\n        \n    ",
+        "data": "\n\n\n\n                \n            ",
         "parent": null,
         "prev": {
           "$ref": 56
@@ -752,7 +752,7 @@
       },
       {
         "type": "text",
-        "data": "\n",
+        "data": "\n        ",
         "parent": null,
         "prev": {
           "$ref": 57
@@ -763,7 +763,7 @@
       },
       {
         "type": "text",
-        "data": "\n\n\n\n                \n            ",
+        "data": "\n    ",
         "parent": null,
         "prev": {
           "$ref": 58
@@ -774,7 +774,7 @@
       },
       {
         "type": "text",
-        "data": "\n        ",
+        "data": "\n",
         "parent": null,
         "prev": {
           "$ref": 59
@@ -796,7 +796,7 @@
       },
       {
         "type": "text",
-        "data": "\n",
+        "data": "\n        ",
         "parent": null,
         "prev": {
           "$ref": 61
@@ -807,7 +807,7 @@
       },
       {
         "type": "text",
-        "data": "\n    ",
+        "data": "\n        ",
         "parent": null,
         "prev": {
           "$ref": 62
@@ -818,7 +818,7 @@
       },
       {
         "type": "text",
-        "data": "\n        ",
+        "data": "\n            ",
         "parent": null,
         "prev": {
           "$ref": 63
@@ -829,7 +829,7 @@
       },
       {
         "type": "text",
-        "data": "\n        ",
+        "data": "\n                \n                \n\n\n\n\n    \n    \n    ",
         "parent": null,
         "prev": {
           "$ref": 64
@@ -840,7 +840,7 @@
       },
       {
         "type": "text",
-        "data": "\n            ",
+        "data": "\n    ",
         "parent": null,
         "prev": {
           "$ref": 65
@@ -851,7 +851,7 @@
       },
       {
         "type": "text",
-        "data": "\n                \n                \n\n\n\n\n    \n    \n    ",
+        "data": "\n    ",
         "parent": null,
         "prev": {
           "$ref": 66
@@ -862,7 +862,7 @@
       },
       {
         "type": "text",
-        "data": "\n    ",
+        "data": "\n        \n        \n\n\n\n\n    \n    \n    ",
         "parent": null,
         "prev": {
           "$ref": 67
@@ -884,7 +884,7 @@
       },
       {
         "type": "text",
-        "data": "\n        \n        \n\n\n\n\n    \n    \n    ",
+        "data": "\n    ",
         "parent": null,
         "prev": {
           "$ref": 69
@@ -895,7 +895,7 @@
       },
       {
         "type": "text",
-        "data": "\n    ",
+        "data": "\n        ",
         "parent": null,
         "prev": {
           "$ref": 70
@@ -905,48 +905,26 @@
         }
       },
       {
-        "type": "text",
-        "data": "\n    ",
-        "parent": null,
-        "prev": {
-          "$ref": 71
-        },
-        "next": {
-          "$ref": 73
-        }
-      },
-      {
-        "type": "text",
-        "data": "\n        ",
-        "parent": null,
-        "prev": {
-          "$ref": 72
-        },
-        "next": {
-          "$ref": 74
-        }
-      },
-      {
         "type": "element",
         "tag": "h2",
         "kind": "tag",
         "attrs": {},
         "children": [
-          75
+          73
         ],
         "parent": null,
         "prev": {
-          "$ref": 73
+          "$ref": 71
         },
         "next": {
-          "$ref": 76
+          "$ref": 74
         }
       },
       {
         "type": "text",
         "data": "Deepslate",
         "parent": {
-          "$ref": 74
+          "$ref": 72
         },
         "prev": null,
         "next": null
@@ -956,10 +934,10 @@
         "data": "\r\n",
         "parent": null,
         "prev": {
-          "$ref": 74
+          "$ref": 72
         },
         "next": {
-          "$ref": 77
+          "$ref": 75
         }
       },
       {
@@ -968,18 +946,43 @@
         "kind": "tag",
         "attrs": {},
         "children": [
+          76,
           78,
           80,
-          82,
-          84
+          82
         ],
         "parent": null,
         "prev": {
-          "$ref": 76
+          "$ref": 74
         },
         "next": {
-          "$ref": 86
+          "$ref": 84
         }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          77
+        ],
+        "parent": {
+          "$ref": 75
+        },
+        "prev": null,
+        "next": {
+          "$ref": 78
+        }
+      },
+      {
+        "type": "text",
+        "data": "Grimstone is now called Deepslate",
+        "parent": {
+          "$ref": 76
+        },
+        "prev": null,
+        "next": null
       },
       {
         "type": "element",
@@ -990,16 +993,18 @@
           79
         ],
         "parent": {
-          "$ref": 77
+          "$ref": 75
         },
-        "prev": null,
+        "prev": {
+          "$ref": 76
+        },
         "next": {
           "$ref": 80
         }
       },
       {
         "type": "text",
-        "data": "Grimstone is now called Deepslate",
+        "data": "Deepslate now has a top texture, and a new block called Cobbled Deepslate drops from Deepslate",
         "parent": {
           "$ref": 78
         },
@@ -1015,7 +1020,7 @@
           81
         ],
         "parent": {
-          "$ref": 77
+          "$ref": 75
         },
         "prev": {
           "$ref": 78
@@ -1026,7 +1031,7 @@
       },
       {
         "type": "text",
-        "data": "Deepslate now has a top texture, and a new block called Cobbled Deepslate drops from Deepslate",
+        "data": "The cobbled variant is the same but without the top texture, and is used to craft all Deepslate variants instead",
         "parent": {
           "$ref": 80
         },
@@ -1042,37 +1047,10 @@
           83
         ],
         "parent": {
-          "$ref": 77
+          "$ref": 75
         },
         "prev": {
           "$ref": 80
-        },
-        "next": {
-          "$ref": 84
-        }
-      },
-      {
-        "type": "text",
-        "data": "The cobbled variant is the same but without the top texture, and is used to craft all Deepslate variants instead",
-        "parent": {
-          "$ref": 82
-        },
-        "prev": null,
-        "next": null
-      },
-      {
-        "type": "element",
-        "tag": "li",
-        "kind": "tag",
-        "attrs": {},
-        "children": [
-          85
-        ],
-        "parent": {
-          "$ref": 77
-        },
-        "prev": {
-          "$ref": 82
         },
         "next": null
       },
@@ -1080,7 +1058,7 @@
         "type": "text",
         "data": "Deepslate now has a unique set of sounds! Very crunchy indeed",
         "parent": {
-          "$ref": 84
+          "$ref": 82
         },
         "prev": null,
         "next": null
@@ -1090,10 +1068,10 @@
         "data": "\r\n",
         "parent": null,
         "prev": {
-          "$ref": 77
+          "$ref": 75
         },
         "next": {
-          "$ref": 87
+          "$ref": 85
         }
       },
       {
@@ -1102,15 +1080,15 @@
         "kind": "tag",
         "attrs": {},
         "children": [
-          88,
-          89
+          86,
+          87
         ],
         "parent": null,
         "prev": {
-          "$ref": 86
+          "$ref": 84
         },
         "next": {
-          "$ref": 90
+          "$ref": 88
         }
       },
       {
@@ -1120,21 +1098,21 @@
         "attrs": {},
         "children": [],
         "parent": {
-          "$ref": 87
+          "$ref": 85
         },
         "prev": null,
         "next": {
-          "$ref": 89
+          "$ref": 87
         }
       },
       {
         "type": "text",
         "data": "Deepslate ores",
         "parent": {
-          "$ref": 87
+          "$ref": 85
         },
         "prev": {
-          "$ref": 88
+          "$ref": 86
         },
         "next": null
       },
@@ -1143,10 +1121,10 @@
         "data": "\r\n",
         "parent": null,
         "prev": {
-          "$ref": 87
+          "$ref": 85
         },
         "next": {
-          "$ref": 91
+          "$ref": 89
         }
       },
       {
@@ -1155,16 +1133,41 @@
         "kind": "tag",
         "attrs": {},
         "children": [
-          92,
-          94
+          90,
+          92
         ],
         "parent": null,
         "prev": {
-          "$ref": 90
+          "$ref": 88
         },
         "next": {
-          "$ref": 96
+          "$ref": 94
         }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          91
+        ],
+        "parent": {
+          "$ref": 89
+        },
+        "prev": null,
+        "next": {
+          "$ref": 92
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added Deepslate versions of Iron, Gold, Lapis, Redstone, and Diamond ores that generate wherever those ores replace Deepslate",
+        "parent": {
+          "$ref": 90
+        },
+        "prev": null,
+        "next": null
       },
       {
         "type": "element",
@@ -1175,35 +1178,10 @@
           93
         ],
         "parent": {
-          "$ref": 91
-        },
-        "prev": null,
-        "next": {
-          "$ref": 94
-        }
-      },
-      {
-        "type": "text",
-        "data": "Added Deepslate versions of Iron, Gold, Lapis, Redstone, and Diamond ores that generate wherever those ores replace Deepslate",
-        "parent": {
-          "$ref": 92
-        },
-        "prev": null,
-        "next": null
-      },
-      {
-        "type": "element",
-        "tag": "li",
-        "kind": "tag",
-        "attrs": {},
-        "children": [
-          95
-        ],
-        "parent": {
-          "$ref": 91
+          "$ref": 89
         },
         "prev": {
-          "$ref": 92
+          "$ref": 90
         },
         "next": null
       },
@@ -1211,7 +1189,7 @@
         "type": "text",
         "data": "Twice as tough to mine as normal ores",
         "parent": {
-          "$ref": 94
+          "$ref": 92
         },
         "prev": null,
         "next": null
@@ -1221,10 +1199,10 @@
         "data": "\r\n",
         "parent": null,
         "prev": {
-          "$ref": 91
+          "$ref": 89
         },
         "next": {
-          "$ref": 97
+          "$ref": 95
         }
       },
       {
@@ -1233,21 +1211,21 @@
         "kind": "tag",
         "attrs": {},
         "children": [
-          98
+          96
         ],
         "parent": null,
         "prev": {
-          "$ref": 96
+          "$ref": 94
         },
         "next": {
-          "$ref": 99
+          "$ref": 97
         }
       },
       {
         "type": "text",
         "data": "Ore Distribution Tweaks",
         "parent": {
-          "$ref": 97
+          "$ref": 95
         },
         "prev": null,
         "next": null
@@ -1257,7 +1235,29 @@
         "data": "\r\n\n    ",
         "parent": null,
         "prev": {
+          "$ref": 95
+        },
+        "next": {
+          "$ref": 98
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n    \n",
+        "parent": null,
+        "prev": {
           "$ref": 97
+        },
+        "next": {
+          "$ref": 99
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n        \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 98
         },
         "next": {
           "$ref": 100
@@ -1265,7 +1265,7 @@
       },
       {
         "type": "text",
-        "data": "\n\n\n    \n",
+        "data": "\n",
         "parent": null,
         "prev": {
           "$ref": 99
@@ -1276,7 +1276,7 @@
       },
       {
         "type": "text",
-        "data": "\n\n\n\n        \n    ",
+        "data": "\n\n\n\n                \n            ",
         "parent": null,
         "prev": {
           "$ref": 100
@@ -1287,7 +1287,7 @@
       },
       {
         "type": "text",
-        "data": "\n",
+        "data": "\n        ",
         "parent": null,
         "prev": {
           "$ref": 101
@@ -1298,7 +1298,7 @@
       },
       {
         "type": "text",
-        "data": "\n\n\n\n                \n            ",
+        "data": "\n    ",
         "parent": null,
         "prev": {
           "$ref": 102
@@ -1309,7 +1309,7 @@
       },
       {
         "type": "text",
-        "data": "\n        ",
+        "data": "\n",
         "parent": null,
         "prev": {
           "$ref": 103
@@ -1331,7 +1331,7 @@
       },
       {
         "type": "text",
-        "data": "\n",
+        "data": "\n        ",
         "parent": null,
         "prev": {
           "$ref": 105
@@ -1342,7 +1342,7 @@
       },
       {
         "type": "text",
-        "data": "\n    ",
+        "data": "\n        ",
         "parent": null,
         "prev": {
           "$ref": 106
@@ -1353,7 +1353,7 @@
       },
       {
         "type": "text",
-        "data": "\n        ",
+        "data": "\n            ",
         "parent": null,
         "prev": {
           "$ref": 107
@@ -1364,7 +1364,7 @@
       },
       {
         "type": "text",
-        "data": "\n        ",
+        "data": "\n                \n                \n\n\n\n\n    \n    \n    ",
         "parent": null,
         "prev": {
           "$ref": 108
@@ -1375,7 +1375,7 @@
       },
       {
         "type": "text",
-        "data": "\n            ",
+        "data": "\n    ",
         "parent": null,
         "prev": {
           "$ref": 109
@@ -1386,7 +1386,7 @@
       },
       {
         "type": "text",
-        "data": "\n                \n                \n\n\n\n\n    \n    \n    ",
+        "data": "\n    ",
         "parent": null,
         "prev": {
           "$ref": 110
@@ -1397,35 +1397,13 @@
       },
       {
         "type": "text",
-        "data": "\n    ",
+        "data": "\n        \n        \n\n\n\n\n    \n    \n    ",
         "parent": null,
         "prev": {
           "$ref": 111
         },
         "next": {
           "$ref": 113
-        }
-      },
-      {
-        "type": "text",
-        "data": "\n    ",
-        "parent": null,
-        "prev": {
-          "$ref": 112
-        },
-        "next": {
-          "$ref": 114
-        }
-      },
-      {
-        "type": "text",
-        "data": "\n        \n        \n\n\n\n\n    \n    \n    ",
-        "parent": null,
-        "prev": {
-          "$ref": 113
-        },
-        "next": {
-          "$ref": 115
         }
       },
       {
@@ -1436,14 +1414,14 @@
           "class": "captioned-image"
         },
         "children": [
+          114,
+          115,
           116,
-          117,
-          118,
-          123
+          121
         ],
         "parent": null,
         "prev": {
-          "$ref": 114
+          "$ref": 112
         },
         "next": null
       },
@@ -1457,24 +1435,24 @@
         },
         "children": [],
         "parent": {
-          "$ref": 115
+          "$ref": 113
         },
         "prev": null,
         "next": {
-          "$ref": 117
+          "$ref": 115
         }
       },
       {
         "type": "text",
         "data": "\n                    ",
         "parent": {
-          "$ref": 115
+          "$ref": 113
         },
         "prev": {
-          "$ref": 116
+          "$ref": 114
         },
         "next": {
-          "$ref": 118
+          "$ref": 116
         }
       },
       {
@@ -1483,29 +1461,29 @@
         "kind": "tag",
         "attrs": {},
         "children": [
-          119,
-          120,
-          122
+          117,
+          118,
+          120
         ],
         "parent": {
-          "$ref": 115
+          "$ref": 113
         },
         "prev": {
-          "$ref": 117
+          "$ref": 115
         },
         "next": {
-          "$ref": 123
+          "$ref": 121
         }
       },
       {
         "type": "text",
         "data": "Ore distribution in snapshot 21w08a. ",
         "parent": {
-          "$ref": 118
+          "$ref": 116
         },
         "prev": null,
         "next": {
-          "$ref": 120
+          "$ref": 118
         }
       },
       {
@@ -1516,23 +1494,23 @@
           "href": "https://images.ctfassets.net/8y6ykjruobr4/73xBtA88xuZQ3fKYH3pX6G/83cc7b912a6c08097d1e7e96e7ed6e96/snapshot-21w08a-ore-distribution.jpg"
         },
         "children": [
-          121
+          119
         ],
         "parent": {
-          "$ref": 118
+          "$ref": 116
         },
         "prev": {
-          "$ref": 119
+          "$ref": 117
         },
         "next": {
-          "$ref": 122
+          "$ref": 120
         }
       },
       {
         "type": "text",
         "data": "Click here",
         "parent": {
-          "$ref": 120
+          "$ref": 118
         },
         "prev": null,
         "next": null
@@ -1541,10 +1519,10 @@
         "type": "text",
         "data": " for a link to the image in full resolution.",
         "parent": {
-          "$ref": 118
+          "$ref": 116
         },
         "prev": {
-          "$ref": 120
+          "$ref": 118
         },
         "next": null
       },
@@ -1552,10 +1530,10 @@
         "type": "text",
         "data": "\r\n\n                ",
         "parent": {
-          "$ref": 115
+          "$ref": 113
         },
         "prev": {
-          "$ref": 118
+          "$ref": 116
         },
         "next": null
       }

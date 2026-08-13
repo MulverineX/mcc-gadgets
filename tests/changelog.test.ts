@@ -61,7 +61,7 @@ const CORPUS: CorpusEntry[] = [
   { version: "1.11", snapshotName: "1-11" },
   { version: "17w06a", snapshotName: "snapshot-17w06a" },
   { version: "1.12-pre6", snapshotName: "1-12-pre-release-6" },
-  //{ version: "1.14-pre1", snapshotName: "1-14-pre-release-1"},
+  { version: "1.14-pre1", snapshotName: "1-14-pre-release-1"},
   { version: "20w14infinite", snapshotName: "snapshot-20w14infinite" },
   { version: "21w08a", snapshotName: "snapshot-21w08a"},
   { version: "21w08b", snapshotName: "snapshot-21w08b"},
@@ -257,11 +257,16 @@ describe("changelog_parser — corpus", () => {
         htmlSnapshot: entry.snapshotName,
         cdxFetch: cache.cdxFetcher(),
       });
-      if (!result) {
-        console.warn(`[skip] ${entry.version}: unresolved`);
-        return;
-      }
+      // Resolver failures must surface as test failures, not silent skips.
+      // A version the resolver can't reach is a regression we want to catch.
+      expect(result).not.toBeNull();
+      if (!result) return; // narrow type for the next line
       const response = result;
+      // A successful fetch with no body AND no bugList means the parser
+      // produced nothing usable — also a regression, not a silent skip.
+      const emptyBody = response.body.nodes.length === 0;
+      const emptyBugs = response.bugList.length === 0;
+      expect(emptyBody && emptyBugs).toBe(false);
 
       const existing = cache.readSnapshot<typeof response>(entry.snapshotName);
       if (process.env.UPDATE_SNAPSHOTS === "1" || !existing) {

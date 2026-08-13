@@ -103,17 +103,29 @@ export function normalizeVersion(version: string): string {
  * the trailing two slots default to `""` and `0`.
  */
 export function parseVersionTuple(v: string): (number | string)[] {
+  // Accepts both the heading format ("1.14 PRE-RELEASE 5") and the manifest
+  // id format ("1.14-pre5"). Snapshot ids always have a digit (`26.1-snapshot-3`);
+  // pre-release ids may or may not (`1.14-pre1` vs hypothetical `1.14-pre-1`).
   const m =
-    /^(\d+)\.(\d+)(?:\.(\d+))?(?:\s+(pre-release|release-candidate|snapshot)\s*(\d+)?)?$/i.exec(
+    /^(\d+)\.(\d+)(?:\.(\d+))?(?:[- ](?:(pre-?release|pre|rc|release-?candidate)(?:[- ]?(\d+))?|snapshot(?:[- ](\d+))?))?$/i.exec(
       v,
     );
   if (!m) return [0, 0, 0, "", 0];
+  const rawKind = m[4] ? m[4].toLowerCase().replace(/[-\s]+/g, "") : "";
+  const normKind =
+    rawKind === "prerelease" || rawKind === "pre"
+      ? "pre-release"
+      : rawKind === "rc" || rawKind === "releasecandidate"
+        ? "release-candidate"
+        : "";
+  // Snapshot branch puts the digit in m[6]; pre-release/rc branches put it in m[5].
+  const digit = m[4] ? Number(m[5] ?? "0") : Number(m[6] ?? "0");
   return [
     Number(m[1]),
     Number(m[2]),
     Number(m[3] ?? "0"),
-    (m[4] ?? "").toLowerCase(),
-    Number(m[5] ?? "0"),
+    normKind,
+    digit,
   ];
 }
 
@@ -163,12 +175,73 @@ export function pickRange(
   version: string,
 ): SectionRange | null {
   if (ranges.length === 0) return null;
+  const target = parseVersionTuple(version);
   const normalized = normalizeVersion(version);
-  const hit = ranges.find(
+  // When the target is parseable, prefer tuple comparison — handles
+  // "1.14 PRE-RELEASE 5" vs "1.14-pre5" mismatches between heading and id
+  // formats. Skip the tuple pass when the target is the default tuple
+  // (unparseable id like "14w05a"): in that case every range also parses
+  // to the default and the tuple check would falsely match anything.
+  const targetIsParseable = !(
+    target[0] === 0 &&
+    target[1] === 0 &&
+    target[2] === 0 &&
+    target[3] === "" &&
+    target[4] === 0
+  );
+  if (targetIsParseable) {
+    const tupleMatch = ranges.find((r) => {
+      if (r.version === "") return false;
+      const t = parseVersionTuple(r.version);
+      return (
+        t[0] === target[0] &&
+        t[1] === target[1] &&
+        t[2] === target[2] &&
+        t[3] === target[3] &&
+        t[4] === target[4]
+      );
+    });
+    if (tupleMatch) return tupleMatch;
+  }
+  const literalMatch = ranges.find(
     (r) => r.version !== "" && normalizeVersion(r.version) === normalized,
   );
-  if (hit) return hit;
+  if (literalMatch) return literalMatch;
   return ranges.find((r) => r.version === "") ?? ranges[0]!;
+}
+
+/**
+ * Find the range with the smallest version tuple — the chronologically
+ * earliest version on a merged article page. Used to decide which range
+ * owns the page-level intro prose.
+ *
+ * Ranges without a version (version === "") are skipped — they came from
+ * plain "Changes" / "New Features" headings and don't participate in the
+ * version comparison. For unparseable ids (e.g. legacy snapshots like
+ * "14w05a" whose tuple is the default), falls back to literal string
+ * comparison so the alphabet still orders them correctly.
+ */
+export function findOldestRange(ranges: SectionRange[]): SectionRange | null {
+  if (ranges.length === 0) return null;
+  let oldest: SectionRange | null = null;
+  for (const r of ranges) {
+    if (r.version === "") continue;
+    if (oldest === null) {
+      oldest = r;
+      continue;
+    }
+    const aTuple = parseVersionTuple(r.version);
+    const bTuple = parseVersionTuple(oldest.version);
+    const cmp = compareVersionTuple(aTuple, bTuple);
+    if (cmp < 0) {
+      oldest = r;
+    } else if (cmp === 0 && normalizeVersion(r.version) < normalizeVersion(oldest.version)) {
+      // Tuples tied (both default for unparseable ids) — fall back to
+      // alphabetical comparison so "21w08a" sorts before "21w08b".
+      oldest = r;
+    }
+  }
+  return oldest ?? ranges[0]!;
 }
 
 export function findMojiraId(root: Element): `MC-${number}` | null {
@@ -264,6 +337,28 @@ export function buildBodyElement(range: SectionRange): BugRef[] {
   const bugList: BugRef[] = [];
   const bugListUls: Element[] = [];
   for (const ul of collectUlsInRoots(sectionChildren)) {
+    // Find the last bug li BEFORE we start detaching — once bug lis are
+    // detached, findMojiraId won't find them anymore and we can't tell
+    // where "after the bugs" starts. Anything past this index (text
+    // nodes, <li>s) gets dropped after the bug extraction loop.
+    const lastBugLiIdx = (() => {
+      const kids = (ul.children ?? []) as Element[];
+      let lastIdx = -1;
+      for (let i = kids.length - 1; i >= 0; i--) {
+        const c = kids[i]!;
+        if (isTag(c) && c.tagName === "li") {
+          const id = findMojiraId(c);
+          if (process.env.DEBUG_BUGLIST === "1" && id) {
+            console.error(
+              `[buglist] ul child idx=${i} tag=${c.tagName} bugId=${id} text=${textOf(c).slice(0, 50)}`,
+            );
+          }
+          if (id !== null) lastIdx = i;
+        }
+      }
+      return lastIdx;
+    })();
+
     const lis = (ul.children ?? []).filter(
       (c) => isTag(c) && c.tagName === "li",
     ) as Element[];
@@ -283,12 +378,56 @@ export function buildBodyElement(range: SectionRange): BugRef[] {
         detach(li);
       }
     }
+    // Drop any <li> that lived AFTER the last bug li. Those are typically
+    // meta closings ("And many more that weren't on the bug tracker...",
+    // "Added some new bugs!", "Added some new covfefe!"), not article
+    // content. Lis BEFORE the last bug stay — they may be real content
+    // like "Optimized recipe book & ..." in a 1.12-pre6 changes ul.
+    if (lastBugLiIdx !== -1) {
+      const kids = (ul.children ?? []) as Element[];
+      if (process.env.DEBUG_BUGLIST === "1") {
+        console.error(
+          `[buglist] lastBugLiIdx=${lastBugLiIdx} ulChildrenAfterDetach=${kids.length}`,
+        );
+        for (let i = 0; i < kids.length; i++) {
+          const c = kids[i]!;
+          console.error(
+            `[buglist]   post[${i}] tag=${isTag(c) ? c.tagName : "text"} text=${textOf(c as Element).slice(0, 60)}`,
+          );
+        }
+      }
+      for (let i = kids.length - 1; i > lastBugLiIdx; i--) {
+        const c = kids[i]!;
+        if (isTag(c) && c.tagName === "li") detach(c);
+      }
+    }
   }
 
   for (const ul of bugListUls) {
-    const header = findPrecedingBugListHeader(ul);
-    if (header) detach(header);
-    detach(ul);
+    const afterTrim = (ul.children ?? []).filter(
+      (c) => isTag(c) && c.tagName === "li",
+    ) as Element[];
+    // The header lives in the original DOM tree (its parent.children),
+    // not in sectionChildren — sectionChildren is a filtered slice of
+    // mainChildren that aliases the same elements. detach() updates the
+    // original parent but leaves the alias list unchanged, so we must also
+    // splice header / ul out of sectionChildren explicitly.
+    const drop = (node: Element) => {
+      detach(node);
+      const idx = sectionChildren.indexOf(node);
+      if (idx !== -1) sectionChildren.splice(idx, 1);
+    };
+    if (afterTrim.length === 0) {
+      // Every <li> was a bug entry — drop the whole ul + its header.
+      const header = findPrecedingBugListHeader(ul);
+      if (header) drop(header as Element);
+      drop(ul as Element);
+    } else {
+      // Keep the ul (still has real content lis) but drop the heading —
+      // it described the bug list we just stripped out.
+      const header = findPrecedingBugListHeader(ul);
+      if (header) drop(header as Element);
+    }
   }
 
   for (const ul of [...sectionChildren]) {
