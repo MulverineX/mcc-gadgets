@@ -1,0 +1,42 @@
+{
+  "version": "22w16b",
+  "heroImage": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/snapshot-22w16a-header.jpg",
+  "source": "minecraft.net",
+  "body": {
+    "nodes": [
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          1
+        ],
+        "parent": null,
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "We've now released snapshot 22w16b to fix a crash.",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": null,
+        "next": null
+      }
+    ]
+  },
+  "bugList": [
+    {
+      "id": "MC-250312",
+      "title": "Game crashing when clicking singleplayer || java.lang.NullPointerException: Cannot invoke \"java.lang.Comparable.compareTo(Object)\" because \"pivot\" is null"
+    }
+  ],
+  "merged": true,
+  "shortText": "We've now released snapshot 22w16b to fix a crash.",
+  "title": "Minecraft Snapshot 22w16b",
+  "targetRelease": "1.19",
+  "publishedAt": 1650475532,
+  "sourceURL": "https://www.minecraft.net/en-us/article/minecraft-snapshot-22w16a"
+}

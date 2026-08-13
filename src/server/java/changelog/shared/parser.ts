@@ -544,11 +544,29 @@ function splitMinecraftNetByVersion(
   // The main X range absorbs intro paragraphs (idx 0..firstFixedBugsIdx)
   // but skips this meta block, which belongs to Y's follow-up data.
   const followUpSkipIndices = new Set<number>();
+  // Bug `<ul>` index captured during the skip walk so the Y range can be
+  // bounded tightly past it (the off-by-one on "+2" bites when whitespace
+  // text nodes sit between the Fixed Bugs header and the list).
+  let followUpBugUlIdx = -1;
+  // Earliest "Update:" paragraph index found in the skip walk — used as
+  // the Y range's sectionStart so the hotfix lead-in prose is captured
+  // with Y, not dropped. Stays at -1 when no Update paragraph exists;
+  // the Y range then starts at the Fixed Bugs header itself.
+  let followUpStartIdx = -1;
   if (followUpNotePattern) {
-    // Find the "Update:" lead paragraph, if present.
+    // Find the "Update:" lead paragraph(s), if present. Prefer one that
+    // explicitly names the target snapshot (e.g. "We've now released
+    // snapshot 22w16b to fix a crash"); fall back to the earliest "Update:"
+    // paragraph so the lead-in prose is captured with Y when no specific
+    // version is named.
     for (let i = 0; i < firstFixedBugsIdx; i++) {
       const text = trimmedTextOf(sectionChildren[i]!);
-      if (/^update:/i.test(text)) followUpSkipIndices.add(i);
+      if (!/^update:/i.test(text)) continue;
+      followUpSkipIndices.add(i);
+      if (followUpStartIdx === -1) followUpStartIdx = i;
+      if (text.toLowerCase().includes(version.toLowerCase())) {
+        followUpStartIdx = i;
+      }
     }
     // The "Fixed bugs in Y" header itself.
     followUpSkipIndices.add(firstFixedBugsIdx);
@@ -561,7 +579,10 @@ function splitMinecraftNetByVersion(
     ) {
       followUpSkipIndices.add(i);
       const sib = sectionChildren[i]!;
-      if (sib.tagName === "ul") break;
+      if (sib.tagName === "ul") {
+        followUpBugUlIdx = i;
+        break;
+      }
     }
     followUpSkip = followUpSkipIndices;
   }
@@ -570,7 +591,22 @@ function splitMinecraftNetByVersion(
   // version strings. Each section starts at such a heading and runs until
   // the next one.
   const ranges: SectionRange[] = [];
-  let current: { version: string; rawTitle: string; sectionStart: number } | null = null;
+  let current: {
+    version: string;
+    rawTitle: string;
+    sectionStart: number;
+    /**
+     * True when this section opened with a "Fixed bugs in Y" header before
+     * any "Changes in X" in the article — the follow-up-note pattern.
+     * The Y section is just a hotfix bug list (plus an optional "Update:"
+     * paragraph above it), so its range is bounded tightly to the
+     * header + bug `<ul>` rather than running to the next "Changes in X".
+     * Without this, the Y range swallows the original X's intermediate
+     * `h2`s (e.g. "New Features in X") that aren't recognized section
+     * dividers.
+     */
+    followUp?: boolean;
+  } | null = null;
 
   for (let i = 0; i < sectionChildren.length; i++) {
     const child = sectionChildren[i]!;
@@ -623,7 +659,14 @@ function splitMinecraftNetByVersion(
       if (current) {
         ranges.push({
           ...current,
-          children: sliceRange(current.sectionStart, i),
+          // Follow-up (Y) sections are bounded tightly: they cover just the
+          // leading "Update:" paragraph (if any) through the bug `<ul>`
+          // right after Y's "Fixed bugs" header. Anything past the bug
+          // `<ul>` belongs to X, not Y, even if X's next h2 ("New
+          // Features in X") isn't a recognized section divider.
+          children: current.followUp
+            ? sliceRange(current.sectionStart, followUpBugUlIdx + 1)
+            : sliceRange(current.sectionStart, i),
         });
       }
       // For the follow-up-note pattern, anchor the first "Changes in X"
@@ -639,7 +682,32 @@ function splitMinecraftNetByVersion(
       // heading's "X" (e.g. "26.1-snapshot-1" vs "26.1 Snapshot 1"), but
       // they're the same release. Just absorb the heading without opening
       // a new section.
-      current ??= startSection(versionStr, child, i);
+      // Mark as follow-up when this opens a brand-new section with "Fixed
+      // bugs in X" before any "Changes in X" has been seen — that's the
+      // hotfix-prepended pattern, and the range needs to be bounded
+      // tightly (see the push branch above). Pull the sectionStart back
+      // to include the leading "Update:" paragraph so its prose is
+      // captured with the hotfix rather than dropped by the X-side skip
+      // set.
+      if (!current && /^fixed bugs? in\b/i.test(headingMatch?.[1] ?? "")) {
+        // Pull sectionStart back to the leading "Update:" paragraph (when
+        // present) so its prose is captured with the hotfix rather than
+        // dropped by the X-side skip set. `followUpStartIdx` is set during
+        // the skip walk; -1 means no Update paragraph exists, in which
+        // case the section starts at the Fixed Bugs header itself. Strip
+        // the `<b>Update</b>` label + trailing `<br>`/whitespace from the
+        // adopted paragraph so the body reads as plain prose.
+        const sectionStart = followUpStartIdx !== -1 ? followUpStartIdx : i;
+        if (followUpStartIdx !== -1) {
+          stripUpdateLeadIn(sectionChildren[sectionStart]! as Element);
+        }
+        current = {
+          ...startSection(versionStr, child, sectionStart),
+          followUp: true,
+        };
+      } else {
+        current ??= startSection(versionStr, child, i);
+      }
     }
   }
 
@@ -1194,6 +1262,40 @@ function detach(child: Element): void {
   if (!parent || !Array.isArray(parent.children)) return;
   parent.children = parent.children.filter((c) => c !== child);
   (child as { parent: Element | null }).parent = null;
+}
+
+/**
+ * Strip a hotfix lead-in paragraph in place: drop the leading `<b>Update</b>`
+ * (or any other leading `<b>` label) and any leading whitespace/colons, and
+ * trim trailing `<br>`/whitespace text nodes. Used on the "Update:" paragraph
+ * adopted as the Y range's sectionStart so the body reads as plain prose
+ * (e.g. "We've now released snapshot 22w16b to fix a crash.") instead of
+ * carrying the original bolded label + line break.
+ */
+function stripUpdateLeadIn(p: Element): void {
+  // Drop leading <b> label + any leading whitespace/colon text. The
+  // trailing junk (whitespace text + the `<br>` line break minecraft.net
+  // uses between the lead-in and the next section) is then cleared by
+  // `trimEmptyEdgesInPlace` — `textOf(<br>)` is `""`, so `<br>` already
+  // satisfies its emptiness check.
+  while (p.children && p.children.length > 0) {
+    const first = p.children[0]!;
+    if (isText(first)) {
+      const trimmed = (first.data ?? "").replace(/^[\s:]+/, "");
+      if (trimmed === "") {
+        detach(first as unknown as Element);
+        continue;
+      }
+      if (trimmed !== first.data) first.data = trimmed;
+      break;
+    }
+    if (/^b$/i.test((first as Element).tagName ?? "")) {
+      detach(first as unknown as Element);
+      continue;
+    }
+    break;
+  }
+  trimEmptyEdgesInPlace((p.children ?? []) as Element[]);
 }
 
 function containerChildren(container: Element): Element[] {

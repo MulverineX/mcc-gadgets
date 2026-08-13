@@ -66,9 +66,9 @@ const CORPUS: CorpusEntry[] = [
   { version: "21w08b", snapshotName: "snapshot-21w08b"},
   { version: "1.19.1-pre3", snapshotName: "1-19-1-pre-release-3" },
   { version: "22w16a", snapshotName: "snapshot-22w16a"},
-  // TODO: Bugged, grabbing prose from the A snapshot and missing the "We've now released snapshot 22w16b to fix a crash."
-  // { version: "22w16b", snapshotName: "snapshot-22w16b"},
+  { version: "22w16b", snapshotName: "snapshot-22w16b"},
   { version: "26.1-snapshot-1", snapshotName: "26-1-snapshot-1" },
+  { version: "26.1", snapshotName: "26-1"},
   { version: "26.2-snapshot-3", snapshotName: "26-2-snapshot-3" },
 ];
 
@@ -331,14 +331,13 @@ describe("changelog_parser — corpus", () => {
           ? `Released <time class="released" data-unix="${snapshot.publishedAt}"></time>`
           : "") +
         `</p>`;
-      // TODO: This revealed that the URL resolution broke again, it was hidden by the cached html, we need to fix the 1.10.1/1.10.2 article resolution
       const source = `<p class="source-url">Source: <a href="${snapshot.sourceURL}">${snapshot.sourceURL}</a></p>`
       const bugList = snapshot.bugList?.length
-        ? `<h3>Fixed Bugs</h3><ul>${snapshot.bugList
+        ? `<h3>Fixed Bugs</h3><details><summary></summary>\n\n<ul>${snapshot.bugList
             .map((b) => `<li><a href="https://mojira.dev/${escapeHtml(b.id)}"><code>${escapeHtml(b.id)}</code></a> — ${escapeHtml(b.title)}</li>`)
-            .join("")}</ul>`
+            .join("")}</ul></details>`
         : "";
-      return `<section>${hero}<h1>${escapeHtml(humanReadableTitle(snapshot.version))}</h1>${meta}${source}${html}${bugList}</section>`;
+      return `<section>${hero}<h1>${escapeHtml(humanReadableTitle(snapshot.version))}</h1>${meta}${source}<details><summary>Changelog</summary>\n\n${html}</details>${bugList}</section>`;
     });
     const style = `<style>
 :root {

@@ -127,7 +127,16 @@ export async function resolveLegacyWaybackUrlRaw(
       // patch) additionally probes the start month when the window crosses
       // a month boundary — that's where pre-releases can ship.
       for (const [i, slug] of attempts.entries()) {
-        const slugWindows = legacyWindowsFor(slug);
+        // `slug` is the article slug (e.g. `minecraft-1101`); `legacyWindowsFor`
+        // expects a manifest version id (e.g. `1.10.1`). Translate before lookup,
+        // otherwise the cascade skips every patch and falls through to the
+        // base-release wildcard scan, which returns the wrong article for
+        // any version whose base release has its own page (e.g. 1.10.1
+        // resolving to `minecraft-110-an-update-of-fire-and-ice`).
+        const prefix = `minecraft-${major}${minor}`;
+        const slugVersion =
+          slug === prefix ? `${major}.${minor}` : `${major}.${minor}.${slug.slice(prefix.length)}`;
+        const slugWindows = legacyWindowsFor(slugVersion);
         const sw = slugWindows?.[0];
         if (!sw) continue;
         const releaseMonth = getMonthFromWeek(sw.year, sw.weekEnd);
