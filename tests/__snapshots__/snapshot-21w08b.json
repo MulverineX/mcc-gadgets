@@ -1,0 +1,23 @@
+{
+  "version": "21w08b",
+  "heroImage": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/snapshot-21w08a-header.jpg",
+  "source": "minecraft.net",
+  "body": {
+    "nodes": []
+  },
+  "bugList": [
+    {
+      "id": "MC-216744",
+      "title": "Iron ore doesn’t generate (only iron ore in deepslate is generated)"
+    },
+    {
+      "id": "MC-216101",
+      "title": "Redstone ore generates with a flat distribution below y=12"
+    }
+  ],
+  "merged": true,
+  "shortText": "",
+  "title": "Minecraft Snapshot 21w08b",
+  "targetRelease": "1.17",
+  "publishedAt": 1614253594
+}

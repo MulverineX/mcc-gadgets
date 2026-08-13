@@ -1,5 +1,10 @@
 {
   "conventionalCommits.scopes": ["vercel", "internal", "deps"],
   "typescript.tsdk": "node_modules\\typescript\\lib",
-  "tailwindCSS.classAttributes": ["class", "className", ".*ClassName"]
+  "tailwindCSS.classAttributes": ["class", "className", ".*ClassName"],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "scripts/data/example-articles/parsed": true,
+  }
 }

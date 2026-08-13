@@ -1,0 +1,55 @@
+{
+  "version": "14w33b",
+  "heroImage": null,
+  "source": "mojang",
+  "body": {
+    "nodes": []
+  },
+  "bugList": [
+    {
+      "id": "MC-4490",
+      "title": "Fishing Rod not Attached in 3rd Person While Crouching"
+    },
+    {
+      "id": "MC-50321",
+      "title": "Fishing line not connected to the rod in third person view"
+    },
+    {
+      "id": "MC-64456",
+      "title": "Fishing Rod Bug in 3rd Person"
+    },
+    {
+      "id": "MC-65112",
+      "title": "Grass Block shows a damage value of 0 when tooltips are enabled"
+    },
+    {
+      "id": "MC-65521",
+      "title": "Armor Stands consume whole stack of Items in Survival"
+    },
+    {
+      "id": "MC-65533",
+      "title": "Efficiency enchantment does not work on shovels and axes"
+    },
+    {
+      "id": "MC-66970",
+      "title": "Major texture disortion for Redstone, Stairs, Cobblestone Walls, Fences and Fence Gates"
+    },
+    {
+      "id": "MC-66983",
+      "title": "Game crashes when placing a torch or redstone torch on the bottom of a block"
+    },
+    {
+      "id": "MC-67141",
+      "title": "Hopper: java.lang.IllegalArgumentException"
+    },
+    {
+      "id": "MC-67142",
+      "title": "Hopper: java.lang.IllegalArgumentException"
+    }
+  ],
+  "merged": true,
+  "shortText": "",
+  "title": "Minecraft Snapshot 14w33b",
+  "targetRelease": "1.8",
+  "publishedAt": 1408119831
+}

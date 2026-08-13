@@ -1,0 +1,658 @@
+{
+  "version": "14w05a",
+  "heroImage": "https://web.archive.org/web/20180912022110im_/https://media.mojang.com/7284588e09e93aee58cba324dc0809924bcb7616/14w05a.png",
+  "source": "mojang",
+  "body": {
+    "nodes": [
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          1
+        ],
+        "parent": null,
+        "prev": null,
+        "next": {
+          "$ref": 2
+        }
+      },
+      {
+        "type": "text",
+        "data": "One day this piece of text will contain some really important information that could change the fate of Humanity, and nobody would know because nobody reads this text anyway. Oh, sorry, what was that? Snapshot? Oh right yes of course! Here we go:",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n\n",
+        "parent": null,
+        "prev": {
+          "$ref": 0
+        },
+        "next": {
+          "$ref": 3
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          4
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 2
+        },
+        "next": {
+          "$ref": 5
+        }
+      },
+      {
+        "type": "text",
+        "data": "Notable additions for survival:",
+        "parent": {
+          "$ref": 3
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n\n",
+        "parent": null,
+        "prev": {
+          "$ref": 3
+        },
+        "next": {
+          "$ref": 6
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          7,
+          8,
+          10,
+          11,
+          13
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 5
+        },
+        "next": {
+          "$ref": 14
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n  ",
+        "parent": {
+          "$ref": 6
+        },
+        "prev": null,
+        "next": {
+          "$ref": 8
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          9
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 7
+        },
+        "next": {
+          "$ref": 10
+        }
+      },
+      {
+        "type": "text",
+        "data": "Book copying mechanics has been altered to differentiate the original & copies of books",
+        "parent": {
+          "$ref": 8
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n  ",
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 8
+        },
+        "next": {
+          "$ref": 11
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          12
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 10
+        },
+        "next": {
+          "$ref": 13
+        }
+      },
+      {
+        "type": "text",
+        "data": "Activator rails can eject entities from Minecarts",
+        "parent": {
+          "$ref": 11
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 11
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n\n",
+        "parent": null,
+        "prev": {
+          "$ref": 6
+        },
+        "next": {
+          "$ref": 15
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          16
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 14
+        },
+        "next": {
+          "$ref": 17
+        }
+      },
+      {
+        "type": "text",
+        "data": "Notable additions for mapmakers:",
+        "parent": {
+          "$ref": 15
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n\n",
+        "parent": null,
+        "prev": {
+          "$ref": 15
+        },
+        "next": {
+          "$ref": 18
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          19,
+          20,
+          22,
+          23,
+          25,
+          26,
+          28,
+          29,
+          31,
+          32,
+          34,
+          35,
+          37,
+          38,
+          40
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 17
+        },
+        "next": {
+          "$ref": 41
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n  ",
+        "parent": {
+          "$ref": 18
+        },
+        "prev": null,
+        "next": {
+          "$ref": 20
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          21
+        ],
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 19
+        },
+        "next": {
+          "$ref": 22
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added a spectator gamemode (/gamemode spectator). Not 100% finished.",
+        "parent": {
+          "$ref": 20
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n  ",
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 20
+        },
+        "next": {
+          "$ref": 23
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          24
+        ],
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 22
+        },
+        "next": {
+          "$ref": 25
+        }
+      },
+      {
+        "type": "text",
+        "data": "Spectators cannot be seen by anybody but other spectators",
+        "parent": {
+          "$ref": 23
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n  ",
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 23
+        },
+        "next": {
+          "$ref": 26
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          27
+        ],
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 25
+        },
+        "next": {
+          "$ref": 28
+        }
+      },
+      {
+        "type": "text",
+        "data": "Spectators can view inventories/etc, but not modify them",
+        "parent": {
+          "$ref": 26
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n  ",
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 26
+        },
+        "next": {
+          "$ref": 29
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          30
+        ],
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 28
+        },
+        "next": {
+          "$ref": 31
+        }
+      },
+      {
+        "type": "text",
+        "data": "Spectators can go through any entity or block without interfering with it",
+        "parent": {
+          "$ref": 29
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n  ",
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 29
+        },
+        "next": {
+          "$ref": 32
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          33
+        ],
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 31
+        },
+        "next": {
+          "$ref": 34
+        }
+      },
+      {
+        "type": "text",
+        "data": "Spectators can click on entities to take their camera",
+        "parent": {
+          "$ref": 32
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n  ",
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 32
+        },
+        "next": {
+          "$ref": 35
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          36
+        ],
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 34
+        },
+        "next": {
+          "$ref": 37
+        }
+      },
+      {
+        "type": "text",
+        "data": "Spectators cannot use items, place blocks, destroy blocks or interact with blocks in any way",
+        "parent": {
+          "$ref": 35
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n  ",
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 35
+        },
+        "next": {
+          "$ref": 38
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          39
+        ],
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 37
+        },
+        "next": {
+          "$ref": 40
+        }
+      },
+      {
+        "type": "text",
+        "data": "Spectators are only slightly buggy maybe sometimes",
+        "parent": {
+          "$ref": 38
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": {
+          "$ref": 18
+        },
+        "prev": {
+          "$ref": 38
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\n\n",
+        "parent": null,
+        "prev": {
+          "$ref": 18
+        },
+        "next": {
+          "$ref": 42
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n",
+        "parent": null,
+        "prev": {
+          "$ref": 41
+        },
+        "next": {
+          "$ref": 43
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          44
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 42
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Bugs fixed in this snapshot:",
+        "parent": {
+          "$ref": 43
+        },
+        "prev": null,
+        "next": null
+      }
+    ]
+  },
+  "bugList": [
+    {
+      "id": "MC-38944",
+      "title": "Joining Realms World “Cancel” Button Mis-Placed"
+    },
+    {
+      "id": "MC-44521",
+      "title": "@a, @e, and any UUID references work incorrectly after a player dies."
+    },
+    {
+      "id": "MC-45050",
+      "title": "/fill … skull\n          Hitbox Bug"
+    },
+    {
+      "id": "MC-45159",
+      "title": "Blocks with tile entities don’t get removed when you clone / fill an airblock to their position."
+    },
+    {
+      "id": "MC-45453",
+      "title": "Items & Blocks placed in item frames are rendered incorrectly"
+    },
+    {
+      "id": "MC-45470",
+      "title": "Items don’t render on the ground properly"
+    },
+    {
+      "id": "MC-45478",
+      "title": "Pre-snapshot14w04a villagers break crops but don’t replant them"
+    },
+    {
+      "id": "MC-45492",
+      "title": "Transparent blocks are much darker"
+    },
+    {
+      "id": "MC-45554",
+      "title": "Two tall flowers variants are not generating."
+    },
+    {
+      "id": "MC-45763",
+      "title": "Some blocks are facing the wrong way if placed in an Item Frame"
+    },
+    {
+      "id": "MC-45764",
+      "title": "Map will not show in item frame"
+    },
+    {
+      "id": "MC-45795",
+      "title": "Villagers can not place or pick up any crops"
+    },
+    {
+      "id": "MC-45847",
+      "title": "/summon Villager Farmer NBT tag canPickUpLoot will default to 0"
+    }
+  ],
+  "merged": true,
+  "shortText": "One day this piece of text will contain some really important information that could change the fate of Humanity, and nobody would know because nobody reads this text anyway. Oh, sorry, what was that? Snapshot? Oh right yes of course! Here we go: Notable additions for survival:",
+  "title": "Minecraft Snapshot 14w05a",
+  "targetRelease": "1.8",
+  "publishedAt": 1391095961
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "target": "ES2022",
+    "noEmit": true,
+    "types": ["@types/bun"],
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["dist"]
+}

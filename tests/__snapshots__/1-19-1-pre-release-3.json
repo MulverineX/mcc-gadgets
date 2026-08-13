@@ -1,0 +1,302 @@
+{
+  "version": "1.19.1-pre3",
+  "heroImage": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1-19-1-pre-release-3-header.jpg",
+  "source": "minecraft.net",
+  "body": {
+    "nodes": [
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          1,
+          7,
+          12
+        ],
+        "parent": null,
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          2,
+          3,
+          6
+        ],
+        "parent": {
+          "$ref": 0
+        },
+        "prev": null,
+        "next": {
+          "$ref": 7
+        }
+      },
+      {
+        "type": "text",
+        "data": "Custom servers can hide player chat messages from display via a new network packet",
+        "parent": {
+          "$ref": 1
+        },
+        "prev": null,
+        "next": {
+          "$ref": 3
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          4
+        ],
+        "parent": {
+          "$ref": 1
+        },
+        "prev": {
+          "$ref": 2
+        },
+        "next": {
+          "$ref": 6
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          5
+        ],
+        "parent": {
+          "$ref": 3
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "This does not delete player chat messages from chat logs",
+        "parent": {
+          "$ref": 4
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 1
+        },
+        "prev": {
+          "$ref": 3
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          8,
+          9,
+          11
+        ],
+        "parent": {
+          "$ref": 0
+        },
+        "prev": {
+          "$ref": 1
+        },
+        "next": {
+          "$ref": 12
+        }
+      },
+      {
+        "type": "text",
+        "data": "Insecure chat messages logged in the server are prefixed with a ",
+        "parent": {
+          "$ref": 7
+        },
+        "prev": null,
+        "next": {
+          "$ref": 9
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightB"
+        },
+        "children": [
+          10
+        ],
+        "parent": {
+          "$ref": 7
+        },
+        "prev": {
+          "$ref": 8
+        },
+        "next": {
+          "$ref": 11
+        }
+      },
+      {
+        "type": "text",
+        "data": "[Not Secure]",
+        "parent": {
+          "$ref": 9
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " tag",
+        "parent": {
+          "$ref": 7
+        },
+        "prev": {
+          "$ref": 9
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          13,
+          14,
+          19
+        ],
+        "parent": {
+          "$ref": 0
+        },
+        "prev": {
+          "$ref": 7
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "The order of chat messages are now cryptographically verified",
+        "parent": {
+          "$ref": 12
+        },
+        "prev": null,
+        "next": {
+          "$ref": 14
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          15
+        ],
+        "parent": {
+          "$ref": 12
+        },
+        "prev": {
+          "$ref": 13
+        },
+        "next": {
+          "$ref": 19
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          16,
+          17,
+          18
+        ],
+        "parent": {
+          "$ref": 14
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "This will be used for validating the context of chat messages for Player Reports",
+        "parent": {
+          "$ref": 15
+        },
+        "prev": null,
+        "next": {
+          "$ref": 17
+        }
+      },
+      {
+        "type": "element",
+        "tag": "br",
+        "kind": "tag",
+        "attrs": {},
+        "children": [],
+        "parent": {
+          "$ref": 15
+        },
+        "prev": {
+          "$ref": 16
+        },
+        "next": {
+          "$ref": 18
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 15
+        },
+        "prev": {
+          "$ref": 17
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 12
+        },
+        "prev": {
+          "$ref": 14
+        },
+        "next": null
+      }
+    ]
+  },
+  "bugList": [
+    {
+      "id": "MC-253743",
+      "title": "The server console doesn’t state if chat messages aren’t secure or have been modified"
+    },
+    {
+      "id": "MC-253813",
+      "title": "Chat commands with entity selectors often reported as “This message is not secure”"
+    }
+  ],
+  "merged": true,
+  "shortText": "Custom servers can hide player chat messages from display via a new network packet: This does not delete player chat messages from chat logs, Insecure chat messages logged in the server are prefixed with a [Not Secure] tag, The order of chat messages are now cryptographically",
+  "title": "Minecraft 1.19.1 Pre-Release 3",
+  "targetRelease": "1.19.1",
+  "publishedAt": 1657119046
+}

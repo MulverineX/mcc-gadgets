@@ -1,0 +1,8 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`versionToCandidates old-format snapshot 1`] = `
+[
+  "minecraft-snapshot-18w22c",
+  "snapshot-18w22c",
+]
+`;

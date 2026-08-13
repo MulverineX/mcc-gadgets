@@ -1,0 +1,51 @@
+{
+  "version": "1.12-pre6",
+  "heroImage": "https://www.minecraft.net/content/dam/minecraftnet/archive/f74e0743bdda3a3ce0b99d5f87145287-snapshot_header.png",
+  "source": "minecraft.net",
+  "body": {
+    "nodes": []
+  },
+  "bugList": [
+    {
+      "id": "MC-59535",
+      "title": "Server log outputs TextComponent object rather than its Text property for player lost connection/Disconnecting message"
+    },
+    {
+      "id": "MC-117764",
+      "title": "No error is logged when using knowledge book with invalid recipes"
+    },
+    {
+      "id": "MC-118002",
+      "title": "Pausing game while moving causes screen shaking"
+    },
+    {
+      "id": "MC-118021",
+      "title": "Parrot spawn egg appears after rabbit spawn egg in English (US)"
+    },
+    {
+      "id": "MC-118036",
+      "title": "Disconnecting from server prints TranslatableComponent{key='multiplayer.disconnect.banned', ...} in log"
+    },
+    {
+      "id": "MC-118038",
+      "title": "Crafting items with no recipe file shows empty toast"
+    },
+    {
+      "id": "MC-118057",
+      "title": "Unexpectedly high CPU usage in menus"
+    },
+    {
+      "id": "MC-118067",
+      "title": "Pressing t in Spectator mode allows you to use recipe book search"
+    },
+    {
+      "id": "MC-118068",
+      "title": "Recipe book uses always t for focusing search instead of chat keybinding"
+    }
+  ],
+  "merged": true,
+  "shortText": "",
+  "title": "Minecraft 1.12 Pre-Release 6",
+  "targetRelease": "1.12",
+  "publishedAt": 1496058312
+}

@@ -1,0 +1,95 @@
+{
+  "version": "14w05b",
+  "heroImage": "https://web.archive.org/web/20180912022110im_/https://media.mojang.com/7284588e09e93aee58cba324dc0809924bcb7616/14w05a.png",
+  "source": "mojang",
+  "body": {
+    "nodes": []
+  },
+  "bugList": [
+    {
+      "id": "MC-1607",
+      "title": "Ghost End Portal in The End / Missing layer with AMD/ATI graphics cards"
+    },
+    {
+      "id": "MC-45763",
+      "title": "Some blocks are facing the wrong way if placed in an Item Frame"
+    },
+    {
+      "id": "MC-45826",
+      "title": "Item frames pop off / rendered on wrong side of block when upgrading to 14w04b"
+    },
+    {
+      "id": "MC-46402",
+      "title": "Flying in Spectator Mode counts as Flying in Survival Mode and kicks you off the server"
+    },
+    {
+      "id": "MC-46416",
+      "title": "Hopper: java.lang.NullPointerException: Unexpected error"
+    },
+    {
+      "id": "MC-46420",
+      "title": "Hopper: java.lang.ArrayIndexOutOfBoundsException: 44339"
+    },
+    {
+      "id": "MC-46422",
+      "title": "Barrier have shadows"
+    },
+    {
+      "id": "MC-46427",
+      "title": "Breaking barriers create lava and water particles"
+    },
+    {
+      "id": "MC-46435",
+      "title": "Reticle Appears on Tile Entities In Spectator Mode"
+    },
+    {
+      "id": "MC-46442",
+      "title": "Hopper: java.lang.ArrayIndexOutOfBoundsException: -1"
+    },
+    {
+      "id": "MC-46444",
+      "title": "You can’t pass through entities when you disconnect/reconnect while in spectator mode"
+    },
+    {
+      "id": "MC-46447",
+      "title": "Repairing Tools No Longer Works"
+    },
+    {
+      "id": "MC-46465",
+      "title": "Changing the language breaks the shader when looking through an entity’s camera"
+    },
+    {
+      "id": "MC-46467",
+      "title": "Hopper: java.lang.RuntimeException: Already decorating"
+    },
+    {
+      "id": "MC-46472",
+      "title": "Spectator mode - speeding up/down works only first time"
+    },
+    {
+      "id": "MC-46485",
+      "title": "‘Flip’ shader pack shows black screen"
+    },
+    {
+      "id": "MC-46489",
+      "title": "Summoning Barrier as FallingSand Entity crashes the game"
+    },
+    {
+      "id": "MC-46563",
+      "title": "When spectating mob in f5 mode, perspective effect remains."
+    },
+    {
+      "id": "MC-46576",
+      "title": "Crash when inside a barrier block"
+    },
+    {
+      "id": "MC-46594",
+      "title": "Debug menu not updating shader description correctly"
+    }
+  ],
+  "merged": true,
+  "shortText": "",
+  "title": "Minecraft Snapshot 14w05b",
+  "targetRelease": "1.8",
+  "publishedAt": 1391177150
+}

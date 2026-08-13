@@ -1,0 +1,4919 @@
+{
+  "version": "26.2-snapshot-3",
+  "heroImage": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/26.2-snapshot-3%201170x500.jpg",
+  "source": "minecraft.net",
+  "body": {
+    "nodes": [
+      {
+        "type": "element",
+        "tag": "h2",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          1
+        ],
+        "parent": null,
+        "prev": null,
+        "next": {
+          "$ref": 2
+        }
+      },
+      {
+        "type": "text",
+        "data": "Changes",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 0
+        },
+        "next": {
+          "$ref": 3
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          4,
+          6
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 2
+        },
+        "next": {
+          "$ref": 31
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          5
+        ],
+        "parent": {
+          "$ref": 3
+        },
+        "prev": null,
+        "next": {
+          "$ref": 6
+        }
+      },
+      {
+        "type": "text",
+        "data": "The Potent Sulfur block no longer crafts back into Sulfur blocks",
+        "parent": {
+          "$ref": 4
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          7,
+          8,
+          30
+        ],
+        "parent": {
+          "$ref": 3
+        },
+        "prev": {
+          "$ref": 4
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Updated the textures for the following blocks:",
+        "parent": {
+          "$ref": 6
+        },
+        "prev": null,
+        "next": {
+          "$ref": 8
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          9,
+          12,
+          15,
+          18,
+          21,
+          24,
+          27
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 7
+        },
+        "next": {
+          "$ref": 30
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          10
+        ],
+        "parent": {
+          "$ref": 8
+        },
+        "prev": null,
+        "next": {
+          "$ref": 12
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          11
+        ],
+        "parent": {
+          "$ref": 9
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Chiseled Cinnabar",
+        "parent": {
+          "$ref": 10
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          13
+        ],
+        "parent": {
+          "$ref": 8
+        },
+        "prev": {
+          "$ref": 9
+        },
+        "next": {
+          "$ref": 15
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          14
+        ],
+        "parent": {
+          "$ref": 12
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Chiseled Sulfur",
+        "parent": {
+          "$ref": 13
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          16
+        ],
+        "parent": {
+          "$ref": 8
+        },
+        "prev": {
+          "$ref": 12
+        },
+        "next": {
+          "$ref": 18
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          17
+        ],
+        "parent": {
+          "$ref": 15
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Cinnabar",
+        "parent": {
+          "$ref": 16
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          19
+        ],
+        "parent": {
+          "$ref": 8
+        },
+        "prev": {
+          "$ref": 15
+        },
+        "next": {
+          "$ref": 21
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          20
+        ],
+        "parent": {
+          "$ref": 18
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Cinnabar Bricks",
+        "parent": {
+          "$ref": 19
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          22
+        ],
+        "parent": {
+          "$ref": 8
+        },
+        "prev": {
+          "$ref": 18
+        },
+        "next": {
+          "$ref": 24
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          23
+        ],
+        "parent": {
+          "$ref": 21
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Polished Cinnabar",
+        "parent": {
+          "$ref": 22
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          25
+        ],
+        "parent": {
+          "$ref": 8
+        },
+        "prev": {
+          "$ref": 21
+        },
+        "next": {
+          "$ref": 27
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          26
+        ],
+        "parent": {
+          "$ref": 24
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Polished Sulfur",
+        "parent": {
+          "$ref": 25
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          28
+        ],
+        "parent": {
+          "$ref": 8
+        },
+        "prev": {
+          "$ref": 24
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          29
+        ],
+        "parent": {
+          "$ref": 27
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Sulfur Bricks",
+        "parent": {
+          "$ref": 28
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 8
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 3
+        },
+        "next": {
+          "$ref": 32
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          33
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 31
+        },
+        "next": {
+          "$ref": 34
+        }
+      },
+      {
+        "type": "text",
+        "data": "Sulfur Cube mob",
+        "parent": {
+          "$ref": 32
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 32
+        },
+        "next": {
+          "$ref": 35
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          36
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 34
+        },
+        "next": {
+          "$ref": 38
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          37
+        ],
+        "parent": {
+          "$ref": 35
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Can no longer be picked up by Boats",
+        "parent": {
+          "$ref": 36
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 35
+        },
+        "next": {
+          "$ref": 39
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          40
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 38
+        },
+        "next": {
+          "$ref": 41
+        }
+      },
+      {
+        "type": "text",
+        "data": "Sounds",
+        "parent": {
+          "$ref": 39
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 39
+        },
+        "next": {
+          "$ref": 42
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          43
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 41
+        },
+        "next": {
+          "$ref": 45
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          44
+        ],
+        "parent": {
+          "$ref": 42
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Updated sounds for Nautilus jets and Nautilus recovers",
+        "parent": {
+          "$ref": 43
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 42
+        },
+        "next": {
+          "$ref": 46
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h2",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          47
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 45
+        },
+        "next": {
+          "$ref": 48
+        }
+      },
+      {
+        "type": "text",
+        "data": "Technical Changes",
+        "parent": {
+          "$ref": 46
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 46
+        },
+        "next": {
+          "$ref": 49
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          50,
+          52
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 48
+        },
+        "next": {
+          "$ref": 54
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          51
+        ],
+        "parent": {
+          "$ref": 49
+        },
+        "prev": null,
+        "next": {
+          "$ref": 52
+        }
+      },
+      {
+        "type": "text",
+        "data": "The Data Pack version is now 102.0",
+        "parent": {
+          "$ref": 50
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          53
+        ],
+        "parent": {
+          "$ref": 49
+        },
+        "prev": {
+          "$ref": 50
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "The Resource Pack version is now 86.0",
+        "parent": {
+          "$ref": 52
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 49
+        },
+        "next": {
+          "$ref": 55
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h2",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          56
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 54
+        },
+        "next": {
+          "$ref": 57
+        }
+      },
+      {
+        "type": "text",
+        "data": "Data Pack Version 102.0",
+        "parent": {
+          "$ref": 55
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 55
+        },
+        "next": {
+          "$ref": 58
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          59
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 57
+        },
+        "next": {
+          "$ref": 60
+        }
+      },
+      {
+        "type": "text",
+        "data": "Block Entity Data",
+        "parent": {
+          "$ref": 58
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 58
+        },
+        "next": {
+          "$ref": 61
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          62
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 60
+        },
+        "next": {
+          "$ref": 67
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          63,
+          64,
+          66
+        ],
+        "parent": {
+          "$ref": 61
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "The ",
+        "parent": {
+          "$ref": 62
+        },
+        "prev": null,
+        "next": {
+          "$ref": 64
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          65
+        ],
+        "parent": {
+          "$ref": 62
+        },
+        "prev": {
+          "$ref": 63
+        },
+        "next": {
+          "$ref": 66
+        }
+      },
+      {
+        "type": "text",
+        "data": "minecraft:bed",
+        "parent": {
+          "$ref": 64
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " block entity has been removed",
+        "parent": {
+          "$ref": 62
+        },
+        "prev": {
+          "$ref": 64
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 61
+        },
+        "next": {
+          "$ref": 68
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          69
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 67
+        },
+        "next": {
+          "$ref": 70
+        }
+      },
+      {
+        "type": "text",
+        "data": "Predicates",
+        "parent": {
+          "$ref": 68
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 68
+        },
+        "next": {
+          "$ref": 71
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h4",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          72
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 70
+        },
+        "next": {
+          "$ref": 73
+        }
+      },
+      {
+        "type": "text",
+        "data": "Entity Predicates",
+        "parent": {
+          "$ref": 71
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 71
+        },
+        "next": {
+          "$ref": 74
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          75
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 73
+        },
+        "next": {
+          "$ref": 76
+        }
+      },
+      {
+        "type": "text",
+        "data": "Entity predicate format has changed from a structure with multiple optional fields to one similar to data component maps.",
+        "parent": {
+          "$ref": 74
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 74
+        },
+        "next": {
+          "$ref": 77
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          78,
+          79,
+          81
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 76
+        },
+        "next": {
+          "$ref": 82
+        }
+      },
+      {
+        "type": "text",
+        "data": "For example, previously ",
+        "parent": {
+          "$ref": 77
+        },
+        "prev": null,
+        "next": {
+          "$ref": 79
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          80
+        ],
+        "parent": {
+          "$ref": 77
+        },
+        "prev": {
+          "$ref": 78
+        },
+        "next": {
+          "$ref": 81
+        }
+      },
+      {
+        "type": "text",
+        "data": "effects",
+        "parent": {
+          "$ref": 79
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " was an optional field:",
+        "parent": {
+          "$ref": 77
+        },
+        "prev": {
+          "$ref": 79
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 77
+        },
+        "next": {
+          "$ref": 83
+        }
+      },
+      {
+        "type": "element",
+        "tag": "pre",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          84,
+          85,
+          87
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 82
+        },
+        "next": {
+          "$ref": 88
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 83
+        },
+        "prev": null,
+        "next": {
+          "$ref": 85
+        }
+      },
+      {
+        "type": "element",
+        "tag": "code",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          86
+        ],
+        "parent": {
+          "$ref": 83
+        },
+        "prev": {
+          "$ref": 84
+        },
+        "next": {
+          "$ref": 87
+        }
+      },
+      {
+        "type": "text",
+        "data": "{\r\n    \"effects\": {...}\r\n}\r\n",
+        "parent": {
+          "$ref": 85
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 83
+        },
+        "prev": {
+          "$ref": 85
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 83
+        },
+        "next": {
+          "$ref": 89
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          90
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 88
+        },
+        "next": {
+          "$ref": 91
+        }
+      },
+      {
+        "type": "text",
+        "data": "In this version it has become a component-like sub-predicate entry:",
+        "parent": {
+          "$ref": 89
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 89
+        },
+        "next": {
+          "$ref": 92
+        }
+      },
+      {
+        "type": "element",
+        "tag": "pre",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          93,
+          94,
+          96
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 91
+        },
+        "next": {
+          "$ref": 97
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 92
+        },
+        "prev": null,
+        "next": {
+          "$ref": 94
+        }
+      },
+      {
+        "type": "element",
+        "tag": "code",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          95
+        ],
+        "parent": {
+          "$ref": 92
+        },
+        "prev": {
+          "$ref": 93
+        },
+        "next": {
+          "$ref": 96
+        }
+      },
+      {
+        "type": "text",
+        "data": "{\r\n    \"minecraft:effects\": {...}\r\n}\r\n",
+        "parent": {
+          "$ref": 94
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 92
+        },
+        "prev": {
+          "$ref": 94
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 92
+        },
+        "next": {
+          "$ref": 98
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          99
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 97
+        },
+        "next": {
+          "$ref": 100
+        }
+      },
+      {
+        "type": "text",
+        "data": "The main functional changes are:",
+        "parent": {
+          "$ref": 98
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 98
+        },
+        "next": {
+          "$ref": 101
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          102,
+          118
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 100
+        },
+        "next": {
+          "$ref": 120
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          103,
+          104,
+          117
+        ],
+        "parent": {
+          "$ref": 101
+        },
+        "prev": null,
+        "next": {
+          "$ref": 118
+        }
+      },
+      {
+        "type": "text",
+        "data": "All keys in entity predicates are now identifiers",
+        "parent": {
+          "$ref": 102
+        },
+        "prev": null,
+        "next": {
+          "$ref": 104
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          105,
+          110
+        ],
+        "parent": {
+          "$ref": 102
+        },
+        "prev": {
+          "$ref": 103
+        },
+        "next": {
+          "$ref": 117
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          106,
+          107,
+          109
+        ],
+        "parent": {
+          "$ref": 104
+        },
+        "prev": null,
+        "next": {
+          "$ref": 110
+        }
+      },
+      {
+        "type": "text",
+        "data": "Since identifiers can be written without namespace (default to ",
+        "parent": {
+          "$ref": 105
+        },
+        "prev": null,
+        "next": {
+          "$ref": 107
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          108
+        ],
+        "parent": {
+          "$ref": 105
+        },
+        "prev": {
+          "$ref": 106
+        },
+        "next": {
+          "$ref": 109
+        }
+      },
+      {
+        "type": "text",
+        "data": "minecraft",
+        "parent": {
+          "$ref": 107
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " namespace), existing field names are still valid",
+        "parent": {
+          "$ref": 105
+        },
+        "prev": {
+          "$ref": 107
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          111,
+          112,
+          114,
+          115
+        ],
+        "parent": {
+          "$ref": 104
+        },
+        "prev": {
+          "$ref": 105
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Exception: field ",
+        "parent": {
+          "$ref": 110
+        },
+        "prev": null,
+        "next": {
+          "$ref": 112
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          113
+        ],
+        "parent": {
+          "$ref": 110
+        },
+        "prev": {
+          "$ref": 111
+        },
+        "next": {
+          "$ref": 114
+        }
+      },
+      {
+        "type": "text",
+        "data": "type",
+        "parent": {
+          "$ref": 112
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " has been renamed to ",
+        "parent": {
+          "$ref": 110
+        },
+        "prev": {
+          "$ref": 112
+        },
+        "next": {
+          "$ref": 115
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          116
+        ],
+        "parent": {
+          "$ref": 110
+        },
+        "prev": {
+          "$ref": 114
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "minecraft:entity_type",
+        "parent": {
+          "$ref": 115
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 102
+        },
+        "prev": {
+          "$ref": 104
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          119
+        ],
+        "parent": {
+          "$ref": 101
+        },
+        "prev": {
+          "$ref": 102
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Unrecognized sub-predicate components are now rejected (previously unknown fields were ignored)",
+        "parent": {
+          "$ref": 118
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 101
+        },
+        "next": {
+          "$ref": 121
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          122
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 120
+        },
+        "next": {
+          "$ref": 123
+        }
+      },
+      {
+        "type": "text",
+        "data": "Existing type-specific sub-predicates have been renamed and moved to top-level.",
+        "parent": {
+          "$ref": 121
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 121
+        },
+        "next": {
+          "$ref": 124
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          125,
+          131,
+          137,
+          143,
+          149,
+          155
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 123
+        },
+        "next": {
+          "$ref": 162
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          126,
+          128,
+          129
+        ],
+        "parent": {
+          "$ref": 124
+        },
+        "prev": null,
+        "next": {
+          "$ref": 131
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          127
+        ],
+        "parent": {
+          "$ref": 125
+        },
+        "prev": null,
+        "next": {
+          "$ref": 128
+        }
+      },
+      {
+        "type": "text",
+        "data": "minecraft:lightning",
+        "parent": {
+          "$ref": 126
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " to ",
+        "parent": {
+          "$ref": 125
+        },
+        "prev": {
+          "$ref": 126
+        },
+        "next": {
+          "$ref": 129
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          130
+        ],
+        "parent": {
+          "$ref": 125
+        },
+        "prev": {
+          "$ref": 128
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "minecraft:type_specific/lightning",
+        "parent": {
+          "$ref": 129
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          132,
+          134,
+          135
+        ],
+        "parent": {
+          "$ref": 124
+        },
+        "prev": {
+          "$ref": 125
+        },
+        "next": {
+          "$ref": 137
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          133
+        ],
+        "parent": {
+          "$ref": 131
+        },
+        "prev": null,
+        "next": {
+          "$ref": 134
+        }
+      },
+      {
+        "type": "text",
+        "data": "minecraft:fishing_hook",
+        "parent": {
+          "$ref": 132
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " to ",
+        "parent": {
+          "$ref": 131
+        },
+        "prev": {
+          "$ref": 132
+        },
+        "next": {
+          "$ref": 135
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          136
+        ],
+        "parent": {
+          "$ref": 131
+        },
+        "prev": {
+          "$ref": 134
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "minecraft:type_specific/fishing_hook",
+        "parent": {
+          "$ref": 135
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          138,
+          140,
+          141
+        ],
+        "parent": {
+          "$ref": 124
+        },
+        "prev": {
+          "$ref": 131
+        },
+        "next": {
+          "$ref": 143
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          139
+        ],
+        "parent": {
+          "$ref": 137
+        },
+        "prev": null,
+        "next": {
+          "$ref": 140
+        }
+      },
+      {
+        "type": "text",
+        "data": "minecraft:player",
+        "parent": {
+          "$ref": 138
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " to ",
+        "parent": {
+          "$ref": 137
+        },
+        "prev": {
+          "$ref": 138
+        },
+        "next": {
+          "$ref": 141
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          142
+        ],
+        "parent": {
+          "$ref": 137
+        },
+        "prev": {
+          "$ref": 140
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "minecraft:type_specific/player",
+        "parent": {
+          "$ref": 141
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          144,
+          146,
+          147
+        ],
+        "parent": {
+          "$ref": 124
+        },
+        "prev": {
+          "$ref": 137
+        },
+        "next": {
+          "$ref": 149
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          145
+        ],
+        "parent": {
+          "$ref": 143
+        },
+        "prev": null,
+        "next": {
+          "$ref": 146
+        }
+      },
+      {
+        "type": "text",
+        "data": "minecraft:raider",
+        "parent": {
+          "$ref": 144
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " to ",
+        "parent": {
+          "$ref": 143
+        },
+        "prev": {
+          "$ref": 144
+        },
+        "next": {
+          "$ref": 147
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          148
+        ],
+        "parent": {
+          "$ref": 143
+        },
+        "prev": {
+          "$ref": 146
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "minecraft:type_specific/raider",
+        "parent": {
+          "$ref": 147
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          150,
+          152,
+          153
+        ],
+        "parent": {
+          "$ref": 124
+        },
+        "prev": {
+          "$ref": 143
+        },
+        "next": {
+          "$ref": 155
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          151
+        ],
+        "parent": {
+          "$ref": 149
+        },
+        "prev": null,
+        "next": {
+          "$ref": 152
+        }
+      },
+      {
+        "type": "text",
+        "data": "minecraft:sheep",
+        "parent": {
+          "$ref": 150
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " to ",
+        "parent": {
+          "$ref": 149
+        },
+        "prev": {
+          "$ref": 150
+        },
+        "next": {
+          "$ref": 153
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          154
+        ],
+        "parent": {
+          "$ref": 149
+        },
+        "prev": {
+          "$ref": 152
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "minecraft:type_specific/sheep",
+        "parent": {
+          "$ref": 153
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          156,
+          158,
+          159,
+          161
+        ],
+        "parent": {
+          "$ref": 124
+        },
+        "prev": {
+          "$ref": 149
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          157
+        ],
+        "parent": {
+          "$ref": 155
+        },
+        "prev": null,
+        "next": {
+          "$ref": 158
+        }
+      },
+      {
+        "type": "text",
+        "data": "minecraft:slime",
+        "parent": {
+          "$ref": 156
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " to ",
+        "parent": {
+          "$ref": 155
+        },
+        "prev": {
+          "$ref": 156
+        },
+        "next": {
+          "$ref": 159
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          160
+        ],
+        "parent": {
+          "$ref": 155
+        },
+        "prev": {
+          "$ref": 158
+        },
+        "next": {
+          "$ref": 161
+        }
+      },
+      {
+        "type": "text",
+        "data": "minecraft:cube_mob",
+        "parent": {
+          "$ref": 159
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " as it now includes Sulfur Cubes in addition to Slimes and Magma Cubes",
+        "parent": {
+          "$ref": 155
+        },
+        "prev": {
+          "$ref": 159
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 124
+        },
+        "next": {
+          "$ref": 163
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          164
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 162
+        },
+        "next": {
+          "$ref": 165
+        }
+      },
+      {
+        "type": "text",
+        "data": "For example:",
+        "parent": {
+          "$ref": 163
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 163
+        },
+        "next": {
+          "$ref": 166
+        }
+      },
+      {
+        "type": "element",
+        "tag": "pre",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          167,
+          168,
+          170
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 165
+        },
+        "next": {
+          "$ref": 171
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 166
+        },
+        "prev": null,
+        "next": {
+          "$ref": 168
+        }
+      },
+      {
+        "type": "element",
+        "tag": "code",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          169
+        ],
+        "parent": {
+          "$ref": 166
+        },
+        "prev": {
+          "$ref": 167
+        },
+        "next": {
+          "$ref": 170
+        }
+      },
+      {
+        "type": "text",
+        "data": "{\r\n  \"type_specific\": {\r\n    \"type\": \"minecraft:player\",\r\n    \"looking_at\": {\r\n      \"type\": \"minecraft:ender_dragon\"\r\n    }\r\n  }\r\n}\r\n",
+        "parent": {
+          "$ref": 168
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 166
+        },
+        "prev": {
+          "$ref": 168
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 166
+        },
+        "next": {
+          "$ref": 172
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          173
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 171
+        },
+        "next": {
+          "$ref": 174
+        }
+      },
+      {
+        "type": "text",
+        "data": "becomes",
+        "parent": {
+          "$ref": 172
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 172
+        },
+        "next": {
+          "$ref": 175
+        }
+      },
+      {
+        "type": "element",
+        "tag": "pre",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          176,
+          177,
+          179
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 174
+        },
+        "next": {
+          "$ref": 180
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 175
+        },
+        "prev": null,
+        "next": {
+          "$ref": 177
+        }
+      },
+      {
+        "type": "element",
+        "tag": "code",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          178
+        ],
+        "parent": {
+          "$ref": 175
+        },
+        "prev": {
+          "$ref": 176
+        },
+        "next": {
+          "$ref": 179
+        }
+      },
+      {
+        "type": "text",
+        "data": "{\r\n  \"minecraft:type_specific/player\": {\r\n    \"looking_at\": {\r\n      \"minecraft:type\": \"minecraft:ender_dragon\"\r\n    }\r\n  }\r\n}\r\n",
+        "parent": {
+          "$ref": 177
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 175
+        },
+        "prev": {
+          "$ref": 177
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 175
+        },
+        "next": {
+          "$ref": 181
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h5",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          182,
+          183,
+          185
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 180
+        },
+        "next": {
+          "$ref": 186
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added ",
+        "parent": {
+          "$ref": 181
+        },
+        "prev": null,
+        "next": {
+          "$ref": 183
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          184
+        ],
+        "parent": {
+          "$ref": 181
+        },
+        "prev": {
+          "$ref": 182
+        },
+        "next": {
+          "$ref": 185
+        }
+      },
+      {
+        "type": "text",
+        "data": "minecraft:entity_tags",
+        "parent": {
+          "$ref": 183
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " entity sub-predicate",
+        "parent": {
+          "$ref": 181
+        },
+        "prev": {
+          "$ref": 183
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 181
+        },
+        "next": {
+          "$ref": 187
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          188,
+          189,
+          191
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 186
+        },
+        "next": {
+          "$ref": 192
+        }
+      },
+      {
+        "type": "text",
+        "data": "This predicate matches entity tags (i.e. ones set with the ",
+        "parent": {
+          "$ref": 187
+        },
+        "prev": null,
+        "next": {
+          "$ref": 189
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          190
+        ],
+        "parent": {
+          "$ref": 187
+        },
+        "prev": {
+          "$ref": 188
+        },
+        "next": {
+          "$ref": 191
+        }
+      },
+      {
+        "type": "text",
+        "data": "/tag",
+        "parent": {
+          "$ref": 189
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " command).",
+        "parent": {
+          "$ref": 187
+        },
+        "prev": {
+          "$ref": 189
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 187
+        },
+        "next": {
+          "$ref": 193
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          194
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 192
+        },
+        "next": {
+          "$ref": 195
+        }
+      },
+      {
+        "type": "text",
+        "data": "Fields:",
+        "parent": {
+          "$ref": 193
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 193
+        },
+        "next": {
+          "$ref": 196
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          197,
+          201,
+          205
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 195
+        },
+        "next": {
+          "$ref": 209
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          198,
+          200
+        ],
+        "parent": {
+          "$ref": 196
+        },
+        "prev": null,
+        "next": {
+          "$ref": 201
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          199
+        ],
+        "parent": {
+          "$ref": 197
+        },
+        "prev": null,
+        "next": {
+          "$ref": 200
+        }
+      },
+      {
+        "type": "text",
+        "data": "any_of",
+        "parent": {
+          "$ref": 198
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " - optional list of strings, if present the matched entity must have at least one of the listed tags",
+        "parent": {
+          "$ref": 197
+        },
+        "prev": {
+          "$ref": 198
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          202,
+          204
+        ],
+        "parent": {
+          "$ref": 196
+        },
+        "prev": {
+          "$ref": 197
+        },
+        "next": {
+          "$ref": 205
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          203
+        ],
+        "parent": {
+          "$ref": 201
+        },
+        "prev": null,
+        "next": {
+          "$ref": 204
+        }
+      },
+      {
+        "type": "text",
+        "data": "all_of",
+        "parent": {
+          "$ref": 202
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " - optional list of strings, if present the matched entity must have all the listed tags",
+        "parent": {
+          "$ref": 201
+        },
+        "prev": {
+          "$ref": 202
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          206,
+          208
+        ],
+        "parent": {
+          "$ref": 196
+        },
+        "prev": {
+          "$ref": 201
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          207
+        ],
+        "parent": {
+          "$ref": 205
+        },
+        "prev": null,
+        "next": {
+          "$ref": 208
+        }
+      },
+      {
+        "type": "text",
+        "data": "none_of",
+        "parent": {
+          "$ref": 206
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " - optional list of strings, if present the matched entity must have none of the listed tags",
+        "parent": {
+          "$ref": 205
+        },
+        "prev": {
+          "$ref": 206
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 196
+        },
+        "next": {
+          "$ref": 210
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          211
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 209
+        },
+        "next": {
+          "$ref": 212
+        }
+      },
+      {
+        "type": "text",
+        "data": "World Generation",
+        "parent": {
+          "$ref": 210
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 210
+        },
+        "next": {
+          "$ref": 213
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h4",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          214
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 212
+        },
+        "next": {
+          "$ref": 215
+        }
+      },
+      {
+        "type": "text",
+        "data": "Overworld Features",
+        "parent": {
+          "$ref": 213
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 213
+        },
+        "next": {
+          "$ref": 216
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          217
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 215
+        },
+        "next": {
+          "$ref": 244
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          218,
+          219,
+          221,
+          243
+        ],
+        "parent": {
+          "$ref": 216
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Adjusted Feature Type ",
+        "parent": {
+          "$ref": 217
+        },
+        "prev": null,
+        "next": {
+          "$ref": 219
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          220
+        ],
+        "parent": {
+          "$ref": 217
+        },
+        "prev": {
+          "$ref": 218
+        },
+        "next": {
+          "$ref": 221
+        }
+      },
+      {
+        "type": "text",
+        "data": "lake",
+        "parent": {
+          "$ref": 219
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          222,
+          227,
+          235
+        ],
+        "parent": {
+          "$ref": 217
+        },
+        "prev": {
+          "$ref": 219
+        },
+        "next": {
+          "$ref": 243
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          223,
+          224,
+          226
+        ],
+        "parent": {
+          "$ref": 221
+        },
+        "prev": null,
+        "next": {
+          "$ref": 227
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added field ",
+        "parent": {
+          "$ref": 222
+        },
+        "prev": null,
+        "next": {
+          "$ref": 224
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          225
+        ],
+        "parent": {
+          "$ref": 222
+        },
+        "prev": {
+          "$ref": 223
+        },
+        "next": {
+          "$ref": 226
+        }
+      },
+      {
+        "type": "text",
+        "data": "can_place_feature",
+        "parent": {
+          "$ref": 224
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " - Block Predicate, describes which blocks this feature can be placed on",
+        "parent": {
+          "$ref": 222
+        },
+        "prev": {
+          "$ref": 224
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          228,
+          229,
+          231,
+          232,
+          234
+        ],
+        "parent": {
+          "$ref": 221
+        },
+        "prev": {
+          "$ref": 222
+        },
+        "next": {
+          "$ref": 235
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added field ",
+        "parent": {
+          "$ref": 227
+        },
+        "prev": null,
+        "next": {
+          "$ref": 229
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          230
+        ],
+        "parent": {
+          "$ref": 227
+        },
+        "prev": {
+          "$ref": 228
+        },
+        "next": {
+          "$ref": 231
+        }
+      },
+      {
+        "type": "text",
+        "data": "can_replace_with_air_or_fluid",
+        "parent": {
+          "$ref": 229
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " - Block Predicate, describes which blocks this feature can replace with air or the provided ",
+        "parent": {
+          "$ref": 227
+        },
+        "prev": {
+          "$ref": 229
+        },
+        "next": {
+          "$ref": 232
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          233
+        ],
+        "parent": {
+          "$ref": 227
+        },
+        "prev": {
+          "$ref": 231
+        },
+        "next": {
+          "$ref": 234
+        }
+      },
+      {
+        "type": "text",
+        "data": "fluid",
+        "parent": {
+          "$ref": 232
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " block",
+        "parent": {
+          "$ref": 227
+        },
+        "prev": {
+          "$ref": 232
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          236,
+          237,
+          239,
+          240,
+          242
+        ],
+        "parent": {
+          "$ref": 221
+        },
+        "prev": {
+          "$ref": 227
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Added field ",
+        "parent": {
+          "$ref": 235
+        },
+        "prev": null,
+        "next": {
+          "$ref": 237
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          238
+        ],
+        "parent": {
+          "$ref": 235
+        },
+        "prev": {
+          "$ref": 236
+        },
+        "next": {
+          "$ref": 239
+        }
+      },
+      {
+        "type": "text",
+        "data": "can_replace_with_barrier",
+        "parent": {
+          "$ref": 237
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " - Block Predicate, describes which blocks this feature can replace with the provided ",
+        "parent": {
+          "$ref": 235
+        },
+        "prev": {
+          "$ref": 237
+        },
+        "next": {
+          "$ref": 240
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          241
+        ],
+        "parent": {
+          "$ref": 235
+        },
+        "prev": {
+          "$ref": 239
+        },
+        "next": {
+          "$ref": 242
+        }
+      },
+      {
+        "type": "text",
+        "data": "barrier",
+        "parent": {
+          "$ref": 240
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " block",
+        "parent": {
+          "$ref": 235
+        },
+        "prev": {
+          "$ref": 240
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 217
+        },
+        "prev": {
+          "$ref": 221
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 216
+        },
+        "next": {
+          "$ref": 245
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          246
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 244
+        },
+        "next": {
+          "$ref": 247
+        }
+      },
+      {
+        "type": "text",
+        "data": "Tags",
+        "parent": {
+          "$ref": 245
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 245
+        },
+        "next": {
+          "$ref": 248
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h4",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          249
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 247
+        },
+        "next": {
+          "$ref": 250
+        }
+      },
+      {
+        "type": "text",
+        "data": "Block Tags",
+        "parent": {
+          "$ref": 248
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 248
+        },
+        "next": {
+          "$ref": 251
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          252
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 250
+        },
+        "next": {
+          "$ref": 257
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          253,
+          254,
+          256
+        ],
+        "parent": {
+          "$ref": 251
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Added ",
+        "parent": {
+          "$ref": 252
+        },
+        "prev": null,
+        "next": {
+          "$ref": 254
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          255
+        ],
+        "parent": {
+          "$ref": 252
+        },
+        "prev": {
+          "$ref": 253
+        },
+        "next": {
+          "$ref": 256
+        }
+      },
+      {
+        "type": "text",
+        "data": "#speleothems",
+        "parent": {
+          "$ref": 254
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " for blocks which are speleothems like Pointed Dripstone and Sulfur Spike",
+        "parent": {
+          "$ref": 252
+        },
+        "prev": {
+          "$ref": 254
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 251
+        },
+        "next": {
+          "$ref": 258
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h2",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          259
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 257
+        },
+        "next": {
+          "$ref": 260
+        }
+      },
+      {
+        "type": "text",
+        "data": "Resource Pack Version 86.0",
+        "parent": {
+          "$ref": 258
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 258
+        },
+        "next": {
+          "$ref": 261
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          262
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 260
+        },
+        "next": {
+          "$ref": 263
+        }
+      },
+      {
+        "type": "text",
+        "data": "Block Sprites",
+        "parent": {
+          "$ref": 261
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 261
+        },
+        "next": {
+          "$ref": 264
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          265,
+          299
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 263
+        },
+        "next": {
+          "$ref": 333
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          266,
+          267,
+          298
+        ],
+        "parent": {
+          "$ref": 264
+        },
+        "prev": null,
+        "next": {
+          "$ref": 299
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added new Block textures:",
+        "parent": {
+          "$ref": 265
+        },
+        "prev": null,
+        "next": {
+          "$ref": 267
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          268,
+          271,
+          274,
+          277,
+          280,
+          283,
+          286,
+          289,
+          292,
+          295
+        ],
+        "parent": {
+          "$ref": 265
+        },
+        "prev": {
+          "$ref": 266
+        },
+        "next": {
+          "$ref": 298
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          269
+        ],
+        "parent": {
+          "$ref": 267
+        },
+        "prev": null,
+        "next": {
+          "$ref": 271
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          270
+        ],
+        "parent": {
+          "$ref": 268
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/sulfur_spike_down_base.png",
+        "parent": {
+          "$ref": 269
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          272
+        ],
+        "parent": {
+          "$ref": 267
+        },
+        "prev": {
+          "$ref": 268
+        },
+        "next": {
+          "$ref": 274
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          273
+        ],
+        "parent": {
+          "$ref": 271
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/sulfur_spike_down_frustum.png",
+        "parent": {
+          "$ref": 272
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          275
+        ],
+        "parent": {
+          "$ref": 267
+        },
+        "prev": {
+          "$ref": 271
+        },
+        "next": {
+          "$ref": 277
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          276
+        ],
+        "parent": {
+          "$ref": 274
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/sulfur_spike_down_middle.png",
+        "parent": {
+          "$ref": 275
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          278
+        ],
+        "parent": {
+          "$ref": 267
+        },
+        "prev": {
+          "$ref": 274
+        },
+        "next": {
+          "$ref": 280
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          279
+        ],
+        "parent": {
+          "$ref": 277
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/sulfur_spike_down_tip.png",
+        "parent": {
+          "$ref": 278
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          281
+        ],
+        "parent": {
+          "$ref": 267
+        },
+        "prev": {
+          "$ref": 277
+        },
+        "next": {
+          "$ref": 283
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          282
+        ],
+        "parent": {
+          "$ref": 280
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/sulfur_spike_down_tip_merge.png",
+        "parent": {
+          "$ref": 281
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          284
+        ],
+        "parent": {
+          "$ref": 267
+        },
+        "prev": {
+          "$ref": 280
+        },
+        "next": {
+          "$ref": 286
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          285
+        ],
+        "parent": {
+          "$ref": 283
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/sulfur_spike_up_base.png",
+        "parent": {
+          "$ref": 284
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          287
+        ],
+        "parent": {
+          "$ref": 267
+        },
+        "prev": {
+          "$ref": 283
+        },
+        "next": {
+          "$ref": 289
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          288
+        ],
+        "parent": {
+          "$ref": 286
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/sulfur_spike_up_frustum.png",
+        "parent": {
+          "$ref": 287
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          290
+        ],
+        "parent": {
+          "$ref": 267
+        },
+        "prev": {
+          "$ref": 286
+        },
+        "next": {
+          "$ref": 292
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          291
+        ],
+        "parent": {
+          "$ref": 289
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/sulfur_spike_up_middle.png",
+        "parent": {
+          "$ref": 290
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          293
+        ],
+        "parent": {
+          "$ref": 267
+        },
+        "prev": {
+          "$ref": 289
+        },
+        "next": {
+          "$ref": 295
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          294
+        ],
+        "parent": {
+          "$ref": 292
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/sulfur_spike_up_tip.png",
+        "parent": {
+          "$ref": 293
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          296
+        ],
+        "parent": {
+          "$ref": 267
+        },
+        "prev": {
+          "$ref": 292
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          297
+        ],
+        "parent": {
+          "$ref": 295
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/sulfur_spike_up_tip_merge.png",
+        "parent": {
+          "$ref": 296
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 265
+        },
+        "prev": {
+          "$ref": 267
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          300,
+          301,
+          303,
+          304,
+          332
+        ],
+        "parent": {
+          "$ref": 264
+        },
+        "prev": {
+          "$ref": 265
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Beds now use block models and textures, replacing ",
+        "parent": {
+          "$ref": 299
+        },
+        "prev": null,
+        "next": {
+          "$ref": 301
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          302
+        ],
+        "parent": {
+          "$ref": 299
+        },
+        "prev": {
+          "$ref": 300
+        },
+        "next": {
+          "$ref": 303
+        }
+      },
+      {
+        "type": "text",
+        "data": "<color>",
+        "parent": {
+          "$ref": 301
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " with the respective bed's color's name",
+        "parent": {
+          "$ref": 299
+        },
+        "prev": {
+          "$ref": 301
+        },
+        "next": {
+          "$ref": 304
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          305,
+          308,
+          311,
+          314,
+          317,
+          320,
+          323,
+          326,
+          329
+        ],
+        "parent": {
+          "$ref": 299
+        },
+        "prev": {
+          "$ref": 303
+        },
+        "next": {
+          "$ref": 332
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          306
+        ],
+        "parent": {
+          "$ref": 304
+        },
+        "prev": null,
+        "next": {
+          "$ref": 308
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          307
+        ],
+        "parent": {
+          "$ref": 305
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/bed_down.png",
+        "parent": {
+          "$ref": 306
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          309
+        ],
+        "parent": {
+          "$ref": 304
+        },
+        "prev": {
+          "$ref": 305
+        },
+        "next": {
+          "$ref": 311
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          310
+        ],
+        "parent": {
+          "$ref": 308
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/bed_head_north.png",
+        "parent": {
+          "$ref": 309
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          312
+        ],
+        "parent": {
+          "$ref": 304
+        },
+        "prev": {
+          "$ref": 308
+        },
+        "next": {
+          "$ref": 314
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          313
+        ],
+        "parent": {
+          "$ref": 311
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/<color>_bed_foot_east.png",
+        "parent": {
+          "$ref": 312
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          315
+        ],
+        "parent": {
+          "$ref": 304
+        },
+        "prev": {
+          "$ref": 311
+        },
+        "next": {
+          "$ref": 317
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          316
+        ],
+        "parent": {
+          "$ref": 314
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/<color>_bed_foot_south.png",
+        "parent": {
+          "$ref": 315
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          318
+        ],
+        "parent": {
+          "$ref": 304
+        },
+        "prev": {
+          "$ref": 314
+        },
+        "next": {
+          "$ref": 320
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          319
+        ],
+        "parent": {
+          "$ref": 317
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/<color>_bed_foot_up.png",
+        "parent": {
+          "$ref": 318
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          321
+        ],
+        "parent": {
+          "$ref": 304
+        },
+        "prev": {
+          "$ref": 317
+        },
+        "next": {
+          "$ref": 323
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          322
+        ],
+        "parent": {
+          "$ref": 320
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/<color>_bed_foot_west.png",
+        "parent": {
+          "$ref": 321
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          324
+        ],
+        "parent": {
+          "$ref": 304
+        },
+        "prev": {
+          "$ref": 320
+        },
+        "next": {
+          "$ref": 326
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          325
+        ],
+        "parent": {
+          "$ref": 323
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/<color>_bed_head_east.png",
+        "parent": {
+          "$ref": 324
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          327
+        ],
+        "parent": {
+          "$ref": 304
+        },
+        "prev": {
+          "$ref": 323
+        },
+        "next": {
+          "$ref": 329
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          328
+        ],
+        "parent": {
+          "$ref": 326
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/<color>_bed_head_up.png",
+        "parent": {
+          "$ref": 327
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          330
+        ],
+        "parent": {
+          "$ref": 304
+        },
+        "prev": {
+          "$ref": 326
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          331
+        ],
+        "parent": {
+          "$ref": 329
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "block/<color>_bed_head_west.png",
+        "parent": {
+          "$ref": 330
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 299
+        },
+        "prev": {
+          "$ref": 304
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 264
+        },
+        "next": {
+          "$ref": 334
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          335
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 333
+        },
+        "next": {
+          "$ref": 336
+        }
+      },
+      {
+        "type": "text",
+        "data": "Item Sprites",
+        "parent": {
+          "$ref": 334
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 334
+        },
+        "next": {
+          "$ref": 337
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          338
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 336
+        },
+        "next": {
+          "$ref": 345
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          339,
+          340,
+          344
+        ],
+        "parent": {
+          "$ref": 337
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Added new Item sprites:",
+        "parent": {
+          "$ref": 338
+        },
+        "prev": null,
+        "next": {
+          "$ref": 340
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          341
+        ],
+        "parent": {
+          "$ref": 338
+        },
+        "prev": {
+          "$ref": 339
+        },
+        "next": {
+          "$ref": 344
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          342
+        ],
+        "parent": {
+          "$ref": 340
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          343
+        ],
+        "parent": {
+          "$ref": 341
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "item/sulfur_spike.png",
+        "parent": {
+          "$ref": 342
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 338
+        },
+        "prev": {
+          "$ref": 340
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 337
+        },
+        "next": {
+          "$ref": 346
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          347
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 345
+        },
+        "next": {
+          "$ref": 348
+        }
+      },
+      {
+        "type": "text",
+        "data": "Item Models",
+        "parent": {
+          "$ref": 346
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 346
+        },
+        "next": {
+          "$ref": 349
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          350
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 348
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          351,
+          352,
+          354
+        ],
+        "parent": {
+          "$ref": 349
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "The ",
+        "parent": {
+          "$ref": 350
+        },
+        "prev": null,
+        "next": {
+          "$ref": 352
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightA"
+        },
+        "children": [
+          353
+        ],
+        "parent": {
+          "$ref": 350
+        },
+        "prev": {
+          "$ref": 351
+        },
+        "next": {
+          "$ref": 354
+        }
+      },
+      {
+        "type": "text",
+        "data": "minecraft:bed",
+        "parent": {
+          "$ref": 352
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " special model type has been removed",
+        "parent": {
+          "$ref": 350
+        },
+        "prev": {
+          "$ref": 352
+        },
+        "next": null
+      }
+    ]
+  },
+  "bugList": [
+    {
+      "id": "MC-229057",
+      "title": "Picking up an axolotl with a lead attached destroys the lead"
+    },
+    {
+      "id": "MC-277744",
+      "title": "Blocks with emissive textures don't emit much light when held by endermen"
+    },
+    {
+      "id": "MC-302496",
+      "title": "Glowing dragon fireballs no longer show the glowing outline"
+    },
+    {
+      "id": "MC-307177",
+      "title": "Enabling JFR profiling causes the client to crash on startup"
+    },
+    {
+      "id": "MC-307227",
+      "title": "Using an empty Offers NBT tag to disable trades doesn't work after a relog/data merge"
+    },
+    {
+      "id": "MC-307289",
+      "title": "Polished sulfur is named \"Polished Sulfur Block\", which is inconsistent with all other polished stone blocks"
+    },
+    {
+      "id": "MC-307291",
+      "title": "The game crashes when an entity with the friction_modifier attribute set to 2.5 moves"
+    },
+    {
+      "id": "MC-307298",
+      "title": "Sulfur cubes with blocks inside them produce footstep sounds when moving across the ground"
+    },
+    {
+      "id": "MC-307300",
+      "title": "Magma blocks held by sulfur cubes are not emissive"
+    },
+    {
+      "id": "MC-307315",
+      "title": "Frogs try to eat large magma cubes now"
+    },
+    {
+      "id": "MC-307316",
+      "title": "Magma cubes no longer drop magma cream"
+    },
+    {
+      "id": "MC-307340",
+      "title": "The bottom face of slimes' outer layer z-fights with the ground"
+    },
+    {
+      "id": "MC-307347",
+      "title": "Releasing a sulfur cube from a bucket and killing it does not cause it to drop its held block"
+    },
+    {
+      "id": "MC-307357",
+      "title": "Sulfur cubes don't emit light when holding a glowing block"
+    },
+    {
+      "id": "MC-307371",
+      "title": "The #sulfur_cube_archetype/fast_flat item tag contains pumpkin twice"
+    },
+    {
+      "id": "MC-307405",
+      "title": "When picking up a leashed sulfur cube with a bucket, the lead disappears"
+    },
+    {
+      "id": "MC-307420",
+      "title": "The game now renders fluid faces that should not be rendered"
+    },
+    {
+      "id": "MC-307473",
+      "title": "The block breaking texture on bamboo stalks is now always displayed centered"
+    },
+    {
+      "id": "MC-307483",
+      "title": "Emptying a sulfur cube bucket underwater doesn't place the sulfur cube at the targeted block"
+    }
+  ],
+  "merged": false,
+  "shortText": "Changes The Potent Sulfur block no longer crafts back into Sulfur blocks, Updated the textures for the following blocks: Chiseled Cinnabar, Chiseled Sulfur, Cinnabar, Cinnabar Bricks, Polished Cinnabar, Polished Sulfur, Sulfur Bricks Sulfur Cube mob Can no longer be picked up by",
+  "title": "Minecraft 26.2 Snapshot 3",
+  "targetRelease": "26.2",
+  "publishedAt": 1776166234
+}

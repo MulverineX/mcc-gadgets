@@ -1,0 +1,1583 @@
+{
+  "version": "21w08a",
+  "heroImage": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/snapshot-21w08a-header.jpg",
+  "source": "minecraft.net",
+  "body": {
+    "nodes": [
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          1
+        ],
+        "parent": null,
+        "prev": null,
+        "next": {
+          "$ref": 2
+        }
+      },
+      {
+        "type": "text",
+        "data": "In this snapshot, our new beloved stone type has suffered a grim fate and has been renamed \"Deepslate\". How mysterious!",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 0
+        },
+        "next": {
+          "$ref": 3
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 2
+        },
+        "next": {
+          "$ref": 4
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 3
+        },
+        "next": {
+          "$ref": 5
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 4
+        },
+        "next": {
+          "$ref": 6
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          22,
+          24,
+          26,
+          28,
+          30,
+          32,
+          34,
+          36,
+          38
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 5
+        },
+        "next": {
+          "$ref": 40
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          8
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": null,
+        "next": {
+          "$ref": 9
+        }
+      },
+      {
+        "type": "text",
+        "data": "Tweaked cave sizes further",
+        "parent": {
+          "$ref": 7
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          10
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 7
+        },
+        "next": {
+          "$ref": 11
+        }
+      },
+      {
+        "type": "text",
+        "data": "Canyon and cave carvers now apply below y=0",
+        "parent": {
+          "$ref": 9
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          12
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 9
+        },
+        "next": {
+          "$ref": 13
+        }
+      },
+      {
+        "type": "text",
+        "data": "Cracks can now be found carved into the ground",
+        "parent": {
+          "$ref": 11
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          14
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 11
+        },
+        "next": {
+          "$ref": 15
+        }
+      },
+      {
+        "type": "text",
+        "data": "Grimstone has been changed into Deepslate",
+        "parent": {
+          "$ref": 13
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          16
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 13
+        },
+        "next": {
+          "$ref": 17
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added Deepslate ores",
+        "parent": {
+          "$ref": 15
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          18,
+          19,
+          21
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 15
+        },
+        "next": {
+          "$ref": 22
+        }
+      },
+      {
+        "type": "text",
+        "data": "The ",
+        "parent": {
+          "$ref": 17
+        },
+        "prev": null,
+        "next": {
+          "$ref": 19
+        }
+      },
+      {
+        "type": "element",
+        "tag": "a",
+        "kind": "tag",
+        "attrs": {
+          "href": "https://images.ctfassets.net/8y6ykjruobr4/73xBtA88xuZQ3fKYH3pX6G/83cc7b912a6c08097d1e7e96e7ed6e96/snapshot-21w08a-ore-distribution.jpg"
+        },
+        "children": [
+          20
+        ],
+        "parent": {
+          "$ref": 17
+        },
+        "prev": {
+          "$ref": 18
+        },
+        "next": {
+          "$ref": 21
+        }
+      },
+      {
+        "type": "text",
+        "data": "distribution of ores",
+        "parent": {
+          "$ref": 19
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " has been further tweaked",
+        "parent": {
+          "$ref": 17
+        },
+        "prev": {
+          "$ref": 19
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          23
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 17
+        },
+        "next": {
+          "$ref": 24
+        }
+      },
+      {
+        "type": "text",
+        "data": "Andesite no longer generates under y=0",
+        "parent": {
+          "$ref": 22
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          25
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 22
+        },
+        "next": {
+          "$ref": 26
+        }
+      },
+      {
+        "type": "text",
+        "data": "Tuff now sometimes generates under y=0",
+        "parent": {
+          "$ref": 24
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          27
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 24
+        },
+        "next": {
+          "$ref": 28
+        }
+      },
+      {
+        "type": "text",
+        "data": "The Tuff layer of amethyst geodes has been replaced with now a new type of stone called Smooth Basalt",
+        "parent": {
+          "$ref": 26
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          29
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 26
+        },
+        "next": {
+          "$ref": 30
+        }
+      },
+      {
+        "type": "text",
+        "data": "Smooth Basalt is now obtained from smelting Basalt",
+        "parent": {
+          "$ref": 28
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          31
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 28
+        },
+        "next": {
+          "$ref": 32
+        }
+      },
+      {
+        "type": "text",
+        "data": "Another round of tweaking has been done to the new textures of ores and Blackstone",
+        "parent": {
+          "$ref": 30
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          33
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 30
+        },
+        "next": {
+          "$ref": 34
+        }
+      },
+      {
+        "type": "text",
+        "data": "Emerald and Lapis Lazuli ore textures have had some touch-ups",
+        "parent": {
+          "$ref": 32
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          35
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 32
+        },
+        "next": {
+          "$ref": 36
+        }
+      },
+      {
+        "type": "text",
+        "data": "Mineshafts now once again generate in the open air in caves",
+        "parent": {
+          "$ref": 34
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          37
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 34
+        },
+        "next": {
+          "$ref": 38
+        }
+      },
+      {
+        "type": "text",
+        "data": "Particles now appear in the air around spore blossoms",
+        "parent": {
+          "$ref": 36
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          39
+        ],
+        "parent": {
+          "$ref": 6
+        },
+        "prev": {
+          "$ref": 36
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Slime Blocks and Honey Blocks have been moved to the Redstone tab of the creative inventory",
+        "parent": {
+          "$ref": 38
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 6
+        },
+        "next": {
+          "$ref": 41
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n    \n",
+        "parent": null,
+        "prev": {
+          "$ref": 40
+        },
+        "next": {
+          "$ref": 42
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n        \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 41
+        },
+        "next": {
+          "$ref": 43
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 42
+        },
+        "next": {
+          "$ref": 44
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n                \n            ",
+        "parent": null,
+        "prev": {
+          "$ref": 43
+        },
+        "next": {
+          "$ref": 45
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 44
+        },
+        "next": {
+          "$ref": 46
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 45
+        },
+        "next": {
+          "$ref": 47
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 46
+        },
+        "next": {
+          "$ref": 48
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 47
+        },
+        "next": {
+          "$ref": 49
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 48
+        },
+        "next": {
+          "$ref": 50
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 49
+        },
+        "next": {
+          "$ref": 51
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n            ",
+        "parent": null,
+        "prev": {
+          "$ref": 50
+        },
+        "next": {
+          "$ref": 52
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n                \n                \n\n\n\n\n    \n    \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 51
+        },
+        "next": {
+          "$ref": 53
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 52
+        },
+        "next": {
+          "$ref": 54
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 53
+        },
+        "next": {
+          "$ref": 55
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        \n        \n\n\n\n\n    \n    \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 54
+        },
+        "next": {
+          "$ref": 56
+        }
+      },
+      {
+        "type": "element",
+        "tag": "img",
+        "kind": "tag",
+        "attrs": {
+          "src": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/snapshot-21w08a-texture-comparison.jpg",
+          "alt": "An image comparing the changes to ore textures."
+        },
+        "children": [],
+        "parent": null,
+        "prev": {
+          "$ref": 55
+        },
+        "next": {
+          "$ref": 57
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n        \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 56
+        },
+        "next": {
+          "$ref": 58
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 57
+        },
+        "next": {
+          "$ref": 59
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n                \n            ",
+        "parent": null,
+        "prev": {
+          "$ref": 58
+        },
+        "next": {
+          "$ref": 60
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 59
+        },
+        "next": {
+          "$ref": 61
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 60
+        },
+        "next": {
+          "$ref": 62
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 61
+        },
+        "next": {
+          "$ref": 63
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 62
+        },
+        "next": {
+          "$ref": 64
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 63
+        },
+        "next": {
+          "$ref": 65
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 64
+        },
+        "next": {
+          "$ref": 66
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n            ",
+        "parent": null,
+        "prev": {
+          "$ref": 65
+        },
+        "next": {
+          "$ref": 67
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n                \n                \n\n\n\n\n    \n    \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 66
+        },
+        "next": {
+          "$ref": 68
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 67
+        },
+        "next": {
+          "$ref": 69
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 68
+        },
+        "next": {
+          "$ref": 70
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        \n        \n\n\n\n\n    \n    \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 69
+        },
+        "next": {
+          "$ref": 71
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 70
+        },
+        "next": {
+          "$ref": 72
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 71
+        },
+        "next": {
+          "$ref": 73
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 72
+        },
+        "next": {
+          "$ref": 74
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h2",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          75
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 73
+        },
+        "next": {
+          "$ref": 76
+        }
+      },
+      {
+        "type": "text",
+        "data": "Deepslate",
+        "parent": {
+          "$ref": 74
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 74
+        },
+        "next": {
+          "$ref": 77
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          78,
+          80,
+          82,
+          84
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 76
+        },
+        "next": {
+          "$ref": 86
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          79
+        ],
+        "parent": {
+          "$ref": 77
+        },
+        "prev": null,
+        "next": {
+          "$ref": 80
+        }
+      },
+      {
+        "type": "text",
+        "data": "Grimstone is now called Deepslate",
+        "parent": {
+          "$ref": 78
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          81
+        ],
+        "parent": {
+          "$ref": 77
+        },
+        "prev": {
+          "$ref": 78
+        },
+        "next": {
+          "$ref": 82
+        }
+      },
+      {
+        "type": "text",
+        "data": "Deepslate now has a top texture, and a new block called Cobbled Deepslate drops from Deepslate",
+        "parent": {
+          "$ref": 80
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          83
+        ],
+        "parent": {
+          "$ref": 77
+        },
+        "prev": {
+          "$ref": 80
+        },
+        "next": {
+          "$ref": 84
+        }
+      },
+      {
+        "type": "text",
+        "data": "The cobbled variant is the same but without the top texture, and is used to craft all Deepslate variants instead",
+        "parent": {
+          "$ref": 82
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          85
+        ],
+        "parent": {
+          "$ref": 77
+        },
+        "prev": {
+          "$ref": 82
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Deepslate now has a unique set of sounds! Very crunchy indeed",
+        "parent": {
+          "$ref": 84
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 77
+        },
+        "next": {
+          "$ref": 87
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h2",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          88,
+          89
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 86
+        },
+        "next": {
+          "$ref": 90
+        }
+      },
+      {
+        "type": "element",
+        "tag": "a",
+        "kind": "tag",
+        "attrs": {},
+        "children": [],
+        "parent": {
+          "$ref": 87
+        },
+        "prev": null,
+        "next": {
+          "$ref": 89
+        }
+      },
+      {
+        "type": "text",
+        "data": "Deepslate ores",
+        "parent": {
+          "$ref": 87
+        },
+        "prev": {
+          "$ref": 88
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 87
+        },
+        "next": {
+          "$ref": 91
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          92,
+          94
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 90
+        },
+        "next": {
+          "$ref": 96
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          93
+        ],
+        "parent": {
+          "$ref": 91
+        },
+        "prev": null,
+        "next": {
+          "$ref": 94
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added Deepslate versions of Iron, Gold, Lapis, Redstone, and Diamond ores that generate wherever those ores replace Deepslate",
+        "parent": {
+          "$ref": 92
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          95
+        ],
+        "parent": {
+          "$ref": 91
+        },
+        "prev": {
+          "$ref": 92
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Twice as tough to mine as normal ores",
+        "parent": {
+          "$ref": 94
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 91
+        },
+        "next": {
+          "$ref": 97
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h2",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          98
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 96
+        },
+        "next": {
+          "$ref": 99
+        }
+      },
+      {
+        "type": "text",
+        "data": "Ore Distribution Tweaks",
+        "parent": {
+          "$ref": 97
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 97
+        },
+        "next": {
+          "$ref": 100
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n    \n",
+        "parent": null,
+        "prev": {
+          "$ref": 99
+        },
+        "next": {
+          "$ref": 101
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n        \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 100
+        },
+        "next": {
+          "$ref": 102
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 101
+        },
+        "next": {
+          "$ref": 103
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n\n\n\n                \n            ",
+        "parent": null,
+        "prev": {
+          "$ref": 102
+        },
+        "next": {
+          "$ref": 104
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 103
+        },
+        "next": {
+          "$ref": 105
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 104
+        },
+        "next": {
+          "$ref": 106
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n",
+        "parent": null,
+        "prev": {
+          "$ref": 105
+        },
+        "next": {
+          "$ref": 107
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 106
+        },
+        "next": {
+          "$ref": 108
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 107
+        },
+        "next": {
+          "$ref": 109
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        ",
+        "parent": null,
+        "prev": {
+          "$ref": 108
+        },
+        "next": {
+          "$ref": 110
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n            ",
+        "parent": null,
+        "prev": {
+          "$ref": 109
+        },
+        "next": {
+          "$ref": 111
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n                \n                \n\n\n\n\n    \n    \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 110
+        },
+        "next": {
+          "$ref": 112
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 111
+        },
+        "next": {
+          "$ref": 113
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 112
+        },
+        "next": {
+          "$ref": 114
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n        \n        \n\n\n\n\n    \n    \n    ",
+        "parent": null,
+        "prev": {
+          "$ref": 113
+        },
+        "next": {
+          "$ref": 115
+        }
+      },
+      {
+        "type": "element",
+        "tag": "div",
+        "kind": "tag",
+        "attrs": {
+          "class": "captioned-image"
+        },
+        "children": [
+          116,
+          117,
+          118,
+          123
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 114
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "img",
+        "kind": "tag",
+        "attrs": {
+          "src": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/snapshot-21w08a-ore-distribution-741x421.jpg",
+          "alt": "An image showing the ore distribution in snapshot 21w08a."
+        },
+        "children": [],
+        "parent": {
+          "$ref": 115
+        },
+        "prev": null,
+        "next": {
+          "$ref": 117
+        }
+      },
+      {
+        "type": "text",
+        "data": "\n                    ",
+        "parent": {
+          "$ref": 115
+        },
+        "prev": {
+          "$ref": 116
+        },
+        "next": {
+          "$ref": 118
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          119,
+          120,
+          122
+        ],
+        "parent": {
+          "$ref": 115
+        },
+        "prev": {
+          "$ref": 117
+        },
+        "next": {
+          "$ref": 123
+        }
+      },
+      {
+        "type": "text",
+        "data": "Ore distribution in snapshot 21w08a. ",
+        "parent": {
+          "$ref": 118
+        },
+        "prev": null,
+        "next": {
+          "$ref": 120
+        }
+      },
+      {
+        "type": "element",
+        "tag": "a",
+        "kind": "tag",
+        "attrs": {
+          "href": "https://images.ctfassets.net/8y6ykjruobr4/73xBtA88xuZQ3fKYH3pX6G/83cc7b912a6c08097d1e7e96e7ed6e96/snapshot-21w08a-ore-distribution.jpg"
+        },
+        "children": [
+          121
+        ],
+        "parent": {
+          "$ref": 118
+        },
+        "prev": {
+          "$ref": 119
+        },
+        "next": {
+          "$ref": 122
+        }
+      },
+      {
+        "type": "text",
+        "data": "Click here",
+        "parent": {
+          "$ref": 120
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " for a link to the image in full resolution.",
+        "parent": {
+          "$ref": 118
+        },
+        "prev": {
+          "$ref": 120
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n\n                ",
+        "parent": {
+          "$ref": 115
+        },
+        "prev": {
+          "$ref": 118
+        },
+        "next": null
+      }
+    ]
+  },
+  "bugList": [
+    {
+      "id": "MC-213926",
+      "title": "Rooted dirt footstep sounds are considerably quieter than normal dirt footstep sounds"
+    },
+    {
+      "id": "MC-214782",
+      "title": "Geodes can generate floating in caves"
+    },
+    {
+      "id": "MC-214843",
+      "title": "Old style caves don’t generate past Y=0"
+    }
+  ],
+  "merged": true,
+  "shortText": "In this snapshot, our new beloved stone type has suffered a grim fate and has been renamed \"Deepslate\". How mysterious! Tweaked cave sizes further, Canyon and cave carvers now apply below y=0, Cracks can now be found carved into the ground, Grimstone has been changed into",
+  "title": "Minecraft Snapshot 21w08a",
+  "targetRelease": "1.17",
+  "publishedAt": 1614177531
+}

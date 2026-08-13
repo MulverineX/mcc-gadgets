@@ -1,0 +1,2008 @@
+{
+  "version": "22w16a",
+  "heroImage": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/snapshot-22w16a-header.jpg",
+  "source": "minecraft.net",
+  "body": {
+    "nodes": [
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          1
+        ],
+        "parent": null,
+        "prev": null,
+        "next": {
+          "$ref": 2
+        }
+      },
+      {
+        "type": "text",
+        "data": "A  chance to re-live the good old times appears in snapshot 22w16a with the ability to de-fragment a Disc – a new Music Disc, to be precise! This snapshot also comes with even more new music, tweaks to the Allay, and to top it all off some random gameplay events are slightly more predictable.",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 0
+        },
+        "next": {
+          "$ref": 3
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          4
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 2
+        },
+        "next": {
+          "$ref": 5
+        }
+      },
+      {
+        "type": "text",
+        "data": "Enjoy!",
+        "parent": {
+          "$ref": 3
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 3
+        },
+        "next": {
+          "$ref": 6
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 5
+        },
+        "next": {
+          "$ref": 7
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 6
+        },
+        "next": {
+          "$ref": 8
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 7
+        },
+        "next": {
+          "$ref": 9
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h2",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          10
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 8
+        },
+        "next": {
+          "$ref": 11
+        }
+      },
+      {
+        "type": "text",
+        "data": "New Features in 22w16a",
+        "parent": {
+          "$ref": 9
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 9
+        },
+        "next": {
+          "$ref": 12
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          13,
+          15
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 11
+        },
+        "next": {
+          "$ref": 17
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          14
+        ],
+        "parent": {
+          "$ref": 12
+        },
+        "prev": null,
+        "next": {
+          "$ref": 15
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added new music",
+        "parent": {
+          "$ref": 13
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          16
+        ],
+        "parent": {
+          "$ref": 12
+        },
+        "prev": {
+          "$ref": 13
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Added Disc Fragment 5 and Music Disc 5",
+        "parent": {
+          "$ref": 15
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 12
+        },
+        "next": {
+          "$ref": 18
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          19
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 17
+        },
+        "next": {
+          "$ref": 20
+        }
+      },
+      {
+        "type": "text",
+        "data": "Four new music tracks",
+        "parent": {
+          "$ref": 18
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 18
+        },
+        "next": {
+          "$ref": 21
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          22,
+          24
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 20
+        },
+        "next": {
+          "$ref": 26
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          23
+        ],
+        "parent": {
+          "$ref": 21
+        },
+        "prev": null,
+        "next": {
+          "$ref": 24
+        }
+      },
+      {
+        "type": "text",
+        "data": "The new music tracks are called Ancestry, Aerie, Firebugs, and Labyrinthine",
+        "parent": {
+          "$ref": 22
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          25
+        ],
+        "parent": {
+          "$ref": 21
+        },
+        "prev": {
+          "$ref": 22
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "They play in certain biomes and in the main menu",
+        "parent": {
+          "$ref": 24
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 21
+        },
+        "next": {
+          "$ref": 27
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          28,
+          29
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 26
+        },
+        "next": {
+          "$ref": 30
+        }
+      },
+      {
+        "type": "element",
+        "tag": "a",
+        "kind": "tag",
+        "attrs": {},
+        "children": [],
+        "parent": {
+          "$ref": 27
+        },
+        "prev": null,
+        "next": {
+          "$ref": 29
+        }
+      },
+      {
+        "type": "text",
+        "data": "Music Disc 5",
+        "parent": {
+          "$ref": 27
+        },
+        "prev": {
+          "$ref": 28
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 27
+        },
+        "next": {
+          "$ref": 31
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          32
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 30
+        },
+        "next": {
+          "$ref": 33
+        }
+      },
+      {
+        "type": "text",
+        "data": "A new music disc has been added to the game.",
+        "parent": {
+          "$ref": 31
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 31
+        },
+        "next": {
+          "$ref": 34
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          35,
+          37
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 33
+        },
+        "next": {
+          "$ref": 39
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          36
+        ],
+        "parent": {
+          "$ref": 34
+        },
+        "prev": null,
+        "next": {
+          "$ref": 37
+        }
+      },
+      {
+        "type": "text",
+        "data": "Unlike other discs, it can only be obtained by finding and crafting 9 Disc Fragments together",
+        "parent": {
+          "$ref": 35
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          38
+        ],
+        "parent": {
+          "$ref": 34
+        },
+        "prev": {
+          "$ref": 35
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "These Disc Fragments can be found rarely in Ancient City chests",
+        "parent": {
+          "$ref": 37
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 34
+        },
+        "next": {
+          "$ref": 40
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 39
+        },
+        "next": {
+          "$ref": 41
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          42,
+          44,
+          46,
+          48
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 40
+        },
+        "next": {
+          "$ref": 50
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          43
+        ],
+        "parent": {
+          "$ref": 41
+        },
+        "prev": null,
+        "next": {
+          "$ref": 44
+        }
+      },
+      {
+        "type": "text",
+        "data": "Allay tweaks",
+        "parent": {
+          "$ref": 42
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          45
+        ],
+        "parent": {
+          "$ref": 41
+        },
+        "prev": {
+          "$ref": 42
+        },
+        "next": {
+          "$ref": 46
+        }
+      },
+      {
+        "type": "text",
+        "data": "Improved the predictability a number of gameplay elements",
+        "parent": {
+          "$ref": 44
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          47
+        ],
+        "parent": {
+          "$ref": 41
+        },
+        "prev": {
+          "$ref": 44
+        },
+        "next": {
+          "$ref": 48
+        }
+      },
+      {
+        "type": "text",
+        "data": "Frogs can now spawn on Grass, Mud, Moss Carpet, Mangrove Roots and Muddy Mangrove Roots",
+        "parent": {
+          "$ref": 46
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          49
+        ],
+        "parent": {
+          "$ref": 41
+        },
+        "prev": {
+          "$ref": 46
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Froglights are now movable by pistons",
+        "parent": {
+          "$ref": 48
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 41
+        },
+        "next": {
+          "$ref": 51
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          52
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 50
+        },
+        "next": {
+          "$ref": 53
+        }
+      },
+      {
+        "type": "text",
+        "data": "Allay tweaks",
+        "parent": {
+          "$ref": 51
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 51
+        },
+        "next": {
+          "$ref": 54
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          55,
+          57,
+          59,
+          61,
+          69
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 53
+        },
+        "next": {
+          "$ref": 71
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          56
+        ],
+        "parent": {
+          "$ref": 54
+        },
+        "prev": null,
+        "next": {
+          "$ref": 57
+        }
+      },
+      {
+        "type": "text",
+        "data": "Allay health raised from 10 to 20",
+        "parent": {
+          "$ref": 55
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          58
+        ],
+        "parent": {
+          "$ref": 54
+        },
+        "prev": {
+          "$ref": 55
+        },
+        "next": {
+          "$ref": 59
+        }
+      },
+      {
+        "type": "text",
+        "data": "Delay after item throw lowered from 5 secs to 3 secs",
+        "parent": {
+          "$ref": 57
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          60
+        ],
+        "parent": {
+          "$ref": 54
+        },
+        "prev": {
+          "$ref": 57
+        },
+        "next": {
+          "$ref": 61
+        }
+      },
+      {
+        "type": "text",
+        "data": "Item search range raised from 9 to 32",
+        "parent": {
+          "$ref": 59
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          62,
+          63,
+          68
+        ],
+        "parent": {
+          "$ref": 54
+        },
+        "prev": {
+          "$ref": 59
+        },
+        "next": {
+          "$ref": 69
+        }
+      },
+      {
+        "type": "text",
+        "data": "Movement speed changes:",
+        "parent": {
+          "$ref": 61
+        },
+        "prev": null,
+        "next": {
+          "$ref": 63
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          64,
+          66
+        ],
+        "parent": {
+          "$ref": 61
+        },
+        "prev": {
+          "$ref": 62
+        },
+        "next": {
+          "$ref": 68
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          65
+        ],
+        "parent": {
+          "$ref": 63
+        },
+        "prev": null,
+        "next": {
+          "$ref": 66
+        }
+      },
+      {
+        "type": "text",
+        "data": "Allay is now slower when just wandering",
+        "parent": {
+          "$ref": 64
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          67
+        ],
+        "parent": {
+          "$ref": 63
+        },
+        "prev": {
+          "$ref": 64
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Allay is now faster when collecting items, going to the player or going to a noteblock",
+        "parent": {
+          "$ref": 66
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 61
+        },
+        "prev": {
+          "$ref": 63
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          70
+        ],
+        "parent": {
+          "$ref": 54
+        },
+        "prev": {
+          "$ref": 61
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Throw arc has changed following community feedback",
+        "parent": {
+          "$ref": 69
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 54
+        },
+        "next": {
+          "$ref": 72
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          73,
+          74
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 71
+        },
+        "next": {
+          "$ref": 75
+        }
+      },
+      {
+        "type": "element",
+        "tag": "a",
+        "kind": "tag",
+        "attrs": {},
+        "children": [],
+        "parent": {
+          "$ref": 72
+        },
+        "prev": null,
+        "next": {
+          "$ref": 74
+        }
+      },
+      {
+        "type": "text",
+        "data": "Predictability of randomized events",
+        "parent": {
+          "$ref": 72
+        },
+        "prev": {
+          "$ref": 73
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 72
+        },
+        "next": {
+          "$ref": 76
+        }
+      },
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          77
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 75
+        },
+        "next": {
+          "$ref": 78
+        }
+      },
+      {
+        "type": "text",
+        "data": "Some randomized events are now more predictable and no longer have a possibility of extreme behaviors.",
+        "parent": {
+          "$ref": 76
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 76
+        },
+        "next": {
+          "$ref": 79
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          80,
+          82,
+          84,
+          89,
+          91,
+          93,
+          95,
+          97
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 78
+        },
+        "next": {
+          "$ref": 99
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          81
+        ],
+        "parent": {
+          "$ref": 79
+        },
+        "prev": null,
+        "next": {
+          "$ref": 82
+        }
+      },
+      {
+        "type": "text",
+        "data": "Placement and velocity of things dropped from Droppers/Dispensers",
+        "parent": {
+          "$ref": 80
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          83
+        ],
+        "parent": {
+          "$ref": 79
+        },
+        "prev": {
+          "$ref": 80
+        },
+        "next": {
+          "$ref": 84
+        }
+      },
+      {
+        "type": "text",
+        "data": "Placement and velocity of items spawned from containers upon destroy",
+        "parent": {
+          "$ref": 82
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          85,
+          86,
+          88
+        ],
+        "parent": {
+          "$ref": 79
+        },
+        "prev": {
+          "$ref": 82
+        },
+        "next": {
+          "$ref": 89
+        }
+      },
+      {
+        "type": "text",
+        "data": "Randomized ",
+        "parent": {
+          "$ref": 84
+        },
+        "prev": null,
+        "next": {
+          "$ref": 86
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightB"
+        },
+        "children": [
+          87
+        ],
+        "parent": {
+          "$ref": 84
+        },
+        "prev": {
+          "$ref": 85
+        },
+        "next": {
+          "$ref": 88
+        }
+      },
+      {
+        "type": "text",
+        "data": "follow_range",
+        "parent": {
+          "$ref": 86
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " component attribute for mobs",
+        "parent": {
+          "$ref": 84
+        },
+        "prev": {
+          "$ref": 86
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          90
+        ],
+        "parent": {
+          "$ref": 79
+        },
+        "prev": {
+          "$ref": 84
+        },
+        "next": {
+          "$ref": 91
+        }
+      },
+      {
+        "type": "text",
+        "data": "Velocity of Horses spawned from skeleton traps",
+        "parent": {
+          "$ref": 89
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          92
+        ],
+        "parent": {
+          "$ref": 79
+        },
+        "prev": {
+          "$ref": 89
+        },
+        "next": {
+          "$ref": 93
+        }
+      },
+      {
+        "type": "text",
+        "data": "Blaze random position and randomized speed of Blaze projectiles",
+        "parent": {
+          "$ref": 91
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          94
+        ],
+        "parent": {
+          "$ref": 79
+        },
+        "prev": {
+          "$ref": 91
+        },
+        "next": {
+          "$ref": 95
+        }
+      },
+      {
+        "type": "text",
+        "data": "Randomized portion of damage and velocity of Arrows",
+        "parent": {
+          "$ref": 93
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          96
+        ],
+        "parent": {
+          "$ref": 79
+        },
+        "prev": {
+          "$ref": 93
+        },
+        "next": {
+          "$ref": 97
+        }
+      },
+      {
+        "type": "text",
+        "data": "Randomized flight pattern of Fireworks",
+        "parent": {
+          "$ref": 95
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          98
+        ],
+        "parent": {
+          "$ref": 79
+        },
+        "prev": {
+          "$ref": 95
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Bobbing patterns and time until a fish for Fishing Rods",
+        "parent": {
+          "$ref": 97
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 79
+        },
+        "next": {
+          "$ref": 100
+        }
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 99
+        },
+        "next": {
+          "$ref": 101
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          102,
+          106,
+          108,
+          110
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 100
+        },
+        "next": {
+          "$ref": 112
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          103,
+          105
+        ],
+        "parent": {
+          "$ref": 101
+        },
+        "prev": null,
+        "next": {
+          "$ref": 106
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightB"
+        },
+        "children": [
+          104
+        ],
+        "parent": {
+          "$ref": 102
+        },
+        "prev": null,
+        "next": {
+          "$ref": 105
+        }
+      },
+      {
+        "type": "text",
+        "data": "LWJGL",
+        "parent": {
+          "$ref": 103
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " library has been updated to version 3.3.1",
+        "parent": {
+          "$ref": 102
+        },
+        "prev": {
+          "$ref": 103
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          107
+        ],
+        "parent": {
+          "$ref": 101
+        },
+        "prev": {
+          "$ref": 102
+        },
+        "next": {
+          "$ref": 108
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added a heap memory allocation metric to the F3 debug screen",
+        "parent": {
+          "$ref": 106
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          109
+        ],
+        "parent": {
+          "$ref": 101
+        },
+        "prev": {
+          "$ref": 106
+        },
+        "next": {
+          "$ref": 110
+        }
+      },
+      {
+        "type": "text",
+        "data": "Added doWardenSpawning game rule",
+        "parent": {
+          "$ref": 108
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          111
+        ],
+        "parent": {
+          "$ref": 101
+        },
+        "prev": {
+          "$ref": 108
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Updates to paintings",
+        "parent": {
+          "$ref": 110
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 101
+        },
+        "next": {
+          "$ref": 113
+        }
+      },
+      {
+        "type": "element",
+        "tag": "h3",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          114
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 112
+        },
+        "next": {
+          "$ref": 115
+        }
+      },
+      {
+        "type": "text",
+        "data": "Painting",
+        "parent": {
+          "$ref": 113
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 113
+        },
+        "next": {
+          "$ref": 116
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          117,
+          122
+        ],
+        "parent": null,
+        "prev": {
+          "$ref": 115
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          118,
+          119,
+          121
+        ],
+        "parent": {
+          "$ref": 116
+        },
+        "prev": null,
+        "next": {
+          "$ref": 122
+        }
+      },
+      {
+        "type": "text",
+        "data": "Paintings that are placeable in survival can now be controlled with the ",
+        "parent": {
+          "$ref": 117
+        },
+        "prev": null,
+        "next": {
+          "$ref": 119
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightB"
+        },
+        "children": [
+          120
+        ],
+        "parent": {
+          "$ref": 117
+        },
+        "prev": {
+          "$ref": 118
+        },
+        "next": {
+          "$ref": 121
+        }
+      },
+      {
+        "type": "text",
+        "data": "painting_variant/placeable",
+        "parent": {
+          "$ref": 119
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": " tag",
+        "parent": {
+          "$ref": 117
+        },
+        "prev": {
+          "$ref": 119
+        },
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          123,
+          124,
+          126,
+          127,
+          129,
+          130,
+          132,
+          133,
+          135,
+          136,
+          139
+        ],
+        "parent": {
+          "$ref": 116
+        },
+        "prev": {
+          "$ref": 117
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Added unused paintings from Bedrock edition (",
+        "parent": {
+          "$ref": 122
+        },
+        "prev": null,
+        "next": {
+          "$ref": 124
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightB"
+        },
+        "children": [
+          125
+        ],
+        "parent": {
+          "$ref": 122
+        },
+        "prev": {
+          "$ref": 123
+        },
+        "next": {
+          "$ref": 126
+        }
+      },
+      {
+        "type": "text",
+        "data": "earth",
+        "parent": {
+          "$ref": 124
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": ", ",
+        "parent": {
+          "$ref": 122
+        },
+        "prev": {
+          "$ref": 124
+        },
+        "next": {
+          "$ref": 127
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightB"
+        },
+        "children": [
+          128
+        ],
+        "parent": {
+          "$ref": 122
+        },
+        "prev": {
+          "$ref": 126
+        },
+        "next": {
+          "$ref": 129
+        }
+      },
+      {
+        "type": "text",
+        "data": "wind",
+        "parent": {
+          "$ref": 127
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": ", ",
+        "parent": {
+          "$ref": 122
+        },
+        "prev": {
+          "$ref": 127
+        },
+        "next": {
+          "$ref": 130
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightB"
+        },
+        "children": [
+          131
+        ],
+        "parent": {
+          "$ref": 122
+        },
+        "prev": {
+          "$ref": 129
+        },
+        "next": {
+          "$ref": 132
+        }
+      },
+      {
+        "type": "text",
+        "data": "fire",
+        "parent": {
+          "$ref": 130
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": ", ",
+        "parent": {
+          "$ref": 122
+        },
+        "prev": {
+          "$ref": 130
+        },
+        "next": {
+          "$ref": 133
+        }
+      },
+      {
+        "type": "element",
+        "tag": "span",
+        "kind": "tag",
+        "attrs": {
+          "class": "MC_Effect_TextHighlightB"
+        },
+        "children": [
+          134
+        ],
+        "parent": {
+          "$ref": 122
+        },
+        "prev": {
+          "$ref": 132
+        },
+        "next": {
+          "$ref": 135
+        }
+      },
+      {
+        "type": "text",
+        "data": "water",
+        "parent": {
+          "$ref": 133
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": ")",
+        "parent": {
+          "$ref": 122
+        },
+        "prev": {
+          "$ref": 133
+        },
+        "next": {
+          "$ref": 136
+        }
+      },
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          137
+        ],
+        "parent": {
+          "$ref": 122
+        },
+        "prev": {
+          "$ref": 135
+        },
+        "next": {
+          "$ref": 139
+        }
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          138
+        ],
+        "parent": {
+          "$ref": 136
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "These paintings are not placeable by default, but can be added through a datapack",
+        "parent": {
+          "$ref": 137
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": {
+          "$ref": 122
+        },
+        "prev": {
+          "$ref": 136
+        },
+        "next": null
+      }
+    ]
+  },
+  "bugList": [
+    {
+      "id": "MC-81870",
+      "title": "Editing entitydata of Painting does not reflect ingame until chunk reload"
+    },
+    {
+      "id": "MC-111809",
+      "title": "Paintings unrender when entity data is updated rapidly"
+    },
+    {
+      "id": "MC-187188",
+      "title": "Painting NBT and registry contain a typo: “Motive” instead of “Motif”"
+    },
+    {
+      "id": "MC-226184",
+      "title": "Axolotls pathfinding to water can sometimes fall in wide holes"
+    },
+    {
+      "id": "MC-228049",
+      "title": "Axolotl can’t pathfind through open doors"
+    },
+    {
+      "id": "MC-228174",
+      "title": "Axolotls try to pathfind through 2 tall walls"
+    },
+    {
+      "id": "MC-244957",
+      "title": "“Search” Option in Social Interactions Screen is not labeled in the right order when using Tab"
+    },
+    {
+      "id": "MC-245001",
+      "title": "“Manage with Microsoft account” button in Social Interactions menu is not centered"
+    },
+    {
+      "id": "MC-249084",
+      "title": "No sound is present for placing a Bucket of Tadpole"
+    },
+    {
+      "id": "MC-249092",
+      "title": "Mangrove Stripped Log, Stripped Wood and Wood are in the incorrect order in the creative inventory"
+    },
+    {
+      "id": "MC-249176",
+      "title": "Froglights are not visible on maps"
+    },
+    {
+      "id": "MC-249193",
+      "title": "Frog can’t pathfind through open doors"
+    },
+    {
+      "id": "MC-249217",
+      "title": "Fluid level next to froglights is too low"
+    },
+    {
+      "id": "MC-249245",
+      "title": "Turtle can’t pathfind through open doors"
+    },
+    {
+      "id": "MC-249246",
+      "title": "Strider can’t pathfind through open doors"
+    },
+    {
+      "id": "MC-249265",
+      "title": "Some blocks cannot be placed on froglights"
+    },
+    {
+      "id": "MC-249459",
+      "title": "Cactus is not destroyed by froglights"
+    },
+    {
+      "id": "MC-249663",
+      "title": "The subtitles of some parrot imitation sounds are inconsistent with the original sounds’ subtitles"
+    },
+    {
+      "id": "MC-249679",
+      "title": "Incorrect activation of warden’s sniffing animations and behavior"
+    },
+    {
+      "id": "MC-249715",
+      "title": "Allays don’t drop their held items upon death"
+    },
+    {
+      "id": "MC-249766",
+      "title": "Allays can despawn after being given an item if they haven’t picked up any items yet"
+    },
+    {
+      "id": "MC-249790",
+      "title": "Allay follows and drops items for players in spectator mode"
+    },
+    {
+      "id": "MC-249838",
+      "title": "Allays lose their idle animation once they start moving"
+    },
+    {
+      "id": "MC-249855",
+      "title": "Parity Issue: Allays don’t have a flying animation in Java"
+    },
+    {
+      "id": "MC-249912",
+      "title": "minecraft:ancient_city/city_center_3 is one block shorter compared than the other ancient city centers"
+    },
+    {
+      "id": "MC-249928",
+      "title": "Mangrove tree roots do not update blocks around them when generating"
+    },
+    {
+      "id": "MC-250039",
+      "title": "Wardens can get angry at mobs outside world border"
+    },
+    {
+      "id": "MC-250040",
+      "title": "Wardens can hear mobs beyond the world border"
+    },
+    {
+      "id": "MC-250041",
+      "title": "Wardens can spawn outside of world border"
+    },
+    {
+      "id": "MC-250044",
+      "title": "Observers don’t detect mangrove roots when tree grows"
+    },
+    {
+      "id": "MC-250094",
+      "title": "Wardens ignore /kill execution whilst they’re emerging or digging"
+    },
+    {
+      "id": "MC-250095",
+      "title": "Wardens can spawn in very narrow places, causing them to suffocate"
+    },
+    {
+      "id": "MC-250293",
+      "title": "The “allay_dust” particle is unused"
+    },
+    {
+      "id": "MC-250294",
+      "title": "Parity Issue: Allays item detection range is significantly smaller than in Bedrock"
+    }
+  ],
+  "merged": true,
+  "shortText": "A chance to re-live the good old times appears in snapshot 22w16a with the ability to de-fragment a Disc – a new Music Disc, to be precise! This snapshot also comes with even more new music, tweaks to the Allay, and to top it all off some random gameplay events are slightly more",
+  "title": "Minecraft Snapshot 22w16a",
+  "targetRelease": "1.19",
+  "publishedAt": 1650465427
+}

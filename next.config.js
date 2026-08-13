@@ -3,10 +3,23 @@
  * for Docker builds.
  */
 await import("./src/env.js");
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import("next").NextConfig} */
 const config = {
   webpack: (config) => {
+    // Map `public/...` imports to the actual `public/` directory so SVGR
+    // can transform them into React components alongside the file-loader
+    // rule that already serves them at the site root.
+    config.resolve = config.resolve ?? {};
+    config.resolve.alias = {
+      ...(config.resolve.alias ?? {}),
+      public: path.join(__dirname, "public"),
+    };
+
     const svgLoaderRule = config.module.rules.find((/** @type {any} */ rule) =>
       rule.test?.test?.(".svg"),
     );

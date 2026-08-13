@@ -1,0 +1,2900 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>corpus rendered</title>
+    <style>
+      :root {
+        --bg: #1a1a1a;
+        --fg: #e6e6e6;
+        --muted: #888;
+        --border: #333;
+        --code-bg: #2a2a2a;
+        --link: #8ab4f8;
+      }
+      body {
+        font-family:
+          "Noto Sans",
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        line-height: 1.5;
+        background: var(--bg);
+        color: var(--fg);
+      }
+      a {
+        color: var(--link);
+      }
+      code {
+        background: var(--code-bg);
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+      }
+      img.hero {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto 2rem;
+      }
+      section {
+        margin-bottom: 6rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border);
+      }
+      section > h1 {
+        margin-top: 0;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #fff;
+          --fg: #222;
+          --muted: #666;
+          --border: #ccc;
+          --code-bg: #f4f4f4;
+          --link: #1a73e8;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img
+        class="hero"
+        src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/26.2-snapshot-3%201170x500.jpg"
+        alt=""
+      />
+      <h1>Minecraft 26.2 Snapshot 3</h1>
+      <p class="meta">
+        Target Version: <code>26.2</code> · Released
+        <time class="released" data-unix="1776166234"></time>
+      </p>
+      <h2>Changes</h2>
+
+      <ul>
+        <li>
+          The Potent Sulfur block no longer crafts back into Sulfur blocks
+        </li>
+        <li>
+          Updated the textures for the following blocks:
+          <ul>
+            <li>
+              <span class="MC_Effect_TextHighlightA">Chiseled Cinnabar</span>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">Chiseled Sulfur</span>
+            </li>
+            <li><span class="MC_Effect_TextHighlightA">Cinnabar</span></li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">Cinnabar Bricks</span>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">Polished Cinnabar</span>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">Polished Sulfur</span>
+            </li>
+            <li><span class="MC_Effect_TextHighlightA">Sulfur Bricks</span></li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Sulfur Cube mob</h3>
+
+      <ul>
+        <li>Can no longer be picked up by Boats</li>
+      </ul>
+
+      <h3>Sounds</h3>
+
+      <ul>
+        <li>Updated sounds for Nautilus jets and Nautilus recovers</li>
+      </ul>
+
+      <h2>Technical Changes</h2>
+
+      <ul>
+        <li>The Data Pack version is now 102.0</li>
+        <li>The Resource Pack version is now 86.0</li>
+      </ul>
+
+      <h2>Data Pack Version 102.0</h2>
+
+      <h3>Block Entity Data</h3>
+
+      <ul>
+        <li>
+          The <span class="MC_Effect_TextHighlightA">minecraft:bed</span> block
+          entity has been removed
+        </li>
+      </ul>
+
+      <h3>Predicates</h3>
+
+      <h4>Entity Predicates</h4>
+
+      <p>
+        Entity predicate format has changed from a structure with multiple
+        optional fields to one similar to data component maps.
+      </p>
+
+      <p>
+        For example, previously
+        <span class="MC_Effect_TextHighlightA">effects</span> was an optional
+        field:
+      </p>
+
+      <pre>
+<code>{
+    &quot;effects&quot;: {...}
+}
+</code>
+</pre>
+
+      <p>In this version it has become a component-like sub-predicate entry:</p>
+
+      <pre>
+<code>{
+    &quot;minecraft:effects&quot;: {...}
+}
+</code>
+</pre>
+
+      <p>The main functional changes are:</p>
+
+      <ul>
+        <li>
+          All keys in entity predicates are now identifiers
+          <ul>
+            <li>
+              Since identifiers can be written without namespace (default to
+              <span class="MC_Effect_TextHighlightA">minecraft</span>
+              namespace), existing field names are still valid
+            </li>
+            <li>
+              Exception: field
+              <span class="MC_Effect_TextHighlightA">type</span> has been
+              renamed to
+              <span class="MC_Effect_TextHighlightA"
+                >minecraft:entity_type</span
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          Unrecognized sub-predicate components are now rejected (previously
+          unknown fields were ignored)
+        </li>
+      </ul>
+
+      <p>
+        Existing type-specific sub-predicates have been renamed and moved to
+        top-level.
+      </p>
+
+      <ul>
+        <li>
+          <span class="MC_Effect_TextHighlightA">minecraft:lightning</span> to
+          <span class="MC_Effect_TextHighlightA"
+            >minecraft:type_specific/lightning</span
+          >
+        </li>
+        <li>
+          <span class="MC_Effect_TextHighlightA">minecraft:fishing_hook</span>
+          to
+          <span class="MC_Effect_TextHighlightA"
+            >minecraft:type_specific/fishing_hook</span
+          >
+        </li>
+        <li>
+          <span class="MC_Effect_TextHighlightA">minecraft:player</span> to
+          <span class="MC_Effect_TextHighlightA"
+            >minecraft:type_specific/player</span
+          >
+        </li>
+        <li>
+          <span class="MC_Effect_TextHighlightA">minecraft:raider</span> to
+          <span class="MC_Effect_TextHighlightA"
+            >minecraft:type_specific/raider</span
+          >
+        </li>
+        <li>
+          <span class="MC_Effect_TextHighlightA">minecraft:sheep</span> to
+          <span class="MC_Effect_TextHighlightA"
+            >minecraft:type_specific/sheep</span
+          >
+        </li>
+        <li>
+          <span class="MC_Effect_TextHighlightA">minecraft:slime</span> to
+          <span class="MC_Effect_TextHighlightA">minecraft:cube_mob</span> as it
+          now includes Sulfur Cubes in addition to Slimes and Magma Cubes
+        </li>
+      </ul>
+
+      <p>For example:</p>
+
+      <pre>
+<code>{
+  &quot;type_specific&quot;: {
+    &quot;type&quot;: &quot;minecraft:player&quot;,
+    &quot;looking_at&quot;: {
+      &quot;type&quot;: &quot;minecraft:ender_dragon&quot;
+    }
+  }
+}
+</code>
+</pre>
+
+      <p>becomes</p>
+
+      <pre>
+<code>{
+  &quot;minecraft:type_specific/player&quot;: {
+    &quot;looking_at&quot;: {
+      &quot;minecraft:type&quot;: &quot;minecraft:ender_dragon&quot;
+    }
+  }
+}
+</code>
+</pre>
+
+      <h5>
+        Added
+        <span class="MC_Effect_TextHighlightA">minecraft:entity_tags</span>
+        entity sub-predicate
+      </h5>
+
+      <p>
+        This predicate matches entity tags (i.e. ones set with the
+        <span class="MC_Effect_TextHighlightA">/tag</span> command).
+      </p>
+
+      <p>Fields:</p>
+
+      <ul>
+        <li>
+          <span class="MC_Effect_TextHighlightA">any_of</span> - optional list
+          of strings, if present the matched entity must have at least one of
+          the listed tags
+        </li>
+        <li>
+          <span class="MC_Effect_TextHighlightA">all_of</span> - optional list
+          of strings, if present the matched entity must have all the listed
+          tags
+        </li>
+        <li>
+          <span class="MC_Effect_TextHighlightA">none_of</span> - optional list
+          of strings, if present the matched entity must have none of the listed
+          tags
+        </li>
+      </ul>
+
+      <h3>World Generation</h3>
+
+      <h4>Overworld Features</h4>
+
+      <ul>
+        <li>
+          Adjusted Feature Type
+          <span class="MC_Effect_TextHighlightA">lake</span>
+          <ul>
+            <li>
+              Added field
+              <span class="MC_Effect_TextHighlightA">can_place_feature</span> -
+              Block Predicate, describes which blocks this feature can be placed
+              on
+            </li>
+            <li>
+              Added field
+              <span class="MC_Effect_TextHighlightA"
+                >can_replace_with_air_or_fluid</span
+              >
+              - Block Predicate, describes which blocks this feature can replace
+              with air or the provided
+              <span class="MC_Effect_TextHighlightA">fluid</span> block
+            </li>
+            <li>
+              Added field
+              <span class="MC_Effect_TextHighlightA"
+                >can_replace_with_barrier</span
+              >
+              - Block Predicate, describes which blocks this feature can replace
+              with the provided
+              <span class="MC_Effect_TextHighlightA">barrier</span> block
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Tags</h3>
+
+      <h4>Block Tags</h4>
+
+      <ul>
+        <li>
+          Added <span class="MC_Effect_TextHighlightA">#speleothems</span> for
+          blocks which are speleothems like Pointed Dripstone and Sulfur Spike
+        </li>
+      </ul>
+
+      <h2>Resource Pack Version 86.0</h2>
+
+      <h3>Block Sprites</h3>
+
+      <ul>
+        <li>
+          Added new Block textures:
+          <ul>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/sulfur_spike_down_base.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/sulfur_spike_down_frustum.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/sulfur_spike_down_middle.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/sulfur_spike_down_tip.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/sulfur_spike_down_tip_merge.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/sulfur_spike_up_base.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/sulfur_spike_up_frustum.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/sulfur_spike_up_middle.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/sulfur_spike_up_tip.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/sulfur_spike_up_tip_merge.png</span
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          Beds now use block models and textures, replacing
+          <span class="MC_Effect_TextHighlightA">&lt;color&gt;</span> with the
+          respective bed&apos;s color&apos;s name
+          <ul>
+            <li>
+              <span class="MC_Effect_TextHighlightA">block/bed_down.png</span>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/bed_head_north.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/&lt;color&gt;_bed_foot_east.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/&lt;color&gt;_bed_foot_south.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/&lt;color&gt;_bed_foot_up.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/&lt;color&gt;_bed_foot_west.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/&lt;color&gt;_bed_head_east.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/&lt;color&gt;_bed_head_up.png</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >block/&lt;color&gt;_bed_head_west.png</span
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Item Sprites</h3>
+
+      <ul>
+        <li>
+          Added new Item sprites:
+          <ul>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >item/sulfur_spike.png</span
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Item Models</h3>
+
+      <ul>
+        <li>
+          The
+          <span class="MC_Effect_TextHighlightA">minecraft:bed</span> special
+          model type has been removed
+        </li>
+      </ul>
+      <h3>Bugs (19)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-229057"><code>MC-229057</code></a> —
+          Picking up an axolotl with a lead attached destroys the lead
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-277744"><code>MC-277744</code></a> —
+          Blocks with emissive textures don't emit much light when held by
+          endermen
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-302496"><code>MC-302496</code></a> —
+          Glowing dragon fireballs no longer show the glowing outline
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307177"><code>MC-307177</code></a> —
+          Enabling JFR profiling causes the client to crash on startup
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307227"><code>MC-307227</code></a> —
+          Using an empty Offers NBT tag to disable trades doesn't work after a
+          relog/data merge
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307289"><code>MC-307289</code></a> —
+          Polished sulfur is named "Polished Sulfur Block", which is
+          inconsistent with all other polished stone blocks
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307291"><code>MC-307291</code></a> —
+          The game crashes when an entity with the friction_modifier attribute
+          set to 2.5 moves
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307298"><code>MC-307298</code></a> —
+          Sulfur cubes with blocks inside them produce footstep sounds when
+          moving across the ground
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307300"><code>MC-307300</code></a> —
+          Magma blocks held by sulfur cubes are not emissive
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307315"><code>MC-307315</code></a> —
+          Frogs try to eat large magma cubes now
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307316"><code>MC-307316</code></a> —
+          Magma cubes no longer drop magma cream
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307340"><code>MC-307340</code></a> —
+          The bottom face of slimes' outer layer z-fights with the ground
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307347"><code>MC-307347</code></a> —
+          Releasing a sulfur cube from a bucket and killing it does not cause it
+          to drop its held block
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307357"><code>MC-307357</code></a> —
+          Sulfur cubes don't emit light when holding a glowing block
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307371"><code>MC-307371</code></a> —
+          The #sulfur_cube_archetype/fast_flat item tag contains pumpkin twice
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307405"><code>MC-307405</code></a> —
+          When picking up a leashed sulfur cube with a bucket, the lead
+          disappears
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307420"><code>MC-307420</code></a> —
+          The game now renders fluid faces that should not be rendered
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307473"><code>MC-307473</code></a> —
+          The block breaking texture on bamboo stalks is now always displayed
+          centered
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-307483"><code>MC-307483</code></a> —
+          Emptying a sulfur cube bucket underwater doesn't place the sulfur cube
+          at the targeted block
+        </li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/26.1-snapshot-1-1170x500.jpg"
+        alt=""
+      />
+      <h1>Minecraft 26.1 Snapshot 1</h1>
+      <p class="meta">
+        Target Version: <code>26.1</code> · Released
+        <time class="released" data-unix="1765888949"></time>
+      </p>
+      <h2>Changes</h2>
+
+      <ul>
+        <li>
+          What trades are unlocked by villager professions are now determined
+          using deterministic random sequences, like loot drops and barter loot
+        </li>
+        <li>
+          The algorithm that maps block and sky light levels to how bright
+          things appear on screen has been fully rewritten
+        </li>
+        <li>
+          A new lightmap debug renderer was introduced, which can be enabled
+          using the <span class="MC_Effect_TextHighlightA">F3 + 4</span> keybind
+        </li>
+      </ul>
+
+      <h3>Lightmap Algorithm Changes</h3>
+
+      <ul>
+        <li>
+          The new algorithm is supposed to mostly provide the same overall
+          results as before, but:
+          <ul>
+            <li>
+              It is simpler and more straightforward, and fixes multiple issues
+              of the previous one, as listed in the Fixed Bugs section below
+            </li>
+            <li>
+              The Darkness effect and world darkening effect of the Wither fight
+              now works the same way in all dimensions
+            </li>
+            <li>
+              The Night Vision effect now simply adds ambient light instead of
+              scaling the resulting colors
+              <ul>
+                <li>
+                  It means that fully dark areas no longer look brighter than
+                  areas lit by block or sky light
+                </li>
+              </ul>
+            </li>
+            <li>
+              More aspects of the algorithm such as block light tint, ambient
+              light color and night vision color are now data-driven through
+              environment attributes, as described in the Data Pack section
+              below
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Lightmap Debug Renderer</h3>
+
+      <ul>
+        <li>
+          A new debug renderer for the lightmap was added, which can be enabled
+          using the <span class="MC_Effect_TextHighlightA">F3 + 4</span> keybind
+        </li>
+        <li>It is mutually exclusive with FPS/TPS and networking charts</li>
+        <li>
+          It shows the lightmap texture in real-time in the bottom right corner
+          of the screen
+        </li>
+        <li>
+          The vertical axis of the texture represent sky light levels (0-15 from
+          bottom to top)
+        </li>
+        <li>
+          The horizontal axis of the texture represent block light levels (0-15
+          from left to right)
+        </li>
+        <li>
+          The color of each pixel represents the resulting color that will be
+          applied to blocks and entities lit with the corresponding block and
+          sky light levels
+        </li>
+      </ul>
+
+      <h3>UI</h3>
+
+      <h4>Debug Screen</h4>
+
+      <ul>
+        <li>
+          The <span class="MC_Effect_TextHighlightA">looking_at_block</span> and
+          <span class="MC_Effect_TextHighlightA">looking_at_fluid</span> debug
+          entries no longer show tags
+        </li>
+        <li>
+          New debug entries have been added:
+          <ul>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >looking_at_block_tags</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >looking_at_fluid_tags</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >looking_at_entity_tags</span
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          Renamed debug entries:
+          <ul>
+            <li>
+              <span class="MC_Effect_TextHighlightA">looking_at_block</span>
+              -&gt;
+              <span class="MC_Effect_TextHighlightA"
+                >looking_at_block_state</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">looking_at_fluid</span>
+              -&gt;
+              <span class="MC_Effect_TextHighlightA"
+                >looking_at_fluid_state</span
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Technical Changes</h2>
+
+      <ul>
+        <li>The Data Pack version is now 95</li>
+        <li>
+          If a server&apos;s disk space is low, a toast will now be shown to
+          server operators
+        </li>
+        <li>The game now requires Java 25</li>
+        <li>
+          The included Java distribution is now the Microsoft build of OpenJDK
+          25
+        </li>
+      </ul>
+
+      <h2>Data Pack Version 95</h2>
+
+      <ul>
+        <li>Added data-driven registry for villager trades</li>
+        <li>
+          Piglin inventory slots can now be accessed using
+          <span class="MC_Effect_TextHighlightA">piglin.*</span> similar to how
+          Villager inventories can be accessed using
+          <span class="MC_Effect_TextHighlightA">villager.*</span>
+        </li>
+      </ul>
+
+      <h3>Data-driven Villager Trades</h3>
+
+      <p>
+        Trades offered by Villagers and Wandering Traders are now data-driven
+        and can be customized by datapack developers
+      </p>
+
+      <h4>Villager Trades</h4>
+
+      <ul>
+        <li>
+          Present in the
+          <span class="MC_Effect_TextHighlightA">villager_trade</span> folder,
+          represents a blueprint for trades which is used by Villagers and
+          Wandering Traders to generate actual trades
+        </li>
+        <li>
+          Entry Format:
+          <ul>
+            <li>
+              <span class="MC_Effect_TextHighlightA">wants</span>, an object
+              representing an item type and number of them needed to trade
+              <ul>
+                <li>
+                  <span class="MC_Effect_TextHighlightA">id</span>, the id of
+                  the item
+                </li>
+                <li>
+                  <span class="MC_Effect_TextHighlightA">count</span>, an
+                  optional number provider representing how many of the item is
+                  needed for the trade
+                  <ul>
+                    <li>
+                      Defaults to a constant
+                      <span class="MC_Effect_TextHighlightA">1</span>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="MC_Effect_TextHighlightA">components</span>, an
+                  optional component map representing the expected data
+                  components on the item
+                  <ul>
+                    <li>Defaults to an empty map</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">additional_wants</span>, an
+              optional object representing an additional item required by the
+              merchant, has the same format as
+              <span class="MC_Effect_TextHighlightA">wants</span>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">gives</span>, an Item Stack
+              representing the resulting item given by the merchant when trading
+              <ul>
+                <li>Uses the existing format for Item Stacks</li>
+              </ul>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">given_item_modifiers</span
+              >, a optional list of Item Modifiers representing modifiers to
+              apply to the item in
+              <span class="MC_Effect_TextHighlightA">gives</span> such as
+              enchantments or potions, used to add dynamism to the trade rather
+              than hardcoding certain values
+              <ul>
+                <li>
+                  Uses the existing format for Item Modifiers (also known as
+                  loot modifiers, item functions, loot functions...)
+                </li>
+                <li>
+                  If any of these returns an empty item the entire trade will be
+                  discarded
+                </li>
+                <li>Item Modifier references are not yet supported</li>
+                <li>
+                  If the final item has a
+                  <span class="MC_Effect_TextHighlightA"
+                    >stored_enchantment</span
+                  >
+                  component containing an enchantment in the
+                  <span class="MC_Effect_TextHighlightA"
+                    >#double_trade_price</span
+                  >
+                  tag, then the count of
+                  <span class="MC_Effect_TextHighlightA">wants</span> is doubled
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">max_uses</span>, an
+              optional number provider representing the maximum number of times
+              a trade may be used
+              <ul>
+                <li>
+                  Is set to <span class="MC_Effect_TextHighlightA">1</span> if
+                  the number provider returns a lower value
+                </li>
+                <li>
+                  Defaults to <span class="MC_Effect_TextHighlightA">4</span>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">reputation_discount</span>,
+              an number provider representing how much factors such as demand,
+              discounts or penalties affects the cost represented by
+              <span class="MC_Effect_TextHighlightA">wants</span>
+              <ul>
+                <li>
+                  Is set to <span class="MC_Effect_TextHighlightA">0.0</span> if
+                  the number provider returns a lower value
+                </li>
+                <li>
+                  Defaults to <span class="MC_Effect_TextHighlightA">0.0</span>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">xp</span>, an optional
+              number provider representing the amount of xp a merchant gets when
+              the trade is done
+              <ul>
+                <li>
+                  Is set to <span class="MC_Effect_TextHighlightA">0</span> if
+                  the number provider returns a lower value
+                </li>
+                <li>
+                  Defaults to <span class="MC_Effect_TextHighlightA">1</span>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">merchant_predicate</span>,
+              a Predicate representing conditions on the merchant that need to
+              be met for the trade to be offered
+              <ul>
+                <li>
+                  Uses the existing format for Predicates (also known as loot
+                  conditions)
+                </li>
+                <li>Predicate references are not yet supported</li>
+              </ul>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >double_trade_price_enchantments</span
+              >, an optional enchantment id, list of namespaced enchantment IDs,
+              or hash-prefixed enchantment tag representing enchantments that
+              will double the additional cost from
+              <span class="MC_Effect_TextHighlightA"
+                >minecraft:enchant_randomly</span
+              >
+              and
+              <span class="MC_Effect_TextHighlightA"
+                >minecraft:enchant_with_levels</span
+              >
+              if they have
+              <span class="MC_Effect_TextHighlightA"
+                >include_additional_cost_component</span
+              >
+              set to <span class="MC_Effect_TextHighlightA">true</span> and if
+              the item has one of the provided values in its
+              <span class="MC_Effect_TextHighlightA"
+                >minecraft:stored_enchantments</span
+              >
+              component
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <p>
+        An example trade of an emerald and a book for an enchanted book offered
+        only by Desert Villagers
+      </p>
+
+      <pre>
+<code>{
+  &quot;additional_wants&quot;: {
+    &quot;id&quot;: &quot;minecraft:book&quot;
+  },
+  &quot;double_trade_price_enchantments&quot;: &quot;#minecraft:double_trade_price&quot;,
+  &quot;given_item_modifiers&quot;: [
+    {
+      &quot;function&quot;: &quot;minecraft:enchant_randomly&quot;,
+      &quot;include_additional_cost_component&quot;: true,
+      &quot;only_compatible&quot;: false,
+      &quot;options&quot;: &quot;#minecraft:trades/desert_common&quot;
+    },
+    {
+      &quot;function&quot;: &quot;minecraft:filtered&quot;,
+      &quot;item_filter&quot;: {
+        &quot;items&quot;: &quot;minecraft:enchanted_book&quot;,
+        &quot;predicates&quot;: {
+          &quot;minecraft:stored_enchantments&quot;: [
+            {}
+          ]
+        }
+      },
+      &quot;on_fail&quot;: {
+        &quot;function&quot;: &quot;minecraft:discard&quot;
+      }
+    }
+  ],
+  &quot;gives&quot;: {
+    &quot;count&quot;: 1,
+    &quot;id&quot;: &quot;minecraft:enchanted_book&quot;
+  },
+  &quot;max_uses&quot;: 12.0,
+  &quot;merchant_predicate&quot;: {
+    &quot;condition&quot;: &quot;minecraft:entity_properties&quot;,
+    &quot;entity&quot;: &quot;this&quot;,
+    &quot;predicate&quot;: {
+      &quot;predicates&quot;: {
+        &quot;minecraft:villager/variant&quot;: &quot;minecraft:desert&quot;
+      }
+    }
+  },
+  &quot;reputation_discount&quot;: 0.2,
+  &quot;wants&quot;: {
+    &quot;id&quot;: &quot;minecraft:emerald&quot;
+  }
+}
+</code>
+
+
+</pre>
+
+      <h4>Trade Sets</h4>
+
+      <ul>
+        <li>
+          Present in the
+          <span class="MC_Effect_TextHighlightA">trade_set</span> folder,
+          they&apos;re groupings of trades offered by Villagers and Wandering
+          Traders
+        </li>
+        <li>
+          We currently only have hardcoded ones available in
+          <span class="MC_Effect_TextHighlightA"
+            >&lt;profession&gt;/level_&lt;level&gt;</span
+          >
+          for Villagers, as well as
+          <span class="MC_Effect_TextHighlightA">wandering_trader/buying</span>,
+          <span class="MC_Effect_TextHighlightA">wandering_trader/special</span
+          >,
+          <span class="MC_Effect_TextHighlightA">wandering_trader/common</span>
+          for Wandering Traders
+        </li>
+        <li>
+          Entry Format:
+          <ul>
+            <li>
+              <span class="MC_Effect_TextHighlightA">trades</span>, a villager
+              trade id, list of namespaced villager trade IDs, or hash-prefixed
+              villager trade tag representing the trades that are part of this
+              trade set
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">amount</span>, a number
+              provider representing the amount of trades to be generated from
+              this set when used
+              <ul>
+                <li>
+                  If the generated number is greater than the number of
+                  available
+                  <span class="MC_Effect_TextHighlightA">trades</span> then it
+                  will only generate until all
+                  <span class="MC_Effect_TextHighlightA">trades</span> have been
+                  used once, unless
+                  <span class="MC_Effect_TextHighlightA">allow_duplicates</span>
+                  is set to <span class="MC_Effect_TextHighlightA">true</span>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">allow_duplicates</span>, a
+              boolean representing if the trade set can use the same Villager
+              Trade multiple times to generate trades
+              <ul>
+                <li>
+                  Defaults to
+                  <span class="MC_Effect_TextHighlightA">false</span>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">random_sequence</span>, an
+              optional named random sequence that determines which trades are
+              generated
+              <ul>
+                <li>Defaults to a non-deterministic random sequence</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <p>
+        An example trade set offering 2 trades from the
+        <span class="MC_Effect_TextHighlightA">#minecraft:armorer/level_1</span>
+        tag, allowing duplicates
+      </p>
+
+      <pre>
+<code>{
+  &quot;amount&quot;: 2.0,
+  &quot;trades&quot;: &quot;#minecraft:armorer/level_1&quot;,
+  &quot;random_sequence&quot;: &quot;minecraft:trade_set/armorer/level_1&quot;,
+  &quot;allow_duplicates&quot;: true
+}
+</code>
+
+
+</pre>
+
+      <h3>Commands</h3>
+
+      <h4>Added <span class="MC_Effect_TextHighlightA">swing</span></h4>
+
+      <ul>
+        <li>New command that enables swinging of entities arms</li>
+        <li>
+          Not all entities support swing animation.
+          <span class="MC_Effect_TextHighlightA">swing</span> will succeed for
+          those entities, but clients will only display it when possible
+        </li>
+        <li>For example, this makes it possible to swing Mannequin arms</li>
+        <li>Returns the amount of entities for which a swing was sent</li>
+      </ul>
+
+      <p>
+        Syntax:
+        <span class="MC_Effect_TextHighlightA"
+          >/swing &lt;entity selector&gt; &lt;mainhand|offhand&gt;</span
+        >
+      </p>
+
+      <h3>Environment Attributes</h3>
+
+      <h4>
+        <span class="MC_Effect_TextHighlightA"
+          >minecraft:visual/block_light_tint</span
+        >
+      </h4>
+
+      <p>
+        Tint of the block light. Block light color start as dark grey at low
+        light levels, becomes tinted by this attribute at medium levels and
+        turns white at high levels. By default, it provides the yellowish tint
+        of torches. Bright colors work best for this attribute, with at least
+        one color component being fully bright. The tint applies globally to all
+        light sources visible on the screen. Individual lights can not be tinted
+        differently.
+      </p>
+
+      <ul>
+        <li>Value type: RGB color</li>
+        <li>
+          Default value: <span class="MC_Effect_TextHighlightA">#FFD88C</span>
+        </li>
+        <li>Modifiers: RGB Color Modifiers</li>
+        <li>Interpolated: yes</li>
+        <li>Resolved at the camera&apos;s position</li>
+      </ul>
+
+      <h4>
+        <span class="MC_Effect_TextHighlightA"
+          >minecraft:visual/ambient_light_color</span
+        >
+      </h4>
+
+      <p>
+        Defines both the ambient light tint and brightness. This light is
+        applied to the world at 0 light level. Block and sky light are added on
+        top of it.
+      </p>
+
+      <ul>
+        <li>Value type: RGB color</li>
+        <li>
+          Default values:
+          <span class="MC_Effect_TextHighlightA">#0A0A0A</span> for the
+          Overworld, <span class="MC_Effect_TextHighlightA">#302821</span> for
+          the Nether, <span class="MC_Effect_TextHighlightA">#3f473f</span> for
+          the End
+        </li>
+        <li>Modifiers: RGB Color Modifiers</li>
+        <li>Interpolated: yes</li>
+        <li>Resolved at the camera&apos;s position</li>
+      </ul>
+
+      <h4>
+        <span class="MC_Effect_TextHighlightA"
+          >minecraft:visual/night_vision_color</span
+        >
+      </h4>
+
+      <p>
+        This color is used similarly to ambient light color. When the Night
+        Vision effect is active, per-component maximum of
+        <span class="MC_Effect_TextHighlightA"
+          >minecraft:visual/night_vision_color</span
+        >
+        and
+        <span class="MC_Effect_TextHighlightA"
+          >minecraft:visual/ambient_light_color</span
+        >
+        is used as ambient color. Night Vision is not tinted by default.
+      </p>
+
+      <ul>
+        <li>Value type: RGB color</li>
+        <li>
+          Default value: <span class="MC_Effect_TextHighlightA">#999999</span>
+        </li>
+        <li>Modifiers: RGB Color Modifiers</li>
+        <li>Interpolated: yes</li>
+        <li>Resolved at the camera&apos;s position</li>
+      </ul>
+
+      <h3>Data Components</h3>
+
+      <h4>
+        Added
+        <span class="MC_Effect_TextHighlightA"
+          >minecraft:additional_trade_cost</span
+        >
+      </h4>
+
+      <ul>
+        <li>
+          Transient component used to modify
+          <span class="MC_Effect_TextHighlightA">count</span> needed of the
+          <span class="MC_Effect_TextHighlightA">gives</span> item in a villager
+          trade, is removed after a trade has been generated
+        </li>
+        <li>Format: integer</li>
+      </ul>
+
+      <h3>Loot Functions</h3>
+
+      <ul>
+        <li>
+          Added
+          <span class="MC_Effect_TextHighlightA">minecraft:villager_trade</span>
+          loot table type which takes the following parameters:
+          <ul>
+            <li>
+              <span class="MC_Effect_TextHighlightA">this</span>, the entity
+              offering the trade
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">origin</span>, the block
+              position of the entity at its feet
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>
+        Added
+        <span class="MC_Effect_TextHighlightA">minecraft:set_random_dyes</span>
+      </h4>
+
+      <ul>
+        <li>
+          Additively adds dyes to an item&apos;s
+          <span class="MC_Effect_TextHighlightA">minecraft:dyed_color</span>
+          data component if the item is in the
+          <span class="MC_Effect_TextHighlightA">#dyeable</span> tag Fields:
+        </li>
+        <li>
+          <span class="MC_Effect_TextHighlightA">conditions</span> - conditions
+          for the function to apply
+        </li>
+        <li>
+          <span class="MC_Effect_TextHighlightA">number_of_dyes</span> - number
+          provider representing the number of random dyes out of sixteen to
+          apply to the item
+          <ul>
+            <li>The same dye might be selected repeatedly</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>
+        Added
+        <span class="MC_Effect_TextHighlightA"
+          >minecraft:set_random_potion</span
+        >
+      </h4>
+
+      <ul>
+        <li>
+          Randomly sets the
+          <span class="MC_Effect_TextHighlightA"
+            >minecraft:potion_contents</span
+          >
+          data component on an item Fields:
+        </li>
+        <li>
+          <span class="MC_Effect_TextHighlightA">conditions</span> - conditions
+          for the function to apply
+        </li>
+        <li>
+          <span class="MC_Effect_TextHighlightA">options</span> - optional
+          potion id, list of namespaced potion IDs, or hash-prefixed potion tag,
+          representing the possible potions to select from
+          <ul>
+            <li>
+              Defaults to any potion in the
+              <span class="MC_Effect_TextHighlightA">potions</span> registry
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>
+        Changed
+        <span class="MC_Effect_TextHighlightA"
+          >minecraft:enchant_with_levels</span
+        >
+      </h4>
+
+      <p>Now also takes the following field:</p>
+
+      <ul>
+        <li>
+          <span class="MC_Effect_TextHighlightA"
+            >include_additional_cost_component</span
+          >
+          - optional boolean representing if an
+          <span class="MC_Effect_TextHighlightA"
+            >minecraft:additional_cost_component</span
+          >
+          should be added to the item based on the cost of the enchantment
+          <ul>
+            <li>
+              Defaults to <span class="MC_Effect_TextHighlightA">false</span>
+            </li>
+            <li>
+              The value is determined by the
+              <span class="MC_Effect_TextHighlightA">levels</span> number
+              provider and is the same that is used to determine what
+              enchantment level is used for enchanting
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>
+        Changed
+        <span class="MC_Effect_TextHighlightA">minecraft:enchant_randomly</span>
+      </h4>
+
+      <p>Now also takes the following field:</p>
+
+      <ul>
+        <li>
+          <span class="MC_Effect_TextHighlightA"
+            >include_additional_cost_component</span
+          >
+          - optional boolean representing if an
+          <span class="MC_Effect_TextHighlightA"
+            >minecraft:additional_cost_component</span
+          >
+          should be added to the item based on the cost of the enchantment
+          <ul>
+            <li>
+              Defaults to <span class="MC_Effect_TextHighlightA">false</span>
+            </li>
+            <li>
+              The value is determined by the value selected by
+              <span class="MC_Effect_TextHighlightA">levels</span> or its
+              default value using the following formula:
+              <span class="MC_Effect_TextHighlightA"
+                >2 + random(0, 5 + level * 10) + 3 * level</span
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Predicates</h3>
+
+      <h4>Entity Predicates</h4>
+
+      <h5>
+        <span class="MC_Effect_TextHighlightA">player</span> Sub-Predicate
+      </h5>
+
+      <ul>
+        <li>
+          New optional field:
+          <span class="MC_Effect_TextHighlightA">food</span> - A Food predicate
+        </li>
+        <li>
+          Format: Object with fields:
+          <ul>
+            <li>
+              <span class="MC_Effect_TextHighlightA">level</span> - optional
+              integer min/max range specifying the required food level
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">saturation</span> -
+              optional float min/max range specifying the required saturation
+              level
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Added <span class="MC_Effect_TextHighlightA">minecraft:sum</span></h4>
+
+      <ul>
+        <li>Returns the sum of a list of number providers</li>
+        <li>
+          Fields:
+          <ul>
+            <li>
+              <span class="MC_Effect_TextHighlightA">summands</span>, a list of
+              number providers
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Enchantments</h3>
+
+      <ul>
+        <li>
+          The
+          <span class="MC_Effect_TextHighlightA">post_piercing_attack</span>
+          component no longer only works for a player if that player has a
+          certain food level
+        </li>
+      </ul>
+
+      <h3>Tags</h3>
+
+      <ul>
+        <li>
+          Added several tags representing groups of villager trades from which
+          Villagers and Wandering Traders derive their trading pools
+          <ul>
+            <li>
+              Villagers have the following tags representing each profession and
+              level of trade in the format:
+              <span class="MC_Effect_TextHighlightA"
+                >#&lt;profession&gt;/level_&lt;level&gt;</span
+              >, up to level 5
+              <ul>
+                <li>
+                  Smiths have the
+                  <span class="MC_Effect_TextHighlightA"
+                    >#common_smith/level_&lt;level&gt;</span
+                  >
+                  tags representing common trades among armorers, weaponsmiths
+                  and toolsmiths, up to level 5
+                </li>
+              </ul>
+            </li>
+            <li>
+              Wandering Traders have the following tags:
+              <span class="MC_Effect_TextHighlightA"
+                >#wandering_trader/buying</span
+              >,
+              <span class="MC_Effect_TextHighlightA"
+                >#wandering_trader/special</span
+              >,
+              <span class="MC_Effect_TextHighlightA"
+                >#wandering_trader/common</span
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Enchantment Tags</h4>
+
+      <ul>
+        <li>
+          Removed the following tags:
+          <ul>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >trades/desert_special</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >trades/jungle_special</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >trades/plains_special</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA"
+                >trades/savanna_special</span
+              >
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">trades/snow_special</span>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">trades/swamp_special</span>
+            </li>
+            <li>
+              <span class="MC_Effect_TextHighlightA">trades/taiga_special</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Potion Tags</h4>
+
+      <ul>
+        <li>
+          Added <span class="MC_Effect_TextHighlightA">#tradeable</span> - all
+          potion effects that can appear in villager trades
+        </li>
+      </ul>
+
+      <h2>Resource Pack Version 76</h2>
+
+      <h3>Lightmap Shader Changes</h3>
+
+      <ul>
+        <li>
+          The <span class="MC_Effect_TextHighlightA">lightmap.fsh</span> shader
+          was significantly modified.
+          <ul>
+            <li>
+              The
+              <span class="MC_Effect_TextHighlightA">LightmapInfo</span> uniform
+              now has two new fields:
+              <ul>
+                <li>
+                  <span class="MC_Effect_TextHighlightA">BlockLightTint</span>
+                </li>
+                <li>
+                  <span class="MC_Effect_TextHighlightA">NightVisionColor</span>
+                </li>
+              </ul>
+            </li>
+            <li>
+              The
+              <span class="MC_Effect_TextHighlightA">AmbientLightFactor</span>
+              field was removed, its value is now premultiplied into
+              <span class="MC_Effect_TextHighlightA">AmbientColor</span>
+            </li>
+            <li>
+              The
+              <span class="MC_Effect_TextHighlightA">DarkenWorldFactor</span>
+              was renamed to
+              <span class="MC_Effect_TextHighlightA"
+                >BossOverlayWorldDarkeningFactor</span
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          Text and items rendered in UI now use a separate 1x1 white lightmap
+          texture, so the lightmap shader does not always have to keep the 15,
+          15 pixel purely white
+        </li>
+      </ul>
+      <h3>Bugs (20)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-64087"><code>MC-64087</code></a> —
+          Revengeful zombies / Zombie reinforcements will try to attack you in
+          Creative mode
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-179949"><code>MC-179949</code></a> —
+          You cannot edit the inventories of piglins by using '/item replace'
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-197497"><code>MC-197497</code></a> —
+          Smooth lighting transition from level 1 to 0 is not smooth
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-199589"><code>MC-199589</code></a> —
+          Hitting mobs in Creative mode then switching into Survival causes the
+          mob to target you
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-219981"><code>MC-219981</code></a> —
+          Leader zombie-type mobs spawn with 20 health despite having an
+          increased maximum health
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-300465"><code>MC-300465</code></a> —
+          Maps with the maximum number of markers cannot be placed in item
+          frames
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-302186"><code>MC-302186</code></a> —
+          Ambient lighting in the Nether appears discolored compared to previous
+          versions
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-302408"><code>MC-302408</code></a> —
+          Inconsistent underwater lighting with the Conduit Power effect applied
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-302528"><code>MC-302528</code></a> —
+          Low sky &amp; block light look outright broken when cast on the same
+          area
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-303119"><code>MC-303119</code></a> —
+          Feeding a cat or wolf in Survival mode with only one item in the
+          selected item slot does not restore as much health as it should
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-303125"><code>MC-303125</code></a> —
+          Creepers can blow up after the player dies
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-303389"><code>MC-303389</code></a> —
+          The ender dragon's velocity can be affected by attacks while perched
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-303692"><code>MC-303692</code></a> —
+          Debug overlay text has an indent when improved transparency is
+          disabled
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-304023"><code>MC-304023</code></a> —
+          Redundant level data fixer files are saved in worlds' "data" folder
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-304217"><code>MC-304217</code></a> —
+          Lunge's hunger requirement applies to post_piercing_attack effects of
+          custom enchantments
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-304599"><code>MC-304599</code></a> —
+          Dolphins don't follow players riding nautiluses like in Bedrock
+          Edition
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-304631"><code>MC-304631</code></a> —
+          Anisotropic filtering set to 8x causes opaque translucent textures to
+          become transparent in the distance when there are odd-sized block
+          textures
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-304725"><code>MC-304725</code></a> —
+          Zombie villagers summoned with default spawn eggs always spawn as
+          their plains variant
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-304991"><code>MC-304991</code></a> —
+          Clicking on a chest with loot that hasn't been generated in Spectator
+          mode makes the "block.chest.locked" sound
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-305012"><code>MC-305012</code></a> —
+          The description of the "Universal anger" game rule still uses the old
+          ID of the "Forgive dead players" game rule
+        </li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1-19-1-pre-release-3-header.jpg"
+        alt=""
+      />
+      <h1>Minecraft 1.19.1 Pre-Release 3</h1>
+      <p class="meta">
+        Target Version: <code>1.19.1</code> · Released
+        <time class="released" data-unix="1657119046"></time>
+      </p>
+      <ul>
+        <li>
+          Custom servers can hide player chat messages from display via a new
+          network packet
+          <ul>
+            <li>This does not delete player chat messages from chat logs</li>
+          </ul>
+        </li>
+        <li>
+          Insecure chat messages logged in the server are prefixed with
+          a&#xa0;<span class="MC_Effect_TextHighlightB">[Not Secure]</span
+          >&#xa0;tag
+        </li>
+        <li>
+          The order of chat messages are now cryptographically verified
+          <ul>
+            <li>
+              This will be used for validating the context of chat messages for
+              Player Reports<br />
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Bugs (2)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-253743"><code>MC-253743</code></a> —
+          The server console doesn’t state if chat messages aren’t secure or
+          have been modified
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-253813"><code>MC-253813</code></a> —
+          Chat commands with entity selectors often reported as “This message is
+          not secure”
+        </li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/snapshot-22w16a-header.jpg"
+        alt=""
+      />
+      <h1>Minecraft Snapshot 22w16a</h1>
+      <p class="meta">
+        Target Version: <code>1.19</code> · Released
+        <time class="released" data-unix="1650465427"></time>
+      </p>
+      <p>
+        A&#xa0; chance to re-live the good old times appears in snapshot 22w16a
+        with the ability to de-fragment a Disc &#x2013; a new Music Disc, to be
+        precise! This snapshot also comes with even more new music, tweaks to
+        the Allay, and to top it all off some random gameplay events are
+        slightly more predictable.
+      </p>
+
+      <p>Enjoy!</p>
+
+      <h2>New Features in 22w16a</h2>
+
+      <ul>
+        <li>Added new music</li>
+        <li>Added Disc Fragment 5 and Music Disc 5</li>
+      </ul>
+
+      <h3>Four new music tracks</h3>
+
+      <ul>
+        <li>
+          The new music tracks are called Ancestry, Aerie, Firebugs, and
+          Labyrinthine
+        </li>
+        <li>They play in certain biomes and in the main menu</li>
+      </ul>
+
+      <h3><a></a>Music Disc 5</h3>
+
+      <p>A new music disc has been added to the game.</p>
+
+      <ul>
+        <li>
+          Unlike other discs, it can only be obtained by finding and crafting 9
+          Disc Fragments together
+        </li>
+        <li>These Disc Fragments can be found rarely in Ancient City chests</li>
+      </ul>
+
+      <ul>
+        <li>Allay tweaks</li>
+        <li>Improved the predictability a number of gameplay elements</li>
+        <li>
+          Frogs can now spawn on Grass, Mud, Moss Carpet, Mangrove Roots and
+          Muddy Mangrove Roots
+        </li>
+        <li>Froglights are now movable by pistons</li>
+      </ul>
+
+      <h3>Allay tweaks</h3>
+
+      <ul>
+        <li>Allay health raised from 10 to 20</li>
+        <li>Delay after item throw lowered from 5 secs to 3 secs</li>
+        <li>Item search range raised from 9 to 32</li>
+        <li>
+          Movement speed changes:
+          <ul>
+            <li>Allay is now slower when just wandering</li>
+            <li>
+              Allay is now faster when collecting items, going to the player or
+              going to a noteblock
+            </li>
+          </ul>
+        </li>
+        <li>Throw arc has changed following community feedback</li>
+      </ul>
+
+      <h3><a></a>Predictability of randomized events</h3>
+
+      <p>
+        Some randomized events are now more predictable and no longer have a
+        possibility of extreme behaviors.
+      </p>
+
+      <ul>
+        <li>
+          Placement and velocity of things dropped from Droppers/Dispensers
+        </li>
+        <li>
+          Placement and velocity of items spawned from containers upon destroy
+        </li>
+        <li>
+          Randomized&#xa0;<span class="MC_Effect_TextHighlightB"
+            >follow_range</span
+          >&#xa0;component attribute for mobs
+        </li>
+        <li>Velocity of Horses spawned from skeleton traps</li>
+        <li>Blaze random position and randomized speed of Blaze projectiles</li>
+        <li>Randomized portion of damage and velocity of Arrows</li>
+        <li>Randomized flight pattern of Fireworks</li>
+        <li>Bobbing patterns and time until a fish for Fishing Rods</li>
+      </ul>
+
+      <ul>
+        <li>
+          <span class="MC_Effect_TextHighlightB">LWJGL</span>&#xa0;library has
+          been updated to version 3.3.1
+        </li>
+        <li>Added a heap memory allocation metric to the F3 debug screen</li>
+        <li>Added doWardenSpawning game rule</li>
+        <li>Updates to paintings</li>
+      </ul>
+
+      <h3>Painting</h3>
+
+      <ul>
+        <li>
+          Paintings that are placeable in survival can now be controlled with
+          the&#xa0;<span class="MC_Effect_TextHighlightB"
+            >painting_variant/placeable</span
+          >&#xa0;tag
+        </li>
+        <li>
+          Added unused paintings from Bedrock edition (<span
+            class="MC_Effect_TextHighlightB"
+            >earth</span
+          >,&#xa0;<span class="MC_Effect_TextHighlightB">wind</span>,&#xa0;<span
+            class="MC_Effect_TextHighlightB"
+            >fire</span
+          >,&#xa0;<span class="MC_Effect_TextHighlightB">water</span>)
+          <ul>
+            <li>
+              These paintings are not placeable by default, but can be added
+              through a datapack
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Bugs (34)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-81870"><code>MC-81870</code></a> —
+          Editing entitydata of Painting does not reflect ingame until chunk
+          reload
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-111809"><code>MC-111809</code></a> —
+          Paintings unrender when entity data is updated rapidly
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-187188"><code>MC-187188</code></a> —
+          Painting NBT and registry contain a typo: “Motive” instead of “Motif”
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-226184"><code>MC-226184</code></a> —
+          Axolotls pathfinding to water can sometimes fall in wide holes
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-228049"><code>MC-228049</code></a> —
+          Axolotl can’t pathfind through open doors
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-228174"><code>MC-228174</code></a> —
+          Axolotls try to pathfind through 2 tall walls
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-244957"><code>MC-244957</code></a> —
+          “Search” Option in Social Interactions Screen is not labeled in the
+          right order when using Tab
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-245001"><code>MC-245001</code></a> —
+          “Manage with Microsoft account” button in Social Interactions menu is
+          not centered
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249084"><code>MC-249084</code></a> — No
+          sound is present for placing a Bucket of Tadpole
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249092"><code>MC-249092</code></a> —
+          Mangrove Stripped Log, Stripped Wood and Wood are in the incorrect
+          order in the creative inventory
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249176"><code>MC-249176</code></a> —
+          Froglights are not visible on maps
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249193"><code>MC-249193</code></a> —
+          Frog can’t pathfind through open doors
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249217"><code>MC-249217</code></a> —
+          Fluid level next to froglights is too low
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249245"><code>MC-249245</code></a> —
+          Turtle can’t pathfind through open doors
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249246"><code>MC-249246</code></a> —
+          Strider can’t pathfind through open doors
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249265"><code>MC-249265</code></a> —
+          Some blocks cannot be placed on froglights
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249459"><code>MC-249459</code></a> —
+          Cactus is not destroyed by froglights
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249663"><code>MC-249663</code></a> —
+          The subtitles of some parrot imitation sounds are inconsistent with
+          the original sounds’ subtitles
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249679"><code>MC-249679</code></a> —
+          Incorrect activation of warden’s sniffing animations and behavior
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249715"><code>MC-249715</code></a> —
+          Allays don’t drop their held items upon death
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249766"><code>MC-249766</code></a> —
+          Allays can despawn after being given an item if they haven’t picked up
+          any items yet
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249790"><code>MC-249790</code></a> —
+          Allay follows and drops items for players in spectator mode
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249838"><code>MC-249838</code></a> —
+          Allays lose their idle animation once they start moving
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249855"><code>MC-249855</code></a> —
+          Parity Issue: Allays don’t have a flying animation in Java
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249912"><code>MC-249912</code></a> —
+          minecraft:ancient_city/city_center_3 is one block shorter compared
+          than the other ancient city centers
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-249928"><code>MC-249928</code></a> —
+          Mangrove tree roots do not update blocks around them when generating
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-250039"><code>MC-250039</code></a> —
+          Wardens can get angry at mobs outside world border
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-250040"><code>MC-250040</code></a> —
+          Wardens can hear mobs beyond the world border
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-250041"><code>MC-250041</code></a> —
+          Wardens can spawn outside of world border
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-250044"><code>MC-250044</code></a> —
+          Observers don’t detect mangrove roots when tree grows
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-250094"><code>MC-250094</code></a> —
+          Wardens ignore /kill execution whilst they’re emerging or digging
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-250095"><code>MC-250095</code></a> —
+          Wardens can spawn in very narrow places, causing them to suffocate
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-250293"><code>MC-250293</code></a> —
+          The “allay_dust” particle is unused
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-250294"><code>MC-250294</code></a> —
+          Parity Issue: Allays item detection range is significantly smaller
+          than in Bedrock
+        </li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/snapshot-21w08a-header.jpg"
+        alt=""
+      />
+      <h1>Minecraft Snapshot 21w08b</h1>
+      <p class="meta">
+        Target Version: <code>1.17</code> · Released
+        <time class="released" data-unix="1614253594"></time>
+      </p>
+      <h3>Bugs (2)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-216744"><code>MC-216744</code></a> —
+          Iron ore doesn’t generate (only iron ore in deepslate is generated)
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-216101"><code>MC-216101</code></a> —
+          Redstone ore generates with a flat distribution below y=12
+        </li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/snapshot-21w08a-header.jpg"
+        alt=""
+      />
+      <h1>Minecraft Snapshot 21w08a</h1>
+      <p class="meta">
+        Target Version: <code>1.17</code> · Released
+        <time class="released" data-unix="1614177531"></time>
+      </p>
+      <p>
+        In this snapshot, our new beloved stone type has suffered a grim fate
+        and has been renamed &quot;Deepslate&quot;. How mysterious!
+      </p>
+
+      <ul>
+        <li>Tweaked cave sizes further</li>
+        <li>Canyon and cave carvers now apply below y=0</li>
+        <li>Cracks can now be found carved into the ground</li>
+        <li>Grimstone has been changed into Deepslate</li>
+        <li>Added Deepslate ores</li>
+        <li>
+          The&#xa0;<a
+            href="https://images.ctfassets.net/8y6ykjruobr4/73xBtA88xuZQ3fKYH3pX6G/83cc7b912a6c08097d1e7e96e7ed6e96/snapshot-21w08a-ore-distribution.jpg"
+            >distribution of ores</a
+          >&#xa0;has been further tweaked
+        </li>
+        <li>Andesite no longer generates under y=0</li>
+        <li>Tuff now sometimes generates under y=0</li>
+        <li>
+          The Tuff layer of amethyst geodes has been replaced with now a new
+          type of stone called Smooth Basalt
+        </li>
+        <li>Smooth Basalt is now obtained from smelting Basalt</li>
+        <li>
+          Another round of tweaking has been done to the new textures of ores
+          and Blackstone
+        </li>
+        <li>Emerald and Lapis Lazuli ore textures have had some touch-ups</li>
+        <li>Mineshafts now once again generate in the open air in caves</li>
+        <li>Particles now appear in the air around spore blossoms</li>
+        <li>
+          Slime Blocks and Honey Blocks have been moved to the Redstone tab of
+          the creative inventory
+        </li>
+      </ul>
+
+      <img
+        src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/snapshot-21w08a-texture-comparison.jpg"
+        alt="An image comparing the changes to ore textures."
+      />
+
+      <h2>Deepslate</h2>
+
+      <ul>
+        <li>Grimstone is now called Deepslate</li>
+        <li>
+          Deepslate now has a top texture, and a new block called Cobbled
+          Deepslate drops from Deepslate
+        </li>
+        <li>
+          The cobbled variant is the same but without the top texture, and is
+          used to craft all Deepslate variants instead
+        </li>
+        <li>Deepslate now has a unique set of sounds! Very crunchy indeed</li>
+      </ul>
+
+      <h2><a></a>Deepslate ores</h2>
+
+      <ul>
+        <li>
+          Added Deepslate versions of Iron, Gold, Lapis, Redstone, and Diamond
+          ores that generate wherever those ores replace Deepslate
+        </li>
+        <li>Twice as tough to mine as normal ores</li>
+      </ul>
+
+      <h2>Ore Distribution Tweaks</h2>
+
+      <div class="captioned-image">
+        <img
+          src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/snapshot-21w08a-ore-distribution-741x421.jpg"
+          alt="An image showing the ore distribution in snapshot 21w08a."
+        />
+        <p>
+          Ore distribution in snapshot 21w08a.
+          <a
+            href="https://images.ctfassets.net/8y6ykjruobr4/73xBtA88xuZQ3fKYH3pX6G/83cc7b912a6c08097d1e7e96e7ed6e96/snapshot-21w08a-ore-distribution.jpg"
+            >Click here</a
+          >
+          for a link to the image in full resolution.
+        </p>
+      </div>
+      <h3>Bugs (3)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-213926"><code>MC-213926</code></a> —
+          Rooted dirt footstep sounds are considerably quieter than normal dirt
+          footstep sounds
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-214782"><code>MC-214782</code></a> —
+          Geodes can generate floating in caves
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-214843"><code>MC-214843</code></a> —
+          Old style caves don’t generate past Y=0
+        </li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://www.minecraft.net/content/dam/minecraftnet/archive/f74e0743bdda3a3ce0b99d5f87145287-snapshot_header.png"
+        alt=""
+      />
+      <h1>Minecraft 1.12 Pre-Release 6</h1>
+      <p class="meta">
+        Target Version: <code>1.12</code> · Released
+        <time class="released" data-unix="1496058312"></time>
+      </p>
+      <h3>Bugs (9)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-59535"><code>MC-59535</code></a> —
+          Server log outputs TextComponent object rather than its Text property
+          for player lost connection/Disconnecting message
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-117764"><code>MC-117764</code></a> — No
+          error is logged when using knowledge book with invalid recipes
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-118002"><code>MC-118002</code></a> —
+          Pausing game while moving causes screen shaking
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-118021"><code>MC-118021</code></a> —
+          Parrot spawn egg appears after rabbit spawn egg in English (US)
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-118036"><code>MC-118036</code></a> —
+          Disconnecting from server prints
+          TranslatableComponent{key='multiplayer.disconnect.banned', ...} in log
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-118038"><code>MC-118038</code></a> —
+          Crafting items with no recipe file shows empty toast
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-118057"><code>MC-118057</code></a> —
+          Unexpectedly high CPU usage in menus
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-118067"><code>MC-118067</code></a> —
+          Pressing t in Spectator mode allows you to use recipe book search
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-118068"><code>MC-118068</code></a> —
+          Recipe book uses always t for focusing search instead of chat
+          keybinding
+        </li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://www.minecraft.net/content/dam/minecraftnet/archive/99a118ed1bc530ec94025a50bbf962c5-snapshot-17w06a-title.png"
+        alt=""
+      />
+      <h1>Minecraft Snapshot 17w06a</h1>
+      <p class="meta">
+        Target Version: <code>1.12</code> · Released
+        <time class="released" data-unix="1486559789"></time>
+      </p>
+      <ul>
+        <li>
+          Save toolbars in Creative Mode with Ctrl+Slotkey and load them with
+          Shift+Slotkey
+        </li>
+        <li>Added colored Concrete blocks</li>
+        <li>Added colored Concrete Powder blocks</li>
+        <li>Added colored Glazed Terracotta blocks</li>
+        <li>
+          Updated the base color palette of Minecraft (affects things such as
+          Banners and Sheep)
+        </li>
+        <li>Updated textures for Wool blocks</li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://web.archive.org/web/20190710052552im_/https://media.mojang.com/blog-image/74aa5ee459a7c408c748dce915b8fdd420403a21/woodlandmansion.png"
+        alt=""
+      />
+      <h1>Minecraft 1.11</h1>
+      <p class="meta">
+        Released <time class="released" data-unix="1479134080"></time>
+      </p>
+      <p>
+        Treasure hunters, rejoice! Update 1.11, aka the Exploration Update, has
+        now made the treacherous journey from snapshot to full release. Our
+        intrepid developers have scaled mighty crags of code, ventured into
+        untamed pre-release territory and battled bugs to bring you wondrous
+        gaming goodies!
+      </p>
+
+      <p>
+        If you haven&#x2019;t got Minecraft for PC / Mac yet:
+        <a
+          href="https://web.archive.org/web/20190710052552/https://minecraft.net/en/store/minecraft/?ref=m"
+          >you can buy it here</a
+        >! It&#x2019;s fun and gets loads of massive, free updates like this
+        one.
+      </p>
+
+      <!--more-->
+
+      <p>
+        Some of these goodies may help you on your own journeys, too. 1.11
+        introduces the Cartographer, a new type of Villager who will exchange
+        your spare emeralds for a map, marking the spot of certain treasure
+        caches. But these locations won&#x2019;t give up their bounty so easily!
+        Some maps may point you to mysterious Ocean Monuments, patrolled by
+        spiny Guardians, others to Woodland Mansions - a new location, inhabited
+        by the Villagers&#x2019; creepy cousins: the Illagers!
+      </p>
+
+      <p>
+        <img
+          src="https://web.archive.org/web/20190710052552im_/https://media.mojang.com/blog-image/74aa5ee459a7c408c748dce915b8fdd420403a21/woodlandmansion.png"
+          alt
+        />
+      </p>
+
+      <p>
+        These mean and miserly folk do not welcome interlopers: watch out for
+        spells which summon toothsome traps from the floor, or conjure nasty
+        impish foes called Vexes. Survive that, and you&#x2019;ll find that the
+        Woodland Mansion contains a rather powerful prize: the Totem of Undying.
+        With this trinket to hand, you can face any peril without fear. Fall,
+        and the Totem of Undying will bring you back from the abyss of death
+        itself! Phew!
+      </p>
+
+      <p>
+        But how will you transport all your amazing loot? Perhaps saddled to a
+        llama! These noble ruminants will form a caravan train that you lead
+        across the land, and can be decked out with snazzy drapes.
+        They&#x2019;re pretty feisty, too, and chase off menaces with a hail of
+        spitballs. Cool! Also, ew! Cewl?
+      </p>
+
+      <p>
+        [<strong>Update!</strong> Clever Twitter user
+        <a
+          href="https://web.archive.org/web/20190710052552/http://www.twitter.com/adhd_orc"
+          >ADHD_orc</a
+        >
+        points out that llamas aren&#x2019;t actually ruminants! They&#x2019;re
+        camelids. Top fact!]
+      </p>
+
+      <p>
+        If their inventory is not enough to accommodate your needs, consider
+        packing your chattels into a Shulker Box - a special chest that retains
+        its contents even when knocked down. Handy!
+      </p>
+
+      <p>
+        There&#x2019;s loads more to discover! But you&#x2019;re brave
+        adventurers, right? Find it for yourself!
+      </p>
+
+      <p>
+        Keen to put 1.11 through its paces? Why not begin your journey in
+        <a
+          href="https://web.archive.org/web/20190710052552/https://aka.ms/mclostciv"
+          >this Lost Civilisation map</a
+        >, made to showcase the features of 1.11 by the cool folk at
+        <a
+          href="https://web.archive.org/web/20190710052552/http://www.blockception.com/"
+          >Blockception</a
+        >? You can
+        <a
+          href="https://web.archive.org/web/20190710052552/https://aka.ms/mclostciv"
+          >download it</a
+        >
+        or play it on
+        <a
+          href="https://web.archive.org/web/20190710052552/https://minecraft.net/en/realms/"
+          >Realms</a
+        >!
+      </p>
+
+      <p>Cheerio!</p>
+
+      <p>
+        Marsh -
+        <a
+          href="https://web.archive.org/web/20190710052552/http://www.twitter.com/marshdavies"
+          >@marshdavies</a
+        >
+      </p>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://web.archive.org/web/20190710044215im_/https://media.mojang.com/blog-image/248757b93981be4772665a234e7d43ca2c326200/so_many_biomes.png"
+        alt=""
+      />
+      <h1>Minecraft 1.10.2</h1>
+      <p class="meta">
+        Released <time class="released" data-unix="1466673452"></time>
+      </p>
+      <p>
+        <strong
+          >Update: Version 1.10.2 is now available and fixes the crashes that
+          many players experienced in Minecraft 1.10.1.</strong
+        >
+      </p>
+      <h3>Bugs (1)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-103981"><code>MC-103981</code></a> —
+          Missing BlockEntity (Piston_Extension, …)
+        </li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://web.archive.org/web/20190710044215im_/https://media.mojang.com/blog-image/248757b93981be4772665a234e7d43ca2c326200/so_many_biomes.png"
+        alt=""
+      />
+      <h1>Minecraft 1.10.1</h1>
+      <p class="meta">
+        Released <time class="released" data-unix="1466590402"></time>
+      </p>
+      <p>
+        This is a smaller update taking care of some of the most annoying
+        reported bugs. We are also planning to release another update for 1.10.x
+        in a few weeks that takes care of some less critical but still annoying
+        issues.
+      </p>
+      <h3>Bugs (7)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-85162"><code>MC-85162</code></a> —
+          Slight player/mob offset when on Farmland Block
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-99914"><code>MC-99914</code></a> —
+          DataWatcher / EntityMetadata ID is based on the class load order
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-100333"><code>MC-100333</code></a> —
+          Entities from old (&lt;= 1.5.2) worlds are killed when loaded in
+          current versions due to a typo in the health data fixer
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-102072"><code>MC-102072</code></a> —
+          Structure Block: Unable to navigate in the “structure name” field of
+          structure blocks, using the arrow-keys, pos1, end or the delete key
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-102867"><code>MC-102867</code></a> —
+          chat key bound to unicode char causes crash in creative inventory
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-103177"><code>MC-103177</code></a> —
+          Missing subtitles for polar bears, strays, husks, and wither skeletons
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-103497"><code>MC-103497</code></a> —
+          End Dragon Does not respawn
+        </li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://web.archive.org/web/20190710030054im_/https://media.mojang.com/blog-image/4b0241e5e14524ffdcbb2960654b44cbd266fd70/blog16%20%281%29.png"
+        alt=""
+      />
+      <h1>Minecraft 1.10</h1>
+      <p class="meta">
+        Released <time class="released" data-unix="1465391178"></time>
+      </p>
+      <p>
+        What comes after 9? Well surprise, surprise: we&#x2019;ve updated
+        Minecraft to version 1.10! Get it hot off the stove in the Minecraft
+        launcher.
+      </p>
+
+      <p>
+        The update contains changes for both the coldest and hottest areas of
+        the Minecraft world. Polar bears roam the frozen plains, and a stronger
+        kind of zombie may approach you in the deserts. There are also other
+        additions you may find pleasant.
+      </p>
+
+      <!--more-->
+
+      <p>
+        For instance, the update includes the second &#x201c;technical
+        block&#x201d; after Command Blocks: the Structure Block. This block
+        allows map makers to store templates of structures and place them
+        dynamically with the help of Redstone trickery. Since it&#x2019;s a
+        technical block, you will not find it in the game menus, and is
+        restricted to players who are admins in creative mode.
+      </p>
+
+      <p>Here is a list of all the changes:</p>
+
+      <ul>
+        <li>Many bug fixes</li>
+        <li>Added Polar Bear</li>
+        <li>Added Husk and Stray</li>
+        <li>An auto-jump option</li>
+        <li>Improvements to some commands</li>
+        <li>Structure blocks for custom maps</li>
+        <li>Underground fossils made from bone blocks</li>
+        <li>Added Magma Block</li>
+        <li>Added Nether Wart Block and Red Nether Bricks</li>
+        <li>Some huge mushrooms can be even larger</li>
+        <li>A rare chance to find lonely trees in plains</li>
+        <li>Find abandoned mineshafts filled with gold in mesa biomes</li>
+        <li>Villages generate better paths between the buildings</li>
+        <li>
+          More variations of villages, based on the biomes they are built in
+        </li>
+        <li>Endermen have been spotted in the Nether</li>
+        <li>Removed Herobrine</li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://web.archive.org/web/20190719040822im_/https://media.mojang.com/blog-image/0fdbd5454c5ef706561c7960dba5a5cdd072af97/2016-05-18_13.55.08.png"
+        alt=""
+      />
+      <h1>Minecraft Snapshot 16w20a</h1>
+      <p class="meta">
+        Target Version: <code>1.10</code> · Released
+        <time class="released" data-unix="1463575514"></time>
+      </p>
+      <p>The polar bears are here.</p>
+
+      <p>
+        And many more new and exciting features are also included in the first
+        snapshot of Minecraft 1.10.
+      </p>
+
+      <p>
+        Most of the changes and new features are not 100% finalized and we are
+        going to improve and balance them in the upcoming snapshots. We are
+        looking forward to read about your experiences on Reddit or watch you
+        playing the snapshot on Twitch or Youtube.
+      </p>
+
+      <!--more-->
+
+      <p>
+        Reporting bugs on our bugtracker is the best way to tell us about things
+        that are horribly broken or even crash your game. Please make sure the
+        issue is not already reported before posting a new ticket.
+      </p>
+
+      <p>
+        The bug tracker has a &#x201c;search&#x201d; function that will help you
+        to figure out if there&#x2019;s already a ticket about the problem you
+        want to report.
+      </p>
+
+      <p>Notable changes:</p>
+
+      <ul>
+        <li>Polar bears in cold biomes, grown ups and cubs</li>
+        <li>
+          Structure blocks for map makers and another new technical block to
+          work with them
+        </li>
+        <li>
+          Technically they are not fossils, but that&#x2019;s what we call one
+          of the new features
+        </li>
+        <li>
+          New auto-jump feature, can be turned on and off in the game settings
+        </li>
+        <li>Some new blocks in the nether, one of them extremely hot</li>
+        <li>A new hostile enemy in hot and dry areas</li>
+        <li>
+          Some relatively broken uses of relative coordinates are fixes and
+          should work relatively well now
+        </li>
+        <li>
+          Use of absolute coordinates is absolutely identical to how it worked
+          in older versions of Minecraft
+        </li>
+        <li>
+          Endermen started invading another dimension, no idea what they are up
+          to
+        </li>
+        <li>
+          Changed abandoned mineshafts in mesa biomes, there seems to be
+          something shiny inside
+        </li>
+      </ul>
+      <h3>Bugs (1)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-89848"><code>MC-89848</code></a> —
+          playsound/sound engine pitch algorithm isn’t working properly
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h1>Minecraft Snapshot 14w33c</h1>
+      <p class="meta">
+        Target Version: <code>1.8</code> · Released
+        <time class="released" data-unix="1408125626"></time>
+      </p>
+      <p><strong>The 14w33c snapshot fixes the holes in the world.</strong></p>
+    </section>
+    <section>
+      <h1>Minecraft Snapshot 14w33b</h1>
+      <p class="meta">
+        Target Version: <code>1.8</code> · Released
+        <time class="released" data-unix="1408119831"></time>
+      </p>
+      <h3>Bugs (10)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-4490"><code>MC-4490</code></a> —
+          Fishing Rod not Attached in 3rd Person While Crouching
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-50321"><code>MC-50321</code></a> —
+          Fishing line not connected to the rod in third person view
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-64456"><code>MC-64456</code></a> —
+          Fishing Rod Bug in 3rd Person
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-65112"><code>MC-65112</code></a> —
+          Grass Block shows a damage value of 0 when tooltips are enabled
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-65521"><code>MC-65521</code></a> —
+          Armor Stands consume whole stack of Items in Survival
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-65533"><code>MC-65533</code></a> —
+          Efficiency enchantment does not work on shovels and axes
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66970"><code>MC-66970</code></a> —
+          Major texture disortion for Redstone, Stairs, Cobblestone Walls,
+          Fences and Fence Gates
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66983"><code>MC-66983</code></a> — Game
+          crashes when placing a torch or redstone torch on the bottom of a
+          block
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-67141"><code>MC-67141</code></a> —
+          Hopper: java.lang.IllegalArgumentException
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-67142"><code>MC-67142</code></a> —
+          Hopper: java.lang.IllegalArgumentException
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h1>Minecraft Snapshot 14w33a</h1>
+      <p class="meta">
+        Target Version: <code>1.8</code> · Released
+        <time class="released" data-unix="1407942494"></time>
+      </p>
+      <p>
+        It&#x2019;s snapshot time. After last weeks snapshot, which did not
+        include any changes at all, we decided to make this weeks snapshot a
+        little bit more interesting. So we added tons of new features, all of
+        them disguised as bugfixes.
+      </p>
+
+      <p>Bugs fixed:</p>
+      <h3>Bugs (28)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-29408"><code>MC-29408</code></a> — Tab
+          support is not possible with player names when using the ‘/playsound’
+          command
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-57714"><code>MC-57714</code></a> —
+          Placing torches on other torches
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-61245"><code>MC-61245</code></a> —
+          Upside down stairs have hitbox of regular stairs / regular stairs have
+          wrong hitbox
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-63319"><code>MC-63319</code></a> —
+          Heads Dropped from Charged Creeper Explosion Ignore Gamerules
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-65522"><code>MC-65522</code></a> —
+          Tool-tip for regular sandstone slab is incorrect
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-65790"><code>MC-65790</code></a> — If
+          you place block on two-block-tall plants,it will destroy them.
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-65909"><code>MC-65909</code></a> —
+          Skulls too small in item frames
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66163"><code>MC-66163</code></a> —
+          Using Pick Block on a colored door returns a regular door
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66166"><code>MC-66166</code></a> —
+          Breaking colored doors turns them into regular doors
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66169"><code>MC-66169</code></a> — Old
+          oak doors still called ‘Wooden Door’ instead of ‘Oak Door’
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66227"><code>MC-66227</code></a> —
+          Helmets can’t be taken off of armor stands while flying above them in
+          creative mode
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66246"><code>MC-66246</code></a> —
+          Skull on small Armor Stand are offset
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66347"><code>MC-66347</code></a> — Beds
+          make incorrect sounds
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66350"><code>MC-66350</code></a> —
+          Selecting “Hardcore” prior creating a debug world yields a “hardcore
+          debug world”
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66413"><code>MC-66413</code></a> — Baby
+          Bunnie’s Name Tags
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66532"><code>MC-66532</code></a> —
+          /entitydata tab autocomplete keeps entering player’s name
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66543"><code>MC-66543</code></a> —
+          Fence gates lock closed, and will not open from pressure plate
+          activation.
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66674"><code>MC-66674</code></a> —
+          Summoning a FallingSand entity with {Block:”leaves”} crashes the
+          client
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66685"><code>MC-66685</code></a> —
+          Hopper: java.lang.IllegalArgumentException
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66687"><code>MC-66687</code></a> —
+          Hopper: java.lang.NullPointerException
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66722"><code>MC-66722</code></a> —
+          Hopper: java.lang.ClassCastException
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66791"><code>MC-66791</code></a> — Iron
+          Golems do not target creepers
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66816"><code>MC-66816</code></a> —
+          Crash: /give @p skull 1 3 {SkullOwner:} [SMP]
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66819"><code>MC-66819</code></a> —
+          Hopper: java.util.ConcurrentModificationException
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66822"><code>MC-66822</code></a> —
+          Hopper: java.lang.NullPointerException
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66824"><code>MC-66824</code></a> —
+          Hopper: java.lang.IllegalArgumentException
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66835"><code>MC-66835</code></a> —
+          /execute coordinates don’t work
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-66915"><code>MC-66915</code></a> — Only
+          smoothstone should make stone slabs.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://web.archive.org/web/20180912022110im_/https://media.mojang.com/7284588e09e93aee58cba324dc0809924bcb7616/14w05a.png"
+        alt=""
+      />
+      <h1>Minecraft Snapshot 14w05b</h1>
+      <p class="meta">
+        Target Version: <code>1.8</code> · Released
+        <time class="released" data-unix="1391177150"></time>
+      </p>
+      <h3>Bugs (20)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-1607"><code>MC-1607</code></a> — Ghost
+          End Portal in The End / Missing layer with AMD/ATI graphics cards
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45763"><code>MC-45763</code></a> — Some
+          blocks are facing the wrong way if placed in an Item Frame
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45826"><code>MC-45826</code></a> — Item
+          frames pop off / rendered on wrong side of block when upgrading to
+          14w04b
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46402"><code>MC-46402</code></a> —
+          Flying in Spectator Mode counts as Flying in Survival Mode and kicks
+          you off the server
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46416"><code>MC-46416</code></a> —
+          Hopper: java.lang.NullPointerException: Unexpected error
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46420"><code>MC-46420</code></a> —
+          Hopper: java.lang.ArrayIndexOutOfBoundsException: 44339
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46422"><code>MC-46422</code></a> —
+          Barrier have shadows
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46427"><code>MC-46427</code></a> —
+          Breaking barriers create lava and water particles
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46435"><code>MC-46435</code></a> —
+          Reticle Appears on Tile Entities In Spectator Mode
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46442"><code>MC-46442</code></a> —
+          Hopper: java.lang.ArrayIndexOutOfBoundsException: -1
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46444"><code>MC-46444</code></a> — You
+          can’t pass through entities when you disconnect/reconnect while in
+          spectator mode
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46447"><code>MC-46447</code></a> —
+          Repairing Tools No Longer Works
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46465"><code>MC-46465</code></a> —
+          Changing the language breaks the shader when looking through an
+          entity’s camera
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46467"><code>MC-46467</code></a> —
+          Hopper: java.lang.RuntimeException: Already decorating
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46472"><code>MC-46472</code></a> —
+          Spectator mode - speeding up/down works only first time
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46485"><code>MC-46485</code></a> —
+          ‘Flip’ shader pack shows black screen
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46489"><code>MC-46489</code></a> —
+          Summoning Barrier as FallingSand Entity crashes the game
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46563"><code>MC-46563</code></a> — When
+          spectating mob in f5 mode, perspective effect remains.
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46576"><code>MC-46576</code></a> —
+          Crash when inside a barrier block
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-46594"><code>MC-46594</code></a> —
+          Debug menu not updating shader description correctly
+        </li>
+      </ul>
+    </section>
+    <section>
+      <img
+        class="hero"
+        src="https://web.archive.org/web/20180912022110im_/https://media.mojang.com/7284588e09e93aee58cba324dc0809924bcb7616/14w05a.png"
+        alt=""
+      />
+      <h1>Minecraft Snapshot 14w05a</h1>
+      <p class="meta">
+        Target Version: <code>1.8</code> · Released
+        <time class="released" data-unix="1391095961"></time>
+      </p>
+      <p>
+        One day this piece of text will contain some really important
+        information that could change the fate of Humanity, and nobody would
+        know because nobody reads this text anyway. Oh, sorry, what was that?
+        Snapshot? Oh right yes of course! Here we go:
+      </p>
+
+      <p>Notable additions for survival:</p>
+
+      <ul>
+        <li>
+          Book copying mechanics has been altered to differentiate the original
+          &amp; copies of books
+        </li>
+        <li>Activator rails can eject entities from Minecarts</li>
+      </ul>
+
+      <p>Notable additions for mapmakers:</p>
+
+      <ul>
+        <li>
+          Added a spectator gamemode (/gamemode spectator). Not 100% finished.
+        </li>
+        <li>Spectators cannot be seen by anybody but other spectators</li>
+        <li>Spectators can view inventories/etc, but not modify them</li>
+        <li>
+          Spectators can go through any entity or block without interfering with
+          it
+        </li>
+        <li>Spectators can click on entities to take their camera</li>
+        <li>
+          Spectators cannot use items, place blocks, destroy blocks or interact
+          with blocks in any way
+        </li>
+        <li>Spectators are only slightly buggy maybe sometimes</li>
+      </ul>
+
+      <p>Bugs fixed in this snapshot:</p>
+      <h3>Bugs (13)</h3>
+      <ul>
+        <li>
+          <a href="https://mojira.dev/MC-38944"><code>MC-38944</code></a> —
+          Joining Realms World “Cancel” Button Mis-Placed
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-44521"><code>MC-44521</code></a> — @a,
+          @e, and any UUID references work incorrectly after a player dies.
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45050"><code>MC-45050</code></a> —
+          /fill … skull Hitbox Bug
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45159"><code>MC-45159</code></a> —
+          Blocks with tile entities don’t get removed when you clone / fill an
+          airblock to their position.
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45453"><code>MC-45453</code></a> —
+          Items &amp; Blocks placed in item frames are rendered incorrectly
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45470"><code>MC-45470</code></a> —
+          Items don’t render on the ground properly
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45478"><code>MC-45478</code></a> —
+          Pre-snapshot14w04a villagers break crops but don’t replant them
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45492"><code>MC-45492</code></a> —
+          Transparent blocks are much darker
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45554"><code>MC-45554</code></a> — Two
+          tall flowers variants are not generating.
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45763"><code>MC-45763</code></a> — Some
+          blocks are facing the wrong way if placed in an Item Frame
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45764"><code>MC-45764</code></a> — Map
+          will not show in item frame
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45795"><code>MC-45795</code></a> —
+          Villagers can not place or pick up any crops
+        </li>
+        <li>
+          <a href="https://mojira.dev/MC-45847"><code>MC-45847</code></a> —
+          /summon Villager Farmer NBT tag canPickUpLoot will default to 0
+        </li>
+      </ul>
+    </section>
+    <script>
+      for (const el of document.querySelectorAll("time.released")) {
+        const unix = Number(el.dataset.unix);
+        if (!unix) continue;
+        const d = new Date(unix * 1000);
+        el.setAttribute("datetime", d.toISOString());
+        el.textContent = new Intl.DateTimeFormat(undefined, {
+          dateStyle: "long",
+          timeStyle: "long",
+        }).format(d);
+      }
+    </script>
+  </body>
+</html>

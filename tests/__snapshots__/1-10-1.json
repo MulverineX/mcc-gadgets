@@ -1,0 +1,65 @@
+{
+  "version": "1.10.1",
+  "heroImage": "https://web.archive.org/web/20190710044215im_/https://media.mojang.com/blog-image/248757b93981be4772665a234e7d43ca2c326200/so_many_biomes.png",
+  "source": "mojang",
+  "body": {
+    "nodes": [
+      {
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          1
+        ],
+        "parent": null,
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "This is a smaller update taking care of some of the most annoying reported bugs. We are also planning to release another update for 1.10.x in a few weeks that takes care of some less critical but still annoying issues.",
+        "parent": {
+          "$ref": 0
+        },
+        "prev": null,
+        "next": null
+      }
+    ]
+  },
+  "bugList": [
+    {
+      "id": "MC-85162",
+      "title": "Slight player/mob offset when on Farmland Block"
+    },
+    {
+      "id": "MC-99914",
+      "title": "DataWatcher / EntityMetadata ID is based on the class load order"
+    },
+    {
+      "id": "MC-100333",
+      "title": "Entities from old (<= 1.5.2) worlds are killed when loaded in current versions due to a typo in the health data fixer"
+    },
+    {
+      "id": "MC-102072",
+      "title": "Structure Block: Unable to navigate in the “structure name” field of structure blocks, using the arrow-keys, pos1, end or the delete key"
+    },
+    {
+      "id": "MC-102867",
+      "title": "chat key bound to unicode char causes crash in creative inventory"
+    },
+    {
+      "id": "MC-103177",
+      "title": "Missing subtitles for polar bears, strays, husks, and wither skeletons"
+    },
+    {
+      "id": "MC-103497",
+      "title": "End Dragon Does not respawn"
+    }
+  ],
+  "merged": true,
+  "shortText": "This is a smaller update taking care of some of the most annoying reported bugs. We are also planning to release another update for 1.10.x in a few weeks that takes care of some less critical but still annoying issues.",
+  "title": "Minecraft 1.10.1",
+  "targetRelease": "1.10.1",
+  "publishedAt": 1466590402
+}
