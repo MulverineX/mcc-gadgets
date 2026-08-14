@@ -416,13 +416,13 @@ export function buildBodyElement(range: SectionRange): BugRef[] {
     if (afterTrim.length === 0) {
       // Every <li> was a bug entry — drop the whole ul + its header.
       const header = findPrecedingBugListHeader(ul);
-      if (header) drop(header as Element);
-      drop(ul as Element);
+      if (header) drop(header);
+      drop(ul);
     } else {
       // Keep the ul (still has real content lis) but drop the heading —
       // it described the bug list we just stripped out.
       const header = findPrecedingBugListHeader(ul);
-      if (header) drop(header as Element);
+      if (header) drop(header);
     }
   }
 

@@ -55,7 +55,7 @@ function hasEmphasizedLeadIn(p: Element): boolean {
 
 export function splitMojangByVersionLegacy(
   container: Element,
-  targetVersion: string,
+  _targetVersion: string,
 ): SectionRange[] {
   const all = findMojangLegacyFooterEnd(container);
 
@@ -88,8 +88,7 @@ export function splitMojangByVersionLegacy(
       while (scan < all.length && isEdgeTrimmable(all[scan]!)) scan++;
       const ulCandidate = all[scan];
       if (
-        ulCandidate &&
-        ulCandidate.tagName === "ul" &&
+        ulCandidate?.tagName === "ul" &&
         hasBugListItems(ulCandidate)
       ) {
         start = scan;

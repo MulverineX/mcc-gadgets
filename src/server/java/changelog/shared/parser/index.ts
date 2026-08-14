@@ -79,7 +79,7 @@ const UNWRAP_CLASSES = new Set<string>([
 function findArticleBodyContainer(root: Element): Element | null {
   const articleGridHits = htmlparser2.DomUtils.findAll(
     (el) => {
-      const cls = (el as Element).attribs?.class ?? "";
+      const cls = (el).attribs?.class ?? "";
       return cls.split(" ").includes("article-grid-a");
     },
     root as unknown as Parameters<typeof htmlparser2.DomUtils.findAll>[1],
@@ -116,7 +116,7 @@ function findArticleBodyContainer(root: Element): Element | null {
     "article-grid-a",
   ];
   const isStructuralWrapper = (el: Element): boolean => {
-    const cls = (el as Element).attribs?.class ?? "";
+    const cls = (el).attribs?.class ?? "";
     if (!cls) return false;
     const classes = cls.split(" ");
     return STRUCTURAL_CLASS_PREFIXES.some((p) =>
@@ -127,7 +127,7 @@ function findArticleBodyContainer(root: Element): Element | null {
   };
 
   const isUnwrap = (el: Element): boolean => {
-    const cls = (el as Element).attribs?.class ?? "";
+    const cls = (el).attribs?.class ?? "";
     if (!cls) return false;
     return cls.split(" ").some((c) => UNWRAP_CLASSES.has(c));
   };

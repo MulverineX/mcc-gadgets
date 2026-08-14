@@ -35,7 +35,7 @@ export function splitMojangByVersionNewer(container: Element): SectionRange[] {
       child.tagName === "p" &&
       child.children.length === 1 &&
       isTag(child.children[0]!) &&
-      child.children[0]!.tagName === "strong" &&
+      child.children[0].tagName === "strong" &&
       /^update:/i.test(textOf(child))
     ) {
       updateParaIdx = i;

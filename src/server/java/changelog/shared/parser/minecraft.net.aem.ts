@@ -85,7 +85,7 @@ export function splitMinecraftNetByVersion(
   version: string,
 ): SectionRange[] {
   const children = containerChildren(container);
-  let followUpSkip: Set<number> = new Set();
+  let followUpSkip = new Set<number>();
 
   function sliceRange(start: number, end: number): Element[] {
     const out: Element[] = [];
@@ -236,7 +236,7 @@ export function splitMinecraftNetByVersion(
       // stripped. The note can span multiple `<p>`s; we collect all of
       // them as long as they're Update: notes.
       const isFirstSection: boolean = current === null;
-      let prepended: Element[] = [];
+      const prepended: Element[] = [];
       if (isFirstSection && isMultiVersion) {
         for (let j = i - 1; j >= 0; j--) {
           const prev = sectionChildren[j]!;
@@ -269,7 +269,7 @@ export function splitMinecraftNetByVersion(
               ? 0
               : i;
         if (followUpStartIdx !== -1) {
-          stripUpdateLeadIn(sectionChildren[sectionStart]! as Element);
+          stripUpdateLeadIn(sectionChildren[sectionStart]!);
         }
         current = {
           ...startSection(versionStr, child, sectionStart),

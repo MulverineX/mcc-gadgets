@@ -5,12 +5,12 @@ import {
   ElementType,
   htmlparser2,
 } from "./types";
-import { documentCreateDiv, textOf, wrapperChildren } from "./utils";
+import { documentCreateDiv } from "./utils";
 
 export function normalizeArticleMedia(nodes: ChildNode[]): void {
   for (let i = 0; i < nodes.length; i++) {
     const node = nodes[i] as unknown as Element;
-    if (!node || node.tagName !== "div") continue;
+    if (node?.tagName !== "div") continue;
     const classes = (node.attribs?.class ?? "").split(" ");
     if (!classes.includes("article-media")) continue;
 
@@ -22,8 +22,7 @@ export function normalizeArticleMedia(nodes: ChildNode[]): void {
 
     let imageLinksTo: string | undefined = undefined;
     if (
-      imageEl?.parentNode?.parentNode &&
-      imageEl.parentNode.parentNode.type === "tag" &&
+      imageEl?.parentNode?.parentNode?.type === ElementType.Tag &&
       imageEl.parentNode.parentNode.tagName === "a"
     ) {
       imageLinksTo = imageEl.parentNode.parentNode.attributes.find(
