@@ -10,109 +10,21 @@
         "kind": "tag",
         "attrs": {},
         "children": [
-          1,
-          2,
-          4,
-          5,
-          7
+          1
         ],
         "parent": null,
         "prev": null,
         "next": {
-          "$ref": 8
-        }
-      },
-      {
-        "type": "text",
-        "data": "We're now feeling confident enough in the stability and feature-completeness of 1.14 - The Village & Pillage Update - that we've decided to enter the pre-release phase. Whilst we know that there are still bugs to be solved and polish to be added, we feel that this version is now good enough that we can ask you all to please help us test and find any issues for a smooth release in a few weeks. Remember to report anything you find to our ",
-        "parent": {
-          "$ref": 0
-        },
-        "prev": null,
-        "next": {
           "$ref": 2
         }
       },
       {
-        "type": "element",
-        "tag": "a",
-        "kind": "tag",
-        "attrs": {
-          "href": "https://bugs.mojang.com/browse/MC"
-        },
-        "children": [
-          3
-        ],
+        "type": "text",
+        "data": "We're now on pre-release 5 and we expect this to be the last pre-release before the full release. We aim to release Village & Pillage for Minecraft: Java Edition on Tuesday, April 23rd.",
         "parent": {
           "$ref": 0
-        },
-        "prev": {
-          "$ref": 1
-        },
-        "next": {
-          "$ref": 4
-        }
-      },
-      {
-        "type": "text",
-        "data": "bug tracker",
-        "parent": {
-          "$ref": 2
         },
         "prev": null,
-        "next": null
-      },
-      {
-        "type": "text",
-        "data": ", or give feedback on new features over to our ",
-        "parent": {
-          "$ref": 0
-        },
-        "prev": {
-          "$ref": 2
-        },
-        "next": {
-          "$ref": 5
-        }
-      },
-      {
-        "type": "element",
-        "tag": "a",
-        "kind": "tag",
-        "attrs": {
-          "href": "https://aka.ms/snapshotfeedback"
-        },
-        "children": [
-          6
-        ],
-        "parent": {
-          "$ref": 0
-        },
-        "prev": {
-          "$ref": 4
-        },
-        "next": {
-          "$ref": 7
-        }
-      },
-      {
-        "type": "text",
-        "data": "feedback website",
-        "parent": {
-          "$ref": 5
-        },
-        "prev": null,
-        "next": null
-      },
-      {
-        "type": "text",
-        "data": ". It helps us immensely!",
-        "parent": {
-          "$ref": 0
-        },
-        "prev": {
-          "$ref": 5
-        },
         "next": null
       },
       {
@@ -123,82 +35,7 @@
           "$ref": 0
         },
         "next": {
-          "$ref": 9
-        }
-      },
-      {
-        "type": "element",
-        "tag": "p",
-        "kind": "tag",
-        "attrs": {},
-        "children": [
-          10,
-          12
-        ],
-        "parent": null,
-        "prev": {
-          "$ref": 8
-        },
-        "next": {
-          "$ref": 13
-        }
-      },
-      {
-        "type": "element",
-        "tag": "b",
-        "kind": "tag",
-        "attrs": {},
-        "children": [
-          11
-        ],
-        "parent": {
-          "$ref": 9
-        },
-        "prev": null,
-        "next": {
-          "$ref": 12
-        }
-      },
-      {
-        "type": "text",
-        "data": "Update:",
-        "parent": {
-          "$ref": 10
-        },
-        "prev": null,
-        "next": null
-      },
-      {
-        "type": "text",
-        "data": " We're now on pre-release 5 and we expect this to be the last pre-release before the full release. We aim to release Village & Pillage for Minecraft: Java Edition on Tuesday, April 23rd.",
-        "parent": {
-          "$ref": 9
-        },
-        "prev": {
-          "$ref": 10
-        },
-        "next": null
-      },
-      {
-        "type": "text",
-        "data": "\r\n",
-        "parent": null,
-        "prev": {
-          "$ref": 9
-        },
-        "next": {
-          "$ref": 14
-        }
-      },
-      {
-        "type": "text",
-        "data": "\r\n",
-        "parent": null,
-        "prev": {
-          "$ref": 13
-        },
-        "next": {
-          "$ref": 15
+          "$ref": 3
         }
       },
       {
@@ -207,14 +44,14 @@
         "kind": "tag",
         "attrs": {},
         "children": [
-          16,
-          20,
-          22,
-          24
+          4,
+          8,
+          10,
+          12
         ],
         "parent": null,
         "prev": {
-          "$ref": 14
+          "$ref": 2
         },
         "next": null
       },
@@ -224,27 +61,27 @@
         "kind": "tag",
         "attrs": {},
         "children": [
-          17,
-          18,
-          19
+          5,
+          6,
+          7
         ],
         "parent": {
-          "$ref": 15
+          "$ref": 3
         },
         "prev": null,
         "next": {
-          "$ref": 20
+          "$ref": 8
         }
       },
       {
         "type": "text",
         "data": "Optimisations to nether portals, they will now keep the other side loaded for 15 seconds after an entity goes through",
         "parent": {
-          "$ref": 16
+          "$ref": 4
         },
         "prev": null,
         "next": {
-          "$ref": 18
+          "$ref": 6
         }
       },
       {
@@ -254,23 +91,23 @@
         "attrs": {},
         "children": [],
         "parent": {
-          "$ref": 16
+          "$ref": 4
         },
         "prev": {
-          "$ref": 17
+          "$ref": 5
         },
         "next": {
-          "$ref": 19
+          "$ref": 7
         }
       },
       {
         "type": "text",
         "data": "\r\n",
         "parent": {
-          "$ref": 16
+          "$ref": 4
         },
         "prev": {
-          "$ref": 18
+          "$ref": 6
         },
         "next": null
       },
@@ -280,23 +117,23 @@
         "kind": "tag",
         "attrs": {},
         "children": [
-          21
+          9
         ],
         "parent": {
-          "$ref": 15
+          "$ref": 3
         },
         "prev": {
-          "$ref": 16
+          "$ref": 4
         },
         "next": {
-          "$ref": 22
+          "$ref": 10
         }
       },
       {
         "type": "text",
         "data": "Fixed more lighting issues that were discovered since yesterday",
         "parent": {
-          "$ref": 20
+          "$ref": 8
         },
         "prev": null,
         "next": null
@@ -307,23 +144,23 @@
         "kind": "tag",
         "attrs": {},
         "children": [
-          23
+          11
         ],
         "parent": {
-          "$ref": 15
+          "$ref": 3
         },
         "prev": {
-          "$ref": 20
+          "$ref": 8
         },
         "next": {
-          "$ref": 24
+          "$ref": 12
         }
       },
       {
         "type": "text",
         "data": "Fixed a case where block entities weren't being ticked correctly",
         "parent": {
-          "$ref": 22
+          "$ref": 10
         },
         "prev": null,
         "next": null
@@ -334,13 +171,13 @@
         "kind": "tag",
         "attrs": {},
         "children": [
-          25
+          13
         ],
         "parent": {
-          "$ref": 15
+          "$ref": 3
         },
         "prev": {
-          "$ref": 22
+          "$ref": 10
         },
         "next": null
       },
@@ -348,7 +185,7 @@
         "type": "text",
         "data": "Updated the game credits",
         "parent": {
-          "$ref": 24
+          "$ref": 12
         },
         "prev": null,
         "next": null
@@ -362,7 +199,7 @@
     }
   ],
   "merged": true,
-  "shortText": "We're now feeling confident enough in the stability and feature-completeness of 1.14 - The Village & Pillage Update - that we've decided to enter the pre-release phase. Whilst we know that there are still bugs to be solved and polish to be added, we feel that this version is now",
+  "shortText": "We're now on pre-release 5 and we expect this to be the last pre-release before the full release. We aim to release Village & Pillage for Minecraft: Java Edition on Tuesday, April 23rd. Optimisations to nether portals, they will now keep the other side loaded for 15 seconds",
   "title": "Minecraft 1.14 Pre-Release 5",
   "targetRelease": "1.14",
   "publishedAt": 1555585519,

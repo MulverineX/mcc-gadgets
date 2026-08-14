@@ -1,4 +1,8 @@
-import { isLegacyVersion, legacyWindowsFor, majorMinorOf } from "../data/legacy-mapping";
+import {
+  isLegacyVersion,
+  legacyWindowsFor,
+  majorMinorOf,
+} from "../data/legacy-mapping";
 
 /** Cutoff for Wayback captures. After this date, `mojang.com` redirected to `minecraft.net`. */
 const WAYBACK_CUTOFF = "20190901";
@@ -68,11 +72,8 @@ export function parseCdxRows(text: string): Array<[string, string]> {
  * suffix.
  */
 export function isBaseReleaseUrl(url: string, majorMinor: string): boolean {
-  const cleaned = url
-    .replace(/\?.*$/, "")
-    .replace(/\/$/, "")
-    .split("/")
-    .pop() ?? "";
+  const cleaned =
+    url.replace(/\?.*$/, "").replace(/\/$/, "").split("/").pop() ?? "";
   const prefix = `minecraft-${majorMinor}-`;
   if (!cleaned.startsWith(prefix)) return false;
   if (/-(pre-release|snapshot|release-candidate)\b/.test(cleaned)) return false;
@@ -105,7 +106,12 @@ export async function resolveLegacyWaybackUrlRaw(
 
   const hardcoded = HARDCODED_LEGACY_SLUGS[version];
   if (hardcoded) {
-    const capture = await captureForSlug(hardcoded.year, hardcoded.month, hardcoded.slug, cdxFetch);
+    const capture = await captureForSlug(
+      hardcoded.year,
+      hardcoded.month,
+      hardcoded.slug,
+      cdxFetch,
+    );
     return capture ? { ...capture, matchedSlug: hardcoded.slug } : null;
   }
 
@@ -135,12 +141,19 @@ export async function resolveLegacyWaybackUrlRaw(
         // resolving to `minecraft-110-an-update-of-fire-and-ice`).
         const prefix = `minecraft-${major}${minor}`;
         const slugVersion =
-          slug === prefix ? `${major}.${minor}` : `${major}.${minor}.${slug.slice(prefix.length)}`;
+          slug === prefix
+            ? `${major}.${minor}`
+            : `${major}.${minor}.${slug.slice(prefix.length)}`;
         const slugWindows = legacyWindowsFor(slugVersion);
         const sw = slugWindows?.[0];
         if (!sw) continue;
         const releaseMonth = getMonthFromWeek(sw.year, sw.weekEnd);
-        const capture = await captureForSlug(sw.year, releaseMonth, slug, cdxFetch);
+        const capture = await captureForSlug(
+          sw.year,
+          releaseMonth,
+          slug,
+          cdxFetch,
+        );
         if (capture) return { ...capture, matchedSlug: slug };
         if (i === 0) {
           // First slug (the exact-patch cascade): also probe the start month
@@ -148,7 +161,12 @@ export async function resolveLegacyWaybackUrlRaw(
           // there; the release itself only lands on the end-month side.
           const startMonth = getMonthFromWeek(sw.year, sw.weekStart);
           if (startMonth !== releaseMonth) {
-            const startCapture = await captureForSlug(sw.year, startMonth, slug, cdxFetch);
+            const startCapture = await captureForSlug(
+              sw.year,
+              startMonth,
+              slug,
+              cdxFetch,
+            );
             if (startCapture) return { ...startCapture, matchedSlug: slug };
           }
         }

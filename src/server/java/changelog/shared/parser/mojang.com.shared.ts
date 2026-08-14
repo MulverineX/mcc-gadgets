@@ -1,7 +1,7 @@
+import { splitMojangByVersionLegacy } from "./mojang.com.old";
+import { splitMojangByVersionNewer } from "./mojang.com.wordpress";
 import { type Element, isComment } from "./types";
 import { containerChildren } from "./utils";
-import { splitMojangByVersionNewer } from "./mojang.com.wordpress";
-import { splitMojangByVersionLegacy } from "./mojang.com.old";
 import type { SectionRange } from "./utils";
 
 export function hasWordPressMoreMarker(container: Element): boolean {

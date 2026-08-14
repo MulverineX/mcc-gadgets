@@ -1,13 +1,13 @@
-import { type Element, isTag, htmlparser2 } from "./types";
+import { type Element, htmlparser2, isTag } from "./types";
 import {
   compareVersionTuple,
   containerChildren,
   lastListEnd,
   normalizeVersion,
   parseVersionTuple,
+  type SectionRange,
   textOf,
   trimmedTextOf,
-  type SectionRange,
 } from "./utils";
 
 const MOJANG_HEADING_RE = /^issues? fixed in version (.+):/i;
@@ -49,7 +49,11 @@ export function splitMojangByVersionNewer(container: Element): SectionRange[] {
       ? preambleChildren.filter((_, i) => i !== updateParaIdx)
       : preambleChildren;
 
-  const sectionMatches: Array<{ idx: number; version: string; heading: string }> = [];
+  const sectionMatches: Array<{
+    idx: number;
+    version: string;
+    heading: string;
+  }> = [];
   for (let i = firstSectionIdx; i < children.length; i++) {
     const match = MOJANG_HEADING_RE.exec(trimmedTextOf(children[i]!));
     if (match) {
@@ -75,10 +79,14 @@ export function splitMojangByVersionNewer(container: Element): SectionRange[] {
   for (let s = 0; s < sectionMatches.length; s++) {
     const m = sectionMatches[s]!;
     const nextStart =
-      s + 1 < sectionMatches.length ? sectionMatches[s + 1]!.idx : children.length;
+      s + 1 < sectionMatches.length
+        ? sectionMatches[s + 1]!.idx
+        : children.length;
     const pre: Element[] = [];
-    if (normalizeVersion(m.version) === normalizeVersion(oldestVersion)) pre.push(...preamble);
-    if (normalizeVersion(m.version) === normalizeVersion(newestVersion)) pre.push(...updatePara);
+    if (normalizeVersion(m.version) === normalizeVersion(oldestVersion))
+      pre.push(...preamble);
+    if (normalizeVersion(m.version) === normalizeVersion(newestVersion))
+      pre.push(...updatePara);
     ranges[s] = {
       version: m.version,
       rawTitle: m.heading,

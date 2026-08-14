@@ -116,14 +116,39 @@
         "next": null
       },
       {
-        "type": "text",
-        "data": "\r\n",
+        "type": "element",
+        "tag": "p",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          9
+        ],
         "parent": null,
         "prev": {
           "$ref": 0
         },
         "next": {
-          "$ref": 9
+          "$ref": 10
+        }
+      },
+      {
+        "type": "text",
+        "data": "We're now on pre-release 5 and we expect this to be the last pre-release before the full release. We aim to release Village & Pillage for Minecraft: Java Edition on Tuesday, April 23rd.",
+        "parent": {
+          "$ref": 8
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "\r\n",
+        "parent": null,
+        "prev": {
+          "$ref": 8
+        },
+        "next": {
+          "$ref": 11
         }
       },
       {
@@ -132,39 +157,14 @@
         "kind": "tag",
         "attrs": {},
         "children": [
-          10,
           12,
-          14
+          14,
+          16
         ],
         "parent": null,
         "prev": {
-          "$ref": 8
-        },
-        "next": null
-      },
-      {
-        "type": "element",
-        "tag": "li",
-        "kind": "tag",
-        "attrs": {},
-        "children": [
-          11
-        ],
-        "parent": {
-          "$ref": 9
-        },
-        "prev": null,
-        "next": {
-          "$ref": 12
-        }
-      },
-      {
-        "type": "text",
-        "data": "Fixed lots of bugs",
-        "parent": {
           "$ref": 10
         },
-        "prev": null,
         "next": null
       },
       {
@@ -176,18 +176,16 @@
           13
         ],
         "parent": {
-          "$ref": 9
+          "$ref": 11
         },
-        "prev": {
-          "$ref": 10
-        },
+        "prev": null,
         "next": {
           "$ref": 14
         }
       },
       {
         "type": "text",
-        "data": "Some optimizations",
+        "data": "Fixed lots of bugs",
         "parent": {
           "$ref": 12
         },
@@ -203,10 +201,37 @@
           15
         ],
         "parent": {
-          "$ref": 9
+          "$ref": 11
         },
         "prev": {
           "$ref": 12
+        },
+        "next": {
+          "$ref": 16
+        }
+      },
+      {
+        "type": "text",
+        "data": "Some optimizations",
+        "parent": {
+          "$ref": 14
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          17
+        ],
+        "parent": {
+          "$ref": 11
+        },
+        "prev": {
+          "$ref": 14
         },
         "next": null
       },
@@ -214,7 +239,7 @@
         "type": "text",
         "data": "Inside optimize world screen there's now an option to remove cached world data (e.g. height maps and light), so that it's recomputed on the next load",
         "parent": {
-          "$ref": 14
+          "$ref": 16
         },
         "prev": null,
         "next": null

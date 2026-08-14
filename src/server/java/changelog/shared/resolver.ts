@@ -1,4 +1,5 @@
 import type { SitemapEntry, VersionManifestEntry } from "../types";
+
 import { fetchCdx } from "./cdx-fetch";
 import { resolveLegacyWaybackUrlRaw } from "./legacy";
 import type { LocalCache } from "./local-cache";
@@ -141,7 +142,11 @@ export async function resolveUpstream(
 ): Promise<ResolvedUpstream> {
   const resolved = resolveVersion(entry, ctx);
   if (resolved.url) {
-    return { url: resolved.url, source: resolved.source, lastmod: resolved.lastmod };
+    return {
+      url: resolved.url,
+      source: resolved.source,
+      lastmod: resolved.lastmod,
+    };
   }
   // Sitemap miss — try Wayback for legacy versions.
   const cdxFetch = options.cdxFetch ?? options.cache?.cdxFetcher() ?? fetchCdx;
@@ -285,7 +290,9 @@ export function versionToCandidates(id: string): string[] {
         const concat = `${major}${minor}${patch}`;
         candidates.push(`minecraft-${concat}-pre-release-${num}`);
         candidates.push(`minecraft-${concat}-pre-release`);
-        candidates.push(`minecraft-${major}-${minor}-${patch}-pre-release-${num}`);
+        candidates.push(
+          `minecraft-${major}-${minor}-${patch}-pre-release-${num}`,
+        );
         candidates.push(`minecraft-${major}-${minor}-${patch}-pre-release`);
       }
     }
@@ -306,8 +313,12 @@ export function versionToCandidates(id: string): string[] {
         candidates.push(`minecraft-${major}-${minor}-release-candidate-${num}`);
         candidates.push(`minecraft-${major}-${minor}-release-candidate`);
       } else if (major && minor && patch) {
-        candidates.push(`minecraft-${major}-${minor}-${patch}-release-candidate-${num}`);
-        candidates.push(`minecraft-${major}-${minor}-${patch}-release-candidate`);
+        candidates.push(
+          `minecraft-${major}-${minor}-${patch}-release-candidate-${num}`,
+        );
+        candidates.push(
+          `minecraft-${major}-${minor}-${patch}-release-candidate`,
+        );
       }
     }
     return candidates;

@@ -3,10 +3,10 @@ import {
   containerChildren,
   hasBugListItems,
   isEdgeTrimmable,
+  type SectionRange,
   textOf,
   trimmedTextOf,
   wrapperChildren,
-  type SectionRange,
 } from "./utils";
 
 const MOJANG_SNAPSHOT_PATTERN = /(\d{2}w\d{2}[a-z]?)/i;

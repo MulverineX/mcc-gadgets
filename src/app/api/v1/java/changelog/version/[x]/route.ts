@@ -1,5 +1,5 @@
 import { fetchParsedVersion } from "~/server/java/changelog/parsed";
-import { CDN_CACHE, cacheControl } from "~/server/java/changelog/shared/cdn";
+import { cacheControl, CDN_CACHE } from "~/server/java/changelog/shared/cdn";
 
 export async function GET(
   _request: Request,

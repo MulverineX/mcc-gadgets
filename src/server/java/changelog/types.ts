@@ -1,12 +1,12 @@
 import type { z } from "zod";
 
+import type { SerializedAST } from "./shared/parser";
 import type {
   SitemapEntrySchema,
   SitemapSchema,
   VersionManifestEntrySchema,
   VersionManifestSchema,
 } from "./shared/schemas";
-import type { SerializedAST } from "./shared/parser";
 
 export type VersionManifestResponse = z.infer<typeof VersionManifestSchema>;
 export type VersionManifestEntry = z.infer<typeof VersionManifestEntrySchema>;

@@ -3,7 +3,9 @@ import * as htmlparser2 from "htmlparser2";
 // `htmlparser2` types its element union loosely; this alias mirrors what
 // the existing diagnostic script uses so the parser logic ports 1:1.
 export type Element = NonNullable<
-  Parameters<NonNullable<ConstructorParameters<typeof htmlparser2.DomHandler>[2]>>[0]
+  Parameters<
+    NonNullable<ConstructorParameters<typeof htmlparser2.DomHandler>[2]>
+  >[0]
 >;
 
 export { htmlparser2 };

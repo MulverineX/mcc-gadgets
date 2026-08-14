@@ -5,24 +5,20 @@ import {
   detach,
   lastListEnd,
   parseVersionTuple,
+  type SectionRange,
   startSection,
   trimEmptyEdgesInPlace,
   trimmedTextOf,
-  type SectionRange,
 } from "./utils";
 
 /**
- * Walk the container's children and return every <p> that sits before the
- * first heading. The intro prose on merged pre-release pages often spans
- * multiple paragraphs (e.g. the lead-in + a "Happy mining!" sign-off).
- * Returning just the first <p> would silently drop the rest and is exactly
- * the kind of bug that only shows up on certain pages.
+ * Return every <p> in the container that sits before the first heading —
+ * the page-level intro. Tracks "Update:" notes separately so they don't
+ * get misattributed to the OLDEST version (they belong to the section
+ * they precede, prepended by the splitter).
  *
- * Skips empty <p>s (whitespace-only). Skips <p>s starting with "Update:" —
- * those are version-specific follow-up notes ("Update: we've now released
- * 21w08b to fix a crash") that belong to the section they precede, not to
- * the page-level intro. Stops at the first heading so we don't pull a <p>
- * from inside a "Changes in X" / "Fixed bugs in X" block.
+ * Multi-paragraph intros are common (lead-in + sign-off); only returning
+ * the first <p> silently drops the rest.
  */
 export function findIntroProse(container: Element): Element[] {
   const out: Element[] = [];
@@ -36,11 +32,8 @@ export function findIntroProse(container: Element): Element[] {
 }
 
 /**
- * True if `<p>` is a Mojang-style "Update:" follow-up note ("Update: we've
- * now released 22w16b to fix a crash") that points at a sibling-section
- * version rather than the page-level intro. Two shapes to handle — the
- * splitter's `stripUpdateLeadIn` may have already removed the literal
- * "Update:" marker by the time we run:
+ * True if `<p>` is a Mojang-style "Update:" follow-up note that points at
+ * a sibling-section version rather than the page-level intro. Two shapes:
  *
  *   <p><b>Update</b>: we've now released ...   (unstripped)
  *   <p>we've now released ...                (already stripped)
@@ -54,16 +47,18 @@ function isUpdateNote(p: Element): boolean {
   }
   const text = trimmedTextOf(p);
   if (/^update\s*:/i.test(text)) return true;
-  // Stripped form: the splitter removes "Update:" but leaves the rest. Real
-  // examples: "We've now released 22w16b ...", "We are now on pre-release 5",
-  // "We're now on pre-release 5". Distinguish from prose: prose never
-  // starts with these patterns. The "(now|are|have) (on|released|...)"
-  // gate keeps us from false-matching "We're now confident enough ..."
-  // (the actual 1.14-pre1 intro — note the "confident" follows, not
-  // "released" / "on [pre-release X]").
-  return /^(we|i|we've|i've)\s+(are|now|have)\s+(now\s+)?(released|on|rolling|shipping|publishing)\b/i.test(text);
+  // Stripped form: gate on "(we|i|...) (are|now|have) (on|released|...)" so
+  // genuine intro prose like "We're now confident enough in the stability"
+  // (1.14-pre1 intro) doesn't match — "confident" isn't "on [pre-release X]".
+  return /^(we|i|we've|i've)\s+(are|now|have)\s+(now\s+)?(released|on|rolling|shipping|publishing)\b/i.test(
+    text,
+  );
 }
 
+/**
+ * Strip the bold "Update:" + any leading ": " from a `<p>` so the prose
+ * left behind reads as a normal sentence ("We're now on pre-release 5").
+ */
 function stripUpdateLeadIn(p: Element): void {
   while (p.children && p.children.length > 0) {
     const first = p.children[0]!;
@@ -102,11 +97,10 @@ export function splitMinecraftNetByVersion(
     return out;
   }
 
-  // Tracks the index where the previous section ended so the next section's
-  // sectionStart can pick up exactly where the previous one left off. Without
-  // this, "Changes in 22w16a" would start at its heading idx, missing any
-  // sibling-section content that lives between sections (e.g. "New Features
-  // in 22w16a" sits between "Fixed Bugs in 22w16b" and "Changes in 22w16a").
+  // `prevSectionEnd` is the index where the last pushed section ended. The
+  // next section's `sectionStart` picks up there so content BETWEEN sibling
+  // headings (e.g. "New Features in 22w16a" wedged between "Fixed Bugs in
+  // 22w16b" and "Changes in 22w16a") isn't dropped.
   let prevSectionEnd = 0;
   let footerIdx = children.length;
   for (let i = 0; i < children.length; i++) {
@@ -126,10 +120,12 @@ export function splitMinecraftNetByVersion(
 
   let firstChangesInIdx = -1;
   let firstFixedBugsIdx = -1;
+  let changesInCount = 0;
   for (let i = 0; i < sectionChildren.length; i++) {
     const text = trimmedTextOf(sectionChildren[i]!);
-    if (firstChangesInIdx === -1 && /^changes? in\s+\S/i.test(text)) {
-      firstChangesInIdx = i;
+    if (/^changes? in\s+\S/i.test(text)) {
+      if (firstChangesInIdx === -1) firstChangesInIdx = i;
+      changesInCount++;
     }
     if (firstFixedBugsIdx === -1 && /^fixed bugs? in\s+\S/i.test(text)) {
       firstFixedBugsIdx = i;
@@ -139,6 +135,12 @@ export function splitMinecraftNetByVersion(
     firstFixedBugsIdx !== -1 &&
     firstChangesInIdx !== -1 &&
     firstFixedBugsIdx < firstChangesInIdx;
+  // Multi-version page (multiple "Changes in X" headings) → the page-level
+  // intro is owned by the OLDEST version (prepended by `parseArticle` via
+  // `findIntroProse`). The first section's `sectionStart` is set to the
+  // heading's own idx so it doesn't inherit the intro. Single-version pages
+  // keep `sectionStart = 0` so the intro stays inside the only section.
+  const isMultiVersion = changesInCount > 1;
 
   const followUpSkipIndices = new Set<number>();
   let followUpBugUlIdx = -1;
@@ -157,7 +159,8 @@ export function splitMinecraftNetByVersion(
     for (
       let i = firstFixedBugsIdx + 1;
       i < sectionChildren.length &&
-      i < (firstChangesInIdx === -1 ? sectionChildren.length : firstChangesInIdx);
+      i <
+        (firstChangesInIdx === -1 ? sectionChildren.length : firstChangesInIdx);
       i++
     ) {
       followUpSkipIndices.add(i);
@@ -176,6 +179,8 @@ export function splitMinecraftNetByVersion(
     rawTitle: string;
     sectionStart: number;
     followUp?: boolean;
+    /** Pre-`sectionStart` Update: paragraphs that belong to this section. */
+    prepended?: Element[];
   } | null = null;
 
   for (let i = 0; i < sectionChildren.length; i++) {
@@ -196,11 +201,10 @@ export function splitMinecraftNetByVersion(
         current ??= startSection(version, child, i);
         continue;
       }
-      // Leave versionStr as the heading text ("1.14 PRE-RELEASE 5"). The old
-      // transform here stripped the trailing digit and rewrote the keyword,
-      // producing a string like "1.14-pre-release" that no version id could
-      // ever match. `pickRange` now compares via `parseVersionTuple` which
-      // accepts both heading and id formats.
+      // Leave versionStr as the heading text ("1.14 PRE-RELEASE 5"). An
+      // older transform stripped the digit and rewrote the keyword here,
+      // producing "1.14-pre-release" — no version id matches that. `pickRange`
+      // now normalizes via `parseVersionTuple`, which accepts both forms.
     } else {
       versionStr = version;
     }
@@ -208,23 +212,56 @@ export function splitMinecraftNetByVersion(
     if (/^changes? in\b/i.test(headingMatch?.[1] ?? "")) {
       if (current) {
         const end = current.followUp ? followUpBugUlIdx + 1 : i;
+        const sliced = sliceRange(current.sectionStart, end);
         const pushed = {
           ...current,
-          children: sliceRange(current.sectionStart, end),
+          children: current.prepended
+            ? [...current.prepended, ...sliced]
+            : sliced,
         };
         prevSectionEnd = end;
         ranges.push(pushed);
       }
-      // New section picks up where the previous one left off. Without this,
-      // content that sits BETWEEN sibling headings (e.g. "New Features in
-      // 22w16a" between "Fixed Bugs in 22w16b" and "Changes in 22w16a")
-      // gets dropped — the "Changes in" heading idx skips over it.
-      current = startSection(versionStr, child, prevSectionEnd);
+      // FIRST "Changes in" heading on a multi-version page: sectionStart
+      // is the heading's own idx (not 0) so the page-level intro isn't
+      // inherited by the newest version. The intro is owned by the oldest
+      // version and is prepended later by `parseArticle` via
+      // `findIntroProse`. Single-version pages keep sectionStart = 0
+      // (the intro belongs to the only section).
+      //
+      // A bold "Update:" note (e.g. "<p><b>Update:</b> We're now on
+      // pre-release 5 ...") often sits between the intro and the first
+      // heading. It belongs to THIS version, not the oldest — so we
+      // prepend it to the first section's children with the bold marker
+      // stripped. The note can span multiple `<p>`s; we collect all of
+      // them as long as they're Update: notes.
+      const isFirstSection: boolean = current === null;
+      let prepended: Element[] = [];
+      if (isFirstSection && isMultiVersion) {
+        for (let j = i - 1; j >= 0; j--) {
+          const prev = sectionChildren[j]!;
+          if (prev.tagName === "h2" || prev.tagName === "h3") break;
+          if (prev.tagName !== "p") continue;
+          if (!isUpdateNote(prev)) break;
+          prepended.unshift(prev);
+        }
+        for (const p of prepended) stripUpdateLeadIn(p);
+      }
+      const firstSectionStart = isMultiVersion ? i : prevSectionEnd;
+      current = {
+        ...startSection(
+          versionStr,
+          child,
+          isFirstSection ? firstSectionStart : prevSectionEnd,
+        ),
+        ...(prepended.length > 0 ? { prepended } : {}),
+      };
     } else {
       if (!current && /^fixed bugs? in\b/i.test(headingMatch?.[1] ?? "")) {
-        // No Update para + no later "Changes in X" → single-section
-        // release (e.g. 1.20.6: intro + fixed bugs + bug ul + footer).
-        // Start at idx 0 so the intro prose isn't dropped.
+        // Single-section release (e.g. 1.20.6): intro + fixed bugs + bug ul
+        // + footer. No "Changes in X" ever appears. Start at idx 0 so the
+        // intro isn't dropped. If a follow-up Update: para exists, start
+        // there instead and strip its bold marker.
         const sectionStart =
           followUpStartIdx !== -1
             ? followUpStartIdx
@@ -245,12 +282,17 @@ export function splitMinecraftNetByVersion(
   }
 
   if (current) {
+    const sliced = sliceRange(
+      current.sectionStart,
+      lastListEnd(
+        sectionChildren,
+        current.sectionStart,
+        sectionChildren.length,
+      ),
+    );
     ranges.push({
       ...current,
-      children: sliceRange(
-        current.sectionStart,
-        lastListEnd(sectionChildren, current.sectionStart, sectionChildren.length),
-      ),
+      children: current.prepended ? [...current.prepended, ...sliced] : sliced,
     });
   }
 

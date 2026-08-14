@@ -119,7 +119,10 @@ export function legacyWindowsFor(versionId: string): LegacyWindow[] | null {
 /** True for versions whose articles live in the Wayback Machine archive of mojang.com. */
 export function isLegacyVersion(majorMinor: string): boolean {
   // 1.11 and below only — 1.12+ is minecraft.net.
-  return legacyMapping[majorMinor] !== undefined && compareMinor(majorMinor, "1.11") <= 0;
+  return (
+    legacyMapping[majorMinor] !== undefined &&
+    compareMinor(majorMinor, "1.11") <= 0
+  );
 }
 
 function compareMinor(a: string, b: string): number {

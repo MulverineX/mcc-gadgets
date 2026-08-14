@@ -1,12 +1,12 @@
 import {
-  DomElement,
-  ElementType,
   type ChildNode,
+  DomElement,
   type Element,
+  ElementType,
+  htmlparser2,
   isComment,
   isTag,
   isText,
-  htmlparser2,
 } from "./types";
 import type { BugRef } from "./types";
 
@@ -26,10 +26,7 @@ export function findFirst(
   predicate: (el: Element) => boolean,
   dom: Element,
 ): Element | null {
-  const hits = htmlparser2.DomUtils.findAll(
-    predicate,
-    dom,
-  );
+  const hits = htmlparser2.DomUtils.findAll(predicate, dom);
   return (hits[0] as Element | undefined) ?? null;
 }
 
@@ -76,7 +73,10 @@ export function isEdgeTrimmable(node: ChildNode): boolean {
 
 export function trimEmptyEdgesInPlace(children: Element[]): void {
   const isEmpty = (el: Element): boolean =>
-    textOf(el).replace(/&nbsp;/g, " ").replace(/&#xa0;/g, " ").trim() === "";
+    textOf(el)
+      .replace(/&nbsp;/g, " ")
+      .replace(/&#xa0;/g, " ")
+      .trim() === "";
 
   let start = 0;
   while (start < children.length && isEmpty(children[start]!)) start++;
@@ -127,13 +127,7 @@ export function parseVersionTuple(v: string): (number | string)[] {
         : "";
   // Snapshot branch puts the digit in m[6]; pre-release/rc branches put it in m[5].
   const digit = m[4] ? Number(m[5] ?? "0") : Number(m[6] ?? "0");
-  return [
-    Number(m[1]),
-    Number(m[2]),
-    Number(m[3] ?? "0"),
-    normKind,
-    digit,
-  ];
+  return [Number(m[1]), Number(m[2]), Number(m[3] ?? "0"), normKind, digit];
 }
 
 export function compareVersionTuple(
@@ -242,7 +236,10 @@ export function findOldestRange(ranges: SectionRange[]): SectionRange | null {
     const cmp = compareVersionTuple(aTuple, bTuple);
     if (cmp < 0) {
       oldest = r;
-    } else if (cmp === 0 && normalizeVersion(r.version) < normalizeVersion(oldest.version)) {
+    } else if (
+      cmp === 0 &&
+      normalizeVersion(r.version) < normalizeVersion(oldest.version)
+    ) {
       // Tuples tied (both default for unparseable ids) — fall back to
       // alphabetical comparison so "21w08a" sorts before "21w08b".
       oldest = r;
@@ -277,9 +274,10 @@ export function collectAllByTag(root: Element, name: string): Element[] {
 export function extractBugTitle(li: Element): string {
   const raw = trimmedTextOf(li);
   // Strip "Fixed bug MC-XXX -" / "[Bug MC-XXX]" / bare "MC-XXX" prefix.
-  const m = /^(?:\[\s*)?(?:[Ff]ixed\s+)?(?:[Bb]ug\s+)?MC-\d+\s*\]?\s*[-–—:\s ]*/.exec(
-    raw,
-  );
+  const m =
+    /^(?:\[\s*)?(?:[Ff]ixed\s+)?(?:[Bb]ug\s+)?MC-\d+\s*\]?\s*[-–—:\s ]*/.exec(
+      raw,
+    );
   const stripped = m ? raw.slice(m[0].length) : raw;
   return stripped.replace(/^[-–—:]\s*/, "").trim();
 }
@@ -289,7 +287,10 @@ export function hasBugListItems(ul: Element): boolean {
   return wrapperChildren(ul).some((li) => {
     if (li.tagName !== "li") return false;
     for (const a of wrapperChildren(li)) {
-      if (a.tagName === "a" && MOJIRA_LINK_PATTERN.test(a.attribs?.href ?? "")) {
+      if (
+        a.tagName === "a" &&
+        MOJIRA_LINK_PATTERN.test(a.attribs?.href ?? "")
+      ) {
         return true;
       }
     }
@@ -376,7 +377,10 @@ export function buildBodyElement(range: SectionRange): BugRef[] {
     for (const li of [...(ul.children ?? [])] as Element[]) {
       if (
         li.tagName === "li" &&
-        textOf(li).replace(/&nbsp;/g, " ").replace(/&#xa0;/g, " ").trim() === ""
+        textOf(li)
+          .replace(/&nbsp;/g, " ")
+          .replace(/&#xa0;/g, " ")
+          .trim() === ""
       ) {
         detach(li);
       }
@@ -453,15 +457,15 @@ export function joinListItems(list: Element): string {
       if (c.tagName === "ul" || c.tagName === "ol") {
         nestedListText = joinListItems(c);
       } else {
-        const t = htmlparser2.DomUtils.textContent(c).replace(/\s+/g, " ").trim();
+        const t = htmlparser2.DomUtils.textContent(c)
+          .replace(/\s+/g, " ")
+          .trim();
         if (t) directText.push(t);
       }
     }
     let label = directText.join(" ").trim();
     if (!label) {
-      label = htmlparser2.DomUtils.textContent(li)
-        .replace(/\s+/g, " ")
-        .trim();
+      label = htmlparser2.DomUtils.textContent(li).replace(/\s+/g, " ").trim();
     }
     if (!label) continue;
     if (nestedListText) {

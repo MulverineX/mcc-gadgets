@@ -1,5 +1,5 @@
 import { fetchRawHtml } from "~/server/java/changelog/raw";
-import { CDN_CACHE, cacheControl } from "~/server/java/changelog/shared/cdn";
+import { cacheControl, CDN_CACHE } from "~/server/java/changelog/shared/cdn";
 
 export async function GET(
   _request: Request,

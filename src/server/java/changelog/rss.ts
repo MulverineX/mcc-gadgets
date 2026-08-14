@@ -2,9 +2,9 @@ import * as htmlparser2 from "htmlparser2";
 
 import { cache as unstableCache } from "~/lib/fetch";
 
+import { loadJsonVersions } from "./json";
 import type { LocalCache } from "./shared/local-cache";
 import { deserializeAst, type SerializedAST } from "./shared/parser";
-import { loadJsonVersions } from "./json";
 
 export interface RssOptions {
   /** When provided, every underlying fetcher goes through this cache. */
@@ -27,9 +27,7 @@ export const getRssFeed = unstableCache(
 );
 
 /** Unwrapped body of `getRssFeed` — testable with `{ cache }` without going through the Next.js `unstable_cache` key serialization. */
-export async function loadRssFeed(
-  options: RssOptions = {},
-): Promise<string> {
+export async function loadRssFeed(options: RssOptions = {}): Promise<string> {
   const json = await loadJsonVersions(options);
   return renderRss(json.entries);
 }
@@ -71,7 +69,8 @@ function renderItem(entry: {
   version: string;
   publishedAt: number;
 }): string {
-  const description = entry.shortText ?? stripHtml(astToHtml(entry.body)).substring(0, 280);
+  const description =
+    entry.shortText ?? stripHtml(astToHtml(entry.body)).substring(0, 280);
   const link = entry.url ?? `https://www.minecraft.net/en-us/article`;
   return [
     `    <item>`,
@@ -103,7 +102,10 @@ function escapeXml(value: string): string {
 }
 
 function stripHtml(html: string): string {
-  return html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  return html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 /** Reconstruct HTML from a serialized AST fragment. Returns "" for null/empty. */

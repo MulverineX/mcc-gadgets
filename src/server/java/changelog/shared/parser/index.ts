@@ -1,14 +1,21 @@
+import { normalizeArticleMedia } from "./media";
 import {
+  findIntroProse,
+  splitMinecraftNetByVersion,
+} from "./minecraft.net.aem";
+import { findMojangLegacyFooterEnd } from "./mojang.com.old";
+import { splitMojangByVersion } from "./mojang.com.shared";
+import {
+  type ChildNode,
   DomComment,
   DomElement,
   DomText,
+  type Element,
   ElementType,
+  htmlparser2,
   isComment,
   isTag,
   isText,
-  type ChildNode,
-  type Element,
-  htmlparser2,
 } from "./types";
 import type {
   ASTNode,
@@ -17,6 +24,18 @@ import type {
   ParsedArticle,
   SerializedAST,
 } from "./types";
+import {
+  buildBodyElement,
+  containerChildren,
+  findFirst,
+  findOldestRange,
+  makeShortTextFromChildren,
+  pickRange,
+  trimRootEdges,
+  wrapperChildren,
+} from "./utils";
+import type { SectionRange } from "./utils";
+
 export type {
   ASTComment,
   ASTElement,
@@ -28,22 +47,6 @@ export type {
   ParsedArticleSection,
   SerializedAST,
 } from "./types";
-
-import {
-  buildBodyElement,
-  containerChildren,
-  findFirst,
-  findOldestRange,
-  makeShortTextFromChildren,
-  pickRange,
-  trimRootEdges,
-  wrapperChildren,
-} from "./utils";
-import { normalizeArticleMedia } from "./media";
-import { splitMojangByVersion } from "./mojang.com.shared";
-import { findMojangLegacyFooterEnd } from "./mojang.com.old";
-import { splitMinecraftNetByVersion, findIntroProse } from "./minecraft.net.aem";
-import type { SectionRange } from "./utils";
 
 const MINECRAFT_NET_BASE = "https://www.minecraft.net";
 
@@ -163,7 +166,7 @@ export function parseArticle(
 
   const container =
     source === "mojang"
-      ? findFirst(
+      ? (findFirst(
           (el) =>
             el.tagName === "article" &&
             (el.attribs?.class ?? "").includes("post-content"),
@@ -175,7 +178,7 @@ export function parseArticle(
             (el.attribs?.class ?? "").includes("post-content") &&
             wrapperChildren(el).filter((c) => c.tagName === "p").length > 1,
           root,
-        )
+        ))
       : findArticleBodyContainer(root);
   const heroImage =
     source === "mojang"
@@ -241,7 +244,13 @@ export function parseArticle(
   // so we skip them here to avoid duplicating it.
   const isMerged = ranges.length > 1;
   const isOldest = matched !== null && matched === findOldestRange(ranges);
-  if (matched && source === "minecraft.net" && container && isMerged && isOldest) {
+  if (
+    matched &&
+    source === "minecraft.net" &&
+    container &&
+    isMerged &&
+    isOldest
+  ) {
     const introEls = findIntroProse(container);
     if (introEls.length > 0) {
       matched.children = [...introEls, ...matched.children];
@@ -284,7 +293,8 @@ export function serializeAst(roots: ChildNode[]): SerializedAST {
 
   function visit(node: ChildNode, parentIdx: number | null): void {
     const idx = nodes.length;
-    const parent: ASTRef | null = parentIdx === null ? null : { $ref: parentIdx };
+    const parent: ASTRef | null =
+      parentIdx === null ? null : { $ref: parentIdx };
     if (isText(node)) {
       nodes.push({
         type: "text",

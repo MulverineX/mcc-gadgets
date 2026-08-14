@@ -1,7 +1,13 @@
 import { z } from "zod";
 
 const VERSION_TYPE_SCHEMA = z.union([
-  z.enum(["snapshot", "release", "special", "release-candidate", "pre-release"]),
+  z.enum([
+    "snapshot",
+    "release",
+    "special",
+    "release-candidate",
+    "pre-release",
+  ]),
   z.string(),
 ]);
 
@@ -52,6 +58,8 @@ export const SitemapSchema = z.object({
  * fixture (`LocalCache.fetchManifest`). Production reads the JSON body via
  * `fetch(...).json()`; LocalCache reads it from disk; both end up here.
  */
-export function parseManifestJson(body: unknown): z.infer<typeof VersionManifestSchema> {
+export function parseManifestJson(
+  body: unknown,
+): z.infer<typeof VersionManifestSchema> {
   return VersionManifestSchema.parse(body);
 }

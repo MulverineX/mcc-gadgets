@@ -1,7 +1,7 @@
-import { buildResolveContext, resolveUpstream } from "./shared/resolver";
-import { getSitemapMap } from "./shared/sitemap";
 import { getVersionManifest } from "./manifest";
 import type { LocalCache } from "./shared/local-cache";
+import { buildResolveContext, resolveUpstream } from "./shared/resolver";
+import { getSitemapMap } from "./shared/sitemap";
 
 export interface RawHtmlResult {
   body: string;

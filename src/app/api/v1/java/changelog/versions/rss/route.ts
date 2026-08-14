@@ -1,5 +1,5 @@
 import { getRssFeed } from "~/server/java/changelog/rss";
-import { CDN_CACHE, cacheControl } from "~/server/java/changelog/shared/cdn";
+import { cacheControl, CDN_CACHE } from "~/server/java/changelog/shared/cdn";
 
 export async function GET(): Promise<Response> {
   const xml = await getRssFeed();

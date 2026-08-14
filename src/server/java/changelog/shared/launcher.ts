@@ -37,7 +37,9 @@ export const getLauncherPatchNotes = cache(
     );
 
     if (!res.success) {
-      throw new Error(`Failed to fetch launcher patch notes: ${String(res.error)}`);
+      throw new Error(
+        `Failed to fetch launcher patch notes: ${String(res.error)}`,
+      );
     }
 
     return {

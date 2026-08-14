@@ -1,11 +1,17 @@
-import { existsSync, mkdirSync, appendFileSync, readFileSync, writeFileSync } from "fs";
-import { join } from "path";
+import type { SitemapEntry, VersionManifestResponse } from "../types";
 import { createHash } from "crypto";
+import {
+  appendFileSync,
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  writeFileSync,
+} from "fs";
+import { join } from "path";
 
+import { sanitizeManifestId } from "./manifest-sanitize";
 import { parseManifestJson } from "./schemas";
 import { extractSitemapEntries } from "./sitemap";
-import { sanitizeManifestId } from "./manifest-sanitize";
-import type { SitemapEntry, VersionManifestResponse } from "../types";
 
 const MANIFEST_URL =
   "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json";
@@ -55,12 +61,19 @@ export class LocalCache {
 
   async fetchManifest(): Promise<VersionManifestResponse> {
     const file = join(this.cacheDir, "manifest.json");
-    const sanitize = (raw: VersionManifestResponse): VersionManifestResponse => ({
+    const sanitize = (
+      raw: VersionManifestResponse,
+    ): VersionManifestResponse => ({
       ...raw,
-      versions: raw.versions.map((v) => ({ ...v, id: sanitizeManifestId(v.id) })),
+      versions: raw.versions.map((v) => ({
+        ...v,
+        id: sanitizeManifestId(v.id),
+      })),
     });
     if (existsSync(file)) {
-      return sanitize(parseManifestJson(JSON.parse(readFileSync(file, "utf-8"))));
+      return sanitize(
+        parseManifestJson(JSON.parse(readFileSync(file, "utf-8"))),
+      );
     }
     const res = await fetch(MANIFEST_URL);
     if (!res.ok) throw new Error(`manifest fetch failed: ${res.status}`);
@@ -90,7 +103,12 @@ export class LocalCache {
     return new Map(
       entries.map((e) => [
         e.slug,
-        { url: e.url, slug: e.slug, patternType: "release", lastmod: e.lastmod },
+        {
+          url: e.url,
+          slug: e.slug,
+          patternType: "release",
+          lastmod: e.lastmod,
+        },
       ]),
     );
   }
@@ -112,7 +130,9 @@ export class LocalCache {
         this.auditLog,
         `  → network fetch START at ${new Date().toISOString()}\n`,
       );
-      const res = await fetch(cdxUrl, { signal: AbortSignal.timeout(5 * 60_000) });
+      const res = await fetch(cdxUrl, {
+        signal: AbortSignal.timeout(5 * 60_000),
+      });
       const ms = Math.round(performance.now() - t0);
       const text = await res.text();
       appendFileSync(
@@ -120,12 +140,18 @@ export class LocalCache {
         `  → network response: ${res.status} (${ms}ms, ${text.length} bytes)\n`,
       );
       if (!res.ok) return null;
-      const hash = createHash("sha256").update(cdxUrl).digest("hex").slice(0, 32);
+      const hash = createHash("sha256")
+        .update(cdxUrl)
+        .digest("hex")
+        .slice(0, 32);
       if (text.length === 0) {
         writeFileSync(join(this.cdxDir, `${hash}.empty.txt`), "");
       } else {
         writeFileSync(join(this.cdxDir, `${hash}.txt`), text);
-        appendFileSync(this.auditLog, `  → body: ${text.replace(/\s+/g, " ").trim().slice(0, 120)}\n`);
+        appendFileSync(
+          this.auditLog,
+          `  → body: ${text.replace(/\s+/g, " ").trim().slice(0, 120)}\n`,
+        );
       }
       return text;
     } catch (e) {
@@ -195,14 +221,8 @@ export class LocalCache {
   }
 
   /** Persist the source marker after a fresh fetch. */
-  writeSource(
-    snapshotName: string,
-    source: "minecraft.net" | "mojang",
-  ): void {
-    writeFileSync(
-      join(this.cacheDir, `${snapshotName}.html.source`),
-      source,
-    );
+  writeSource(snapshotName: string, source: "minecraft.net" | "mojang"): void {
+    writeFileSync(join(this.cacheDir, `${snapshotName}.html.source`), source);
   }
 
   /** Read a committed parser snapshot (or null if missing). */

@@ -1,25 +1,22 @@
+import { targetReleaseOf } from "./data/legacy-mapping";
+import { getVersionManifest } from "./manifest";
 import {
-  setShortText,
+  type CachedEntryCache,
   markVersionVisited,
   setCachedEntry,
-  type CachedEntryCache,
+  setShortText,
 } from "./shared/cache";
+import { getLauncherEntry } from "./shared/launcher";
+import type { LocalCache } from "./shared/local-cache";
 import {
   absolutizeImageUrl,
   parseArticle,
   type ParsedArticle,
 } from "./shared/parser";
-import {
-  buildResolveContext,
-  resolveUpstream,
-} from "./shared/resolver";
+import { buildResolveContext, resolveUpstream } from "./shared/resolver";
 import { getSitemapMap } from "./shared/sitemap";
-import { getVersionManifest } from "./manifest";
-import { humanReadableTitle } from "./shared/title";
-import type { LocalCache } from "./shared/local-cache";
-import { getLauncherEntry } from "./shared/launcher";
-import { targetReleaseOf } from "./data/legacy-mapping";
 import { toUnixSeconds } from "./shared/time";
+import { humanReadableTitle } from "./shared/title";
 
 /**
  * Final per-version API response: a parsed article + a derived title.
@@ -121,7 +118,9 @@ export async function fetchParsedVersion(
   if (!options.cache) {
     // Pull launchercontent so the cached entry can carry image + shortText.
     // Errors are swallowed — launchercontent is optional enrichment.
-    const launcherEntry = await getLauncherEntry(version).catch(() => undefined);
+    const launcherEntry = await getLauncherEntry(version).catch(
+      () => undefined,
+    );
     const cachedEntry: CachedEntryCache = {
       url: resolution.url,
       source: resolution.source === "mojang" ? "wayback" : "sitemap",
@@ -135,7 +134,9 @@ export async function fetchParsedVersion(
     ]);
     if (parsed.shortText) {
       setShortText(version, parsed.shortText).catch((e) => {
-        console.warn(`shortText cache write failed for ${version}: ${String(e)}`);
+        console.warn(
+          `shortText cache write failed for ${version}: ${String(e)}`,
+        );
       });
     }
   }

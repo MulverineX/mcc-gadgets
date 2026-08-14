@@ -1,18 +1,9 @@
-import { afterAll, beforeAll, describe, expect, test } from "bun:test";
-import { existsSync, readFileSync, renameSync, unlinkSync, readdirSync } from "fs";
-import { readdir } from "node:fs/promises";
-import * as prettier from "prettier";
-import { join } from "path";
-import * as htmlparser2 from "htmlparser2";
-
 import { loadCachedVersions } from "../src/server/java/changelog/cached";
 import { loadJsonVersions } from "../src/server/java/changelog/json";
 import { fetchParsedVersion } from "../src/server/java/changelog/parsed";
 import { loadRssFeed } from "../src/server/java/changelog/rss";
 import { LocalCache } from "../src/server/java/changelog/shared/local-cache";
-import {
-  deserializeAst,
-} from "../src/server/java/changelog/shared/parser";
+import { deserializeAst } from "../src/server/java/changelog/shared/parser";
 import {
   buildResolveContext,
   resolveVersion,
@@ -20,6 +11,18 @@ import {
 } from "../src/server/java/changelog/shared/resolver";
 import { humanReadableTitle } from "../src/server/java/changelog/shared/title";
 import type { VersionManifestEntry } from "../src/server/java/changelog/types";
+import { afterAll, beforeAll, describe, expect, test } from "bun:test";
+import {
+  existsSync,
+  readdirSync,
+  readFileSync,
+  renameSync,
+  unlinkSync,
+} from "fs";
+import * as htmlparser2 from "htmlparser2";
+import { readdir } from "node:fs/promises";
+import { join } from "path";
+import * as prettier from "prettier";
 
 /**
  * End-to-end changelog test suite.
@@ -61,19 +64,19 @@ const CORPUS: CorpusEntry[] = [
   { version: "1.11", snapshotName: "1-11" },
   { version: "17w06a", snapshotName: "snapshot-17w06a" },
   { version: "1.12-pre6", snapshotName: "1-12-pre-release-6" },
-  { version: "1.12-pre7", snapshotName: "1-12-pre-release-7"},
-  { version: "1.14-pre1", snapshotName: "1-14-pre-release-1"},
-  { version: "1.14-pre2", snapshotName: "1-14-pre-release-2"},
-  { version: "1.14-pre5", snapshotName: "1-14-pre-release-5"},
+  { version: "1.12-pre7", snapshotName: "1-12-pre-release-7" },
+  { version: "1.14-pre1", snapshotName: "1-14-pre-release-1" },
+  { version: "1.14-pre2", snapshotName: "1-14-pre-release-2" },
+  { version: "1.14-pre5", snapshotName: "1-14-pre-release-5" },
   { version: "20w14infinite", snapshotName: "snapshot-20w14infinite" },
-  { version: "21w08a", snapshotName: "snapshot-21w08a"},
-  { version: "21w08b", snapshotName: "snapshot-21w08b"},
-  { version: "22w16a", snapshotName: "snapshot-22w16a"},
-  { version: "22w16b", snapshotName: "snapshot-22w16b"},
+  { version: "21w08a", snapshotName: "snapshot-21w08a" },
+  { version: "21w08b", snapshotName: "snapshot-21w08b" },
+  { version: "22w16a", snapshotName: "snapshot-22w16a" },
+  { version: "22w16b", snapshotName: "snapshot-22w16b" },
   { version: "1.19.1-pre3", snapshotName: "1-19-1-pre-release-3" },
-  { version: "1.20.6", snapshotName: "1-20-6"},
+  { version: "1.20.6", snapshotName: "1-20-6" },
   { version: "26.1-snapshot-1", snapshotName: "26-1-snapshot-1" },
-  { version: "26.1", snapshotName: "26-1"},
+  { version: "26.1", snapshotName: "26-1" },
   { version: "26.2-snapshot-3", snapshotName: "26-2-snapshot-3" },
 ];
 
@@ -105,11 +108,15 @@ describe("versionToCandidates", () => {
   });
 
   test("patch release", () => {
-    expect(versionToCandidates("1.20.4")).toContain("minecraft-java-edition-1-20-4");
+    expect(versionToCandidates("1.20.4")).toContain(
+      "minecraft-java-edition-1-20-4",
+    );
   });
 
   test("base release", () => {
-    expect(versionToCandidates("1.21")).toEqual(["minecraft-java-edition-1-21"]);
+    expect(versionToCandidates("1.21")).toEqual([
+      "minecraft-java-edition-1-21",
+    ]);
   });
 });
 
@@ -122,7 +129,9 @@ describe("humanReadableTitle", () => {
     expect(humanReadableTitle("1.10.1")).toBe("Minecraft 1.10.1");
   });
   test("pre-release", () => {
-    expect(humanReadableTitle("1.12-pre6")).toBe("Minecraft 1.12 Pre-Release 6");
+    expect(humanReadableTitle("1.12-pre6")).toBe(
+      "Minecraft 1.12 Pre-Release 6",
+    );
   });
   test("old snapshot", () => {
     expect(humanReadableTitle("17w06a")).toBe("Minecraft Snapshot 17w06a");
@@ -246,52 +255,58 @@ describe("changelog_parser — corpus", () => {
   });
 
   for (const entry of CORPUS) {
-    test(`parseArticle(${entry.version})`, async () => {
-      const t0 = performance.now();
+    test(
+      `parseArticle(${entry.version})`,
+      async () => {
+        const t0 = performance.now();
 
-      // Run the same resolver the API does — sitemap → launchercontent → Wayback
-      // fallback for legacy versions. `htmlSnapshot` points the HTML fetch at
-      // the on-disk fixture (and persists it on miss). `cdxFetch` falls back
-      // to the network for legacy CDX queries and persists responses.
-      // 5-minute budget: legacy CDX lookups can do 12 sequential Wayback
-      // queries at ~15s each on first run; subsequent runs hit the cache.
-      const result = await fetchParsedVersion(entry.version, {
-        cache,
-        htmlSnapshot: entry.snapshotName,
-        cdxFetch: cache.cdxFetcher(),
-      });
-      // Resolver failures must surface as test failures, not silent skips.
-      // A version the resolver can't reach is a regression we want to catch.
-      expect(result).not.toBeNull();
-      if (!result) return; // narrow type for the next line
-      const response = result;
-      // A successful fetch with no body AND no bugList means the parser
-      // produced nothing usable — also a regression, not a silent skip.
-      const emptyBody = response.body.nodes.length === 0;
-      const emptyBugs = response.bugList.length === 0;
-      expect(emptyBody && emptyBugs).toBe(false);
+        // Run the same resolver the API does — sitemap → launchercontent → Wayback
+        // fallback for legacy versions. `htmlSnapshot` points the HTML fetch at
+        // the on-disk fixture (and persists it on miss). `cdxFetch` falls back
+        // to the network for legacy CDX queries and persists responses.
+        // 5-minute budget: legacy CDX lookups can do 12 sequential Wayback
+        // queries at ~15s each on first run; subsequent runs hit the cache.
+        const result = await fetchParsedVersion(entry.version, {
+          cache,
+          htmlSnapshot: entry.snapshotName,
+          cdxFetch: cache.cdxFetcher(),
+        });
+        // Resolver failures must surface as test failures, not silent skips.
+        // A version the resolver can't reach is a regression we want to catch.
+        expect(result).not.toBeNull();
+        if (!result) return; // narrow type for the next line
+        const response = result;
+        // A successful fetch with no body AND no bugList means the parser
+        // produced nothing usable — also a regression, not a silent skip.
+        const emptyBody = response.body.nodes.length === 0;
+        const emptyBugs = response.bugList.length === 0;
+        expect(emptyBody && emptyBugs).toBe(false);
 
-      const existing = cache.readSnapshot<typeof response>(entry.snapshotName);
-      if (process.env.UPDATE_SNAPSHOTS === "1" || !existing) {
-        cache.writeSnapshot(entry.snapshotName, response);
-        console.log(
-          `[${entry.version}] wrote snapshot. TOTAL: ${(performance.now() - t0).toFixed(0)}ms`,
+        const existing = cache.readSnapshot<typeof response>(
+          entry.snapshotName,
         );
-        return;
-      }
+        if (process.env.UPDATE_SNAPSHOTS === "1" || !existing) {
+          cache.writeSnapshot(entry.snapshotName, response);
+          console.log(
+            `[${entry.version}] wrote snapshot. TOTAL: ${(performance.now() - t0).toFixed(0)}ms`,
+          );
+          return;
+        }
 
-      try {
-        expect(response).toEqual(existing);
-        console.log(
-          `[${entry.version}] snapshot match. TOTAL: ${(performance.now() - t0).toFixed(0)}ms`,
-        );
-      } catch (e) {
-        console.log(
-          `[${entry.version}] snapshot MISMATCH. TOTAL: ${(performance.now() - t0).toFixed(0)}ms`,
-        );
-        throw e;
-      }
-    }, 5 * 60_000);
+        try {
+          expect(response).toEqual(existing);
+          console.log(
+            `[${entry.version}] snapshot match. TOTAL: ${(performance.now() - t0).toFixed(0)}ms`,
+          );
+        } catch (e) {
+          console.log(
+            `[${entry.version}] snapshot MISMATCH. TOTAL: ${(performance.now() - t0).toFixed(0)}ms`,
+          );
+          throw e;
+        }
+      },
+      5 * 60_000,
+    );
   }
 
   /** Render every corpus body's AST back to HTML, dump to one inspection file. */
@@ -324,7 +339,9 @@ describe("changelog_parser — corpus", () => {
     }
     snapshots.sort((a, b) => (b.publishedAt ?? 0) - (a.publishedAt ?? 0));
     const sections = snapshots.map((snapshot) => {
-      const html = deserializeAst(snapshot.body as Parameters<typeof deserializeAst>[0])
+      const html = deserializeAst(
+        snapshot.body as Parameters<typeof deserializeAst>[0],
+      )
         .map((root) => htmlparser2.DomUtils.getOuterHTML(root))
         .join("\n");
       const hero = snapshot.heroImage
@@ -341,10 +358,13 @@ describe("changelog_parser — corpus", () => {
           ? `Released <time class="released" data-unix="${snapshot.publishedAt}"></time>`
           : "") +
         `</p>`;
-      const source = `<p class="source-url">Source: <a href="${snapshot.sourceURL}">${snapshot.sourceURL}</a></p>`
+      const source = `<p class="source-url">Source: <a href="${snapshot.sourceURL}">${snapshot.sourceURL}</a></p>`;
       const bugList = snapshot.bugList?.length
         ? `<h3>Fixed Bugs</h3><details><summary></summary>\n\n<ul>${snapshot.bugList
-            .map((b) => `<li><a href="https://mojira.dev/${escapeHtml(b.id)}"><code>${escapeHtml(b.id)}</code></a> — ${escapeHtml(b.title)}</li>`)
+            .map(
+              (b) =>
+                `<li><a href="https://mojira.dev/${escapeHtml(b.id)}"><code>${escapeHtml(b.id)}</code></a> — ${escapeHtml(b.title)}</li>`,
+            )
             .join("")}</ul></details>`
         : "";
       return `<section>${hero}<h1>${escapeHtml(humanReadableTitle(snapshot.version))}</h1>${meta}${source}<details><summary>Changelog</summary>\n\n${html}</details>${bugList}</section>`;
@@ -453,9 +473,13 @@ async function pruneAuditBackups(
   // historical states (e.g. a prior code revision) and are kept as evidence.
   if (liveLogText !== null) {
     const liveFp = fingerprintFor(liveLogText);
-    console.log(`[prune] live fp length: ${liveFp.length}, sample: ${JSON.stringify(liveFp.slice(0, 80))}`);
+    console.log(
+      `[prune] live fp length: ${liveFp.length}, sample: ${JSON.stringify(liveFp.slice(0, 80))}`,
+    );
     for (const [fp, f] of seen) {
-      console.log(`[prune] backup ${f} fp length: ${fp.length}, sample: ${JSON.stringify(fp.slice(0, 80))}, match: ${fp === liveFp}`);
+      console.log(
+        `[prune] backup ${f} fp length: ${fp.length}, sample: ${JSON.stringify(fp.slice(0, 80))}, match: ${fp === liveFp}`,
+      );
       if (fp === liveFp) {
         try {
           unlinkSync(join(cacheDir, f));
@@ -588,7 +612,10 @@ describe("fetchParsedVersion — LocalCache integration", () => {
   });
 
   test("1.10 (mojang source) resolves via Wayback and parses", async () => {
-    const result = await fetchParsedVersion("1.10", { cache, htmlSnapshot: "1-10" });
+    const result = await fetchParsedVersion("1.10", {
+      cache,
+      htmlSnapshot: "1-10",
+    });
     expect(result).not.toBeNull();
     expect(result!.source).toBe("mojang");
     expect(result!.title).toBe("Minecraft 1.10");
@@ -653,7 +680,9 @@ describe("bulk endpoints — LocalCache integration", () => {
     // actually misses the slug.
     expect(visited112!.source).toBe("sitemap");
 
-    const visitedSnap = data.entries.find((e) => e.version === "26.2-snapshot-3");
+    const visitedSnap = data.entries.find(
+      (e) => e.version === "26.2-snapshot-3",
+    );
     expect(visitedSnap).toBeDefined();
     expect(visitedSnap!.url).toBe(
       "https://www.minecraft.net/en-us/article/minecraft-26-2-snapshot-3",
@@ -690,6 +719,8 @@ describe("bulk endpoints — LocalCache integration", () => {
     const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
     expect(items.length).toBeGreaterThan(0);
     expect(items[0]).toContain("<pubDate>");
-    expect(items[0]).toMatch(/<pubDate>[A-Z][a-z]{2}, \d{2} [A-Z][a-z]{2} \d{4}/);
+    expect(items[0]).toMatch(
+      /<pubDate>[A-Z][a-z]{2}, \d{2} [A-Z][a-z]{2} \d{4}/,
+    );
   }, 60_000);
 });

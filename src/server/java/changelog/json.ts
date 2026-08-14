@@ -1,10 +1,10 @@
 import { cache as unstableCache } from "~/lib/fetch";
 
+import { loadCachedVersions } from "./cached";
+import { fetchParsedVersion } from "./parsed";
 import type { LocalCache } from "./shared/local-cache";
 import { humanReadableTitle } from "./shared/title";
-import { fetchParsedVersion } from "./parsed";
 import type { CachedEntry, JsonEntry, JsonResponse } from "./types";
-import { loadCachedVersions } from "./cached";
 
 export interface JsonVersionsOptions {
   /** When provided, every underlying fetcher goes through this cache. */

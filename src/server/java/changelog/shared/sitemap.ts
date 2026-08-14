@@ -1,10 +1,11 @@
-import { cache } from "~/lib/fetch";
+import type { SitemapData, SitemapEntry } from "../types";
 import { z } from "zod";
 
+import { cache } from "~/lib/fetch";
+
+import type { LocalCache } from "./local-cache";
 import { detectPattern } from "./patterns";
 import { SitemapEntrySchema } from "./schemas";
-import type { SitemapData, SitemapEntry } from "../types";
-import type { LocalCache } from "./local-cache";
 
 const SITEMAP_URL = "https://www.minecraft.net/sitemap.xml";
 
@@ -54,7 +55,8 @@ export function extractSitemapEntries(xml: string): SitemapEntry[] {
   for (const block of urlBlocks) {
     const loc = /<loc>([^<]+)<\/loc>/.exec(block)?.[1];
     if (!loc) continue;
-    const slugMatch = /^https:\/\/www\.minecraft\.net\/en-us\/article\/(.+)$/.exec(loc);
+    const slugMatch =
+      /^https:\/\/www\.minecraft\.net\/en-us\/article\/(.+)$/.exec(loc);
     if (!slugMatch?.[1]) continue;
     const lastmod = /<lastmod>([^<]+)<\/lastmod>/.exec(block)?.[1];
     const slug = slugMatch[1];

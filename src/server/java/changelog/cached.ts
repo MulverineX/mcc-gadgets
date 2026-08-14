@@ -1,7 +1,9 @@
 import { revalidatePath } from "next/cache";
+
 import { cache as unstableCache } from "~/lib/fetch";
 
-import { getLauncherEntry } from "./shared/launcher";
+import { targetReleaseOf } from "./data/legacy-mapping";
+import { getVersionManifest } from "./manifest";
 import {
   getCachedEntry,
   getLastmod,
@@ -9,22 +11,21 @@ import {
   getVisitedVersions,
   setLastmod,
 } from "./shared/cache";
+import { getLauncherEntry } from "./shared/launcher";
 import type { LocalCache } from "./shared/local-cache";
 import {
   buildResolveContext,
+  type ResolveContext,
   resolveUpstream,
   resolveVersion,
-  type ResolveContext,
 } from "./shared/resolver";
 import { getSitemapMap } from "./shared/sitemap";
+import { toUnixSeconds } from "./shared/time";
 import type {
   CachedEntry,
   CachedResponse,
   VersionManifestEntry,
 } from "./types";
-import { getVersionManifest } from "./manifest";
-import { targetReleaseOf } from "./data/legacy-mapping";
-import { toUnixSeconds } from "./shared/time";
 
 const RAW_HTML_PATH_PREFIX = "/api/v1/java/changelog/version";
 
@@ -72,8 +73,9 @@ export async function loadCachedVersions(
   ]);
 
   const ctx: ResolveContext = buildResolveContext(manifest, sitemapMap);
-  const visited = options.visited
-    ?? (options.cache ? new Set<string>() : await getVisitedVersions());
+  const visited =
+    options.visited ??
+    (options.cache ? new Set<string>() : await getVisitedVersions());
 
   const entries: CachedEntry[] = [];
   for (const version of manifest.versions) {
@@ -82,17 +84,14 @@ export async function loadCachedVersions(
       // `fetchParsedVersion` on the user's visit. Falls back to a fresh
       // resolution if the cache entry is missing (e.g. cache TTL expired
       // but the visit set persisted).
-      const cached = options.cache
-        ? null
-        : await getCachedEntry(version.id);
+      const cached = options.cache ? null : await getCachedEntry(version.id);
       if (cached) {
         entries.push({
           ...stubEntry(version),
           url: cached.url,
           image: cached.image,
           shortText: cached.shortText,
-          source:
-            cached.source === "hardcoded" ? "sitemap" : cached.source,
+          source: cached.source === "hardcoded" ? "sitemap" : cached.source,
           lastmod: toUnixSeconds(cached.lastmod),
         });
       } else {
@@ -132,13 +131,12 @@ async function resolveCachedEntry(
   // fixture instead of the production CDX fetcher.
   const upstream = await resolveUpstream(entry, ctx, { cache: options.cache });
   const url: string | null = upstream.url;
-  const source: CachedEntry["source"] = upstream.source === "hardcoded" ? "sitemap" : upstream.source;
+  const source: CachedEntry["source"] =
+    upstream.source === "hardcoded" ? "sitemap" : upstream.source;
   // Build a minimal resolved view for lastmod — re-run resolveVersion when
   // we got a sitemap hit so we have its lastmod value.
   const lastmod =
-    url && source === "sitemap"
-      ? resolveVersion(entry, ctx).lastmod
-      : null;
+    url && source === "sitemap" ? resolveVersion(entry, ctx).lastmod : null;
 
   // Image + launchercontent shortText. URL source doesn't have to be
   // launchercontent — image/shortText come from launchercontent regardless of

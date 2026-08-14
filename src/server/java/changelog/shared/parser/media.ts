@@ -1,8 +1,8 @@
 import {
-  DomElement,
-  ElementType,
   type ChildNode,
+  DomElement,
   type Element,
+  ElementType,
   htmlparser2,
 } from "./types";
 import { documentCreateDiv, textOf, wrapperChildren } from "./utils";
@@ -26,8 +26,13 @@ export function normalizeArticleMedia(nodes: ChildNode[]): void {
       imageEl.parentNode.parentNode.type === "tag" &&
       imageEl.parentNode.parentNode.tagName === "a"
     ) {
-      imageLinksTo = imageEl.parentNode.parentNode.attributes.find((attr) => attr.name === "href")?.value;
-      if (typeof imageLinksTo === "string" && imageLinksTo.includes("https://youtu")) {
+      imageLinksTo = imageEl.parentNode.parentNode.attributes.find(
+        (attr) => attr.name === "href",
+      )?.value;
+      if (
+        typeof imageLinksTo === "string" &&
+        imageLinksTo.includes("https://youtu")
+      ) {
         const youtubeLink = new URL(imageLinksTo);
         // This doesn't work in the __rendered.html either because of something missing in the <head> or because its not actually from a webserver
         // or because the host isnt https, but I tested the element on mcc-gadgets.com and it worked fine.
@@ -58,7 +63,9 @@ export function normalizeArticleMedia(nodes: ChildNode[]): void {
     const stack: Element[] = [...((node.children ?? []) as Element[])];
     while (stack.length) {
       const el = stack.pop()!;
-      if ((el.attribs?.class ?? "").split(" ").includes("MC_Link_Style_RichText")) {
+      if (
+        (el.attribs?.class ?? "").split(" ").includes("MC_Link_Style_RichText")
+      ) {
         subtitleEl = el;
         break;
       }

@@ -1,8 +1,8 @@
 import { cache } from "~/lib/fetch";
 
+import type { LocalCache } from "./shared/local-cache";
 import { sanitizeManifestId } from "./shared/manifest-sanitize";
 import { parseManifestJson } from "./shared/schemas";
-import type { LocalCache } from "./shared/local-cache";
 import type { VersionManifestResponse } from "./types";
 
 const PISTON_META_URL =
@@ -20,7 +20,9 @@ export interface ManifestFetchOptions {
  * identical regardless of source.
  */
 export const getVersionManifest = cache(
-  async (_options: ManifestFetchOptions = {}): Promise<VersionManifestResponse> => {
+  async (
+    _options: ManifestFetchOptions = {},
+  ): Promise<VersionManifestResponse> => {
     const res = await fetch(PISTON_META_URL);
     if (!res.ok) {
       throw new Error(`manifest fetch failed: ${res.status}`);

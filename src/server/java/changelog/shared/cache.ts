@@ -22,7 +22,10 @@ export async function getShortText(version: string): Promise<string | null> {
   return typeof value === "string" ? value : null;
 }
 
-export async function setShortText(version: string, text: string): Promise<void> {
+export async function setShortText(
+  version: string,
+  text: string,
+): Promise<void> {
   await runtimeCache.set(shortTextKey(version), text, {
     ttl: SHORT_TEXT_TTL_SECONDS,
     tags: ["shorttext"],
