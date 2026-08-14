@@ -352,15 +352,17 @@ function cascadeSlug(
   entry: VersionManifestEntry,
   ctx: ResolveContext,
 ): string | null {
-  // Pre-release / RC: cascade to lower numbered sibling
-  const pre = /^(.+)-(pre|rc)(?:-?\d+)?$/.exec(id);
+  // Pre-release / RC: cascade to lower numbered sibling. Number is captured
+  // here rather than re-matched separately: ids like `1.12-pre7` have no
+  // standalone `-N` at the end (the only `-` is before `pre`), so a tail
+  // regex like `/-(\d+)$/` returns undefined and the cascade silently no-ops.
+  const pre = /^(.+)-(pre|rc)(-?\d+)?$/.exec(id);
   if (pre) {
-    const [, base, kind] = pre;
-    const trailingNum = (/-(\d+)$/.exec(id))?.[1];
-    if (base && kind && trailingNum) {
-      const num = Number(trailingNum);
+    const [, base, kind, numStr] = pre;
+    if (base && kind && numStr) {
+      const num = Number(numStr);
       for (let n = num - 1; n >= 1; n--) {
-        const siblingId = `${base}-${kind}${kind === "pre" ? "" : ""}${n}`;
+        const siblingId = `${base}-${kind}${n}`;
         const siblingCandidates = versionToCandidates(siblingId);
         for (const slug of siblingCandidates) {
           if (ctx.sitemap.has(slug)) return slug;

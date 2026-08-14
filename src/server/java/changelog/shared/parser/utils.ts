@@ -9,7 +9,6 @@ import {
   htmlparser2,
 } from "./types";
 import type { BugRef } from "./types";
-import { appendFileSync } from "node:fs";
 
 export const MOJIRA_LINK_PATTERN = /bugs\.mojang\.com\/browse\/(MC-\d+)/;
 // "Changes in 1.14" / "Technical changes in 1.14" — versioned section
@@ -324,11 +323,11 @@ export function findPrecedingBugListHeader(ul: Element): Element | null {
   for (let i = idx - 1; i >= 0; i--) {
     const sib = siblings[i]!;
     if (isText(sib)) {
-      if (trimmedTextOf(sib as Element) === "") continue;
+      if (trimmedTextOf(sib) === "") continue;
       return null;
     }
     if (!isTag(sib)) return null;
-    return sib as Element;
+    return sib;
   }
   return null;
 }

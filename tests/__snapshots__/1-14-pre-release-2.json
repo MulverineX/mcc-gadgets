@@ -1,0 +1,180 @@
+{
+  "version": "1.14-pre2",
+  "heroImage": "https://www.minecraft.net/content/dam/minecraftnet/minecraft/java-snapshots/1-14-pre-release-1/2019-04-10_16.17.34_header.png",
+  "source": "minecraft.net",
+  "body": {
+    "nodes": [
+      {
+        "type": "element",
+        "tag": "ul",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          1,
+          3
+        ],
+        "parent": null,
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          2
+        ],
+        "parent": {
+          "$ref": 0
+        },
+        "prev": null,
+        "next": {
+          "$ref": 3
+        }
+      },
+      {
+        "type": "text",
+        "data": "Fixed a few bugs",
+        "parent": {
+          "$ref": 1
+        },
+        "prev": null,
+        "next": null
+      },
+      {
+        "type": "element",
+        "tag": "li",
+        "kind": "tag",
+        "attrs": {},
+        "children": [
+          4
+        ],
+        "parent": {
+          "$ref": 0
+        },
+        "prev": {
+          "$ref": 1
+        },
+        "next": null
+      },
+      {
+        "type": "text",
+        "data": "Some performance improvements",
+        "parent": {
+          "$ref": 3
+        },
+        "prev": null,
+        "next": null
+      }
+    ]
+  },
+  "bugList": [
+    {
+      "id": "MC-123773",
+      "title": "Scrolling the hotbar on mac behaves weirdly starting in 18w01a"
+    },
+    {
+      "id": "MC-133205",
+      "title": "Missing block with superflat preset \"The Void\""
+    },
+    {
+      "id": "MC-137581",
+      "title": "Destroyed shulker boxes are lost in creative mode"
+    },
+    {
+      "id": "MC-138444",
+      "title": "Tall sea grass doesn't drop sea grass when sheared"
+    },
+    {
+      "id": "MC-140236",
+      "title": "Using the Grindstone on an item to remove enchants doesn't reset the XP price to add enchants to it in an anvil"
+    },
+    {
+      "id": "MC-140261",
+      "title": "When putting only one non-enchanted item in the grindstone GUI, the same item appears as the output"
+    },
+    {
+      "id": "MC-141253",
+      "title": "Zombie villagers in certain biomes don't spawn with their biome specific skins"
+    },
+    {
+      "id": "MC-141990",
+      "title": "Cartography table does not update when cloning maps"
+    },
+    {
+      "id": "MC-143410",
+      "title": "Wandering Trader and Trader Llama spawn in the void biome"
+    },
+    {
+      "id": "MC-143998",
+      "title": "Switching in smoker between \"Showing all\" and \"Showing smokable\" does not work"
+    },
+    {
+      "id": "MC-144242",
+      "title": "Foxes' heads never move"
+    },
+    {
+      "id": "MC-145738",
+      "title": "All town centers in village now generate in ground and creates many holes in superflat world"
+    },
+    {
+      "id": "MC-145848",
+      "title": "Players can sleep in the same beds as villagers"
+    },
+    {
+      "id": "MC-145916",
+      "title": "Food that can be planted cannot be eaten while targeting a block"
+    },
+    {
+      "id": "MC-146251",
+      "title": "Farmer doesn't look at plants when he is working"
+    },
+    {
+      "id": "MC-146995",
+      "title": "Villagers don't immediately replant crops"
+    },
+    {
+      "id": "MC-147338",
+      "title": "Bright spots underwater - ocean lighting errors"
+    },
+    {
+      "id": "MC-147565",
+      "title": "Foxes body model are 2 pixel higher when sleeping"
+    },
+    {
+      "id": "MC-147566",
+      "title": "Baby fox hitbox is shifted"
+    },
+    {
+      "id": "MC-147572",
+      "title": "Suspicious stews of saturation from shipwrecks and villagers still have a lasting effect"
+    },
+    {
+      "id": "MC-147598",
+      "title": "Baby foxes don't drop items they're holding when they die"
+    },
+    {
+      "id": "MC-147606",
+      "title": "Polar bear attack sound never changes pitch, even if the roar comes from a baby polar bear"
+    },
+    {
+      "id": "MC-147654",
+      "title": "Baby fox's head is off center"
+    },
+    {
+      "id": "MC-147754",
+      "title": "Crash while opening world / while ticking entity: \"IllegalStateException: POI data mismatch: already registered at ev{x=##, y=##, z=##}\""
+    },
+    {
+      "id": "MC-147951",
+      "title": "Cartography Table does not Lock Maps"
+    }
+  ],
+  "merged": true,
+  "shortText": "Fixed a few bugs, Some performance improvements",
+  "title": "Minecraft 1.14 Pre-Release 2",
+  "targetRelease": "1.14",
+  "publishedAt": 1555069133,
+  "sourceURL": "https://www.minecraft.net/en-us/article/minecraft-1-14-pre-release-1"
+}
