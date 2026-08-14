@@ -9,10 +9,18 @@ import {
   htmlparser2,
 } from "./types";
 import type { BugRef } from "./types";
+import { appendFileSync } from "node:fs";
 
 export const MOJIRA_LINK_PATTERN = /bugs\.mojang\.com\/browse\/(MC-\d+)/;
+// "Changes in 1.14" / "Technical changes in 1.14" — versioned section
+// headings that should be dropped from the body. Bug list headings
+// ("Fixed bugs in 1.14", "Issues fixed in 1.14", "Bugs fixed") are NOT
+// here — they're handled by findPrecedingBugListHeader alongside the
+// bug ul they precede. Detaching them in the first loop would orphan
+// findPrecedingBugListHeader, which walks back through siblings and
+// would then pick up the wrong preceding element.
 export const SECTION_HEADING_PATTERN =
-  /^(changes? in|technical changes? in|fixed bugs?|issues? fixed in)\b/i;
+  /^(?:changes?|technical changes?)\s+in\b/i;
 export const SHORT_TEXT_LIMIT = 280;
 
 export function findFirst(
@@ -301,24 +309,26 @@ export function collectUlsInRoots(roots: Element[]): Element[] {
   return out;
 }
 
-export function isBugListSectionHeader(text: string): boolean {
-  return /^bugs?\s+(?:fixed\s+(?:in\s+\S+)?|fixed\s+bugs?)\s*:?\s*$/i.test(
-    text,
-  ) || /^(?:fixed\s+bugs?|issues?\s+fixed)\s*:?\s*$/i.test(text);
-}
-
 export function findPrecedingBugListHeader(ul: Element): Element | null {
   const parent = ul.parent as { children?: unknown[] } | null;
   if (!parent || !Array.isArray(parent.children)) return null;
   const siblings = parent.children as Element[];
   const idx = siblings.indexOf(ul);
+  // Walk backwards from the ul until we hit a real element.
+  // Skip whitespace text nodes (some pages interleave whitespace
+  // between the heading and the list). The first real element is the
+  // heading — we trust its position, not its text content, because some
+  // mojang.com pages put a `<p>` immediately before the `<ul>`
+  // with text we can't reliably pattern-match (e.g. "Bugs fixed in this
+  // snapshot:" with a multi-word "in" clause).
   for (let i = idx - 1; i >= 0; i--) {
     const sib = siblings[i]!;
-    if (isText(sib)) continue;
-    if (!isTag(sib) || sib.tagName !== "p") return null;
-    return isBugListSectionHeader(trimmedTextOf(sib as Element))
-      ? (sib as Element)
-      : null;
+    if (isText(sib)) {
+      if (trimmedTextOf(sib as Element) === "") continue;
+      return null;
+    }
+    if (!isTag(sib)) return null;
+    return sib as Element;
   }
   return null;
 }
@@ -346,14 +356,8 @@ export function buildBodyElement(range: SectionRange): BugRef[] {
       let lastIdx = -1;
       for (let i = kids.length - 1; i >= 0; i--) {
         const c = kids[i]!;
-        if (isTag(c) && c.tagName === "li") {
-          const id = findMojiraId(c);
-          if (process.env.DEBUG_BUGLIST === "1" && id) {
-            console.error(
-              `[buglist] ul child idx=${i} tag=${c.tagName} bugId=${id} text=${textOf(c).slice(0, 50)}`,
-            );
-          }
-          if (id !== null) lastIdx = i;
+        if (isTag(c) && c.tagName === "li" && findMojiraId(c) !== null) {
+          lastIdx = i;
         }
       }
       return lastIdx;
@@ -385,17 +389,6 @@ export function buildBodyElement(range: SectionRange): BugRef[] {
     // like "Optimized recipe book & ..." in a 1.12-pre6 changes ul.
     if (lastBugLiIdx !== -1) {
       const kids = (ul.children ?? []) as Element[];
-      if (process.env.DEBUG_BUGLIST === "1") {
-        console.error(
-          `[buglist] lastBugLiIdx=${lastBugLiIdx} ulChildrenAfterDetach=${kids.length}`,
-        );
-        for (let i = 0; i < kids.length; i++) {
-          const c = kids[i]!;
-          console.error(
-            `[buglist]   post[${i}] tag=${isTag(c) ? c.tagName : "text"} text=${textOf(c as Element).slice(0, 60)}`,
-          );
-        }
-      }
       for (let i = kids.length - 1; i > lastBugLiIdx; i--) {
         const c = kids[i]!;
         if (isTag(c) && c.tagName === "li") detach(c);

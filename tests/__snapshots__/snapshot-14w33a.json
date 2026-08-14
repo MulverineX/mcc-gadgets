@@ -14,49 +14,13 @@
         ],
         "parent": null,
         "prev": null,
-        "next": {
-          "$ref": 2
-        }
+        "next": null
       },
       {
         "type": "text",
         "data": "It’s snapshot time. After last weeks snapshot, which did not include any changes at all, we decided to make this weeks snapshot a little bit more interesting. So we added tons of new features, all of them disguised as bugfixes.",
         "parent": {
           "$ref": 0
-        },
-        "prev": null,
-        "next": null
-      },
-      {
-        "type": "text",
-        "data": "\n\n",
-        "parent": null,
-        "prev": {
-          "$ref": 0
-        },
-        "next": {
-          "$ref": 3
-        }
-      },
-      {
-        "type": "element",
-        "tag": "p",
-        "kind": "tag",
-        "attrs": {},
-        "children": [
-          4
-        ],
-        "parent": null,
-        "prev": {
-          "$ref": 2
-        },
-        "next": null
-      },
-      {
-        "type": "text",
-        "data": "Bugs fixed:",
-        "parent": {
-          "$ref": 3
         },
         "prev": null,
         "next": null
@@ -178,7 +142,7 @@
     }
   ],
   "merged": true,
-  "shortText": "It’s snapshot time. After last weeks snapshot, which did not include any changes at all, we decided to make this weeks snapshot a little bit more interesting. So we added tons of new features, all of them disguised as bugfixes. Bugs fixed:",
+  "shortText": "It’s snapshot time. After last weeks snapshot, which did not include any changes at all, we decided to make this weeks snapshot a little bit more interesting. So we added tons of new features, all of them disguised as bugfixes.",
   "title": "Minecraft Snapshot 14w33a",
   "targetRelease": "1.8",
   "publishedAt": 1407942494,

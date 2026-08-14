@@ -181,9 +181,6 @@ export function splitMinecraftNetByVersion(
   for (let i = 0; i < sectionChildren.length; i++) {
     const child = sectionChildren[i]!;
     const text = trimmedTextOf(child);
-    if (process.env.DEBUG_PICK) {
-      console.log(`  [${i}] ${child.tagName}: ${text}`);
-    }
     const headingMatch =
       /^(changes? in|technical changes? in|fixed bugs? in)\s*(.*)$/i.exec(text);
     const plainMatch = headingMatch
@@ -192,11 +189,6 @@ export function splitMinecraftNetByVersion(
 
     if (!headingMatch && !plainMatch) continue;
 
-    if (process.env.DEBUG_PICK && /21w08/.test(version)) {
-      console.log(
-        `  [heading] idx=${i} text=${JSON.stringify(text)} match=${headingMatch ? JSON.stringify(headingMatch[1]) : "plain"} ver=${headingMatch ? JSON.stringify(headingMatch[2]) : ""}`,
-      );
-    }
     let versionStr: string;
     if (headingMatch) {
       versionStr = headingMatch[2]!.trim();
@@ -260,11 +252,6 @@ export function splitMinecraftNetByVersion(
         lastListEnd(sectionChildren, current.sectionStart, sectionChildren.length),
       ),
     });
-  }
-  if (process.env.DEBUG_PICK) {
-    console.log(
-      `  [minecraft-net] version=${version} current=${current?.version} ranges=${JSON.stringify(ranges.map((r) => ({ v: r.version, c: r.children.length })))}`,
-    );
   }
 
   if (ranges.length === 0) {
